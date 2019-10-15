@@ -43,6 +43,9 @@ export default class App extends Component {
           path='/add-entry'
           component={AddForm}
         />
+        <Route
+          path='/login'
+        />
       </div>
     )
   }

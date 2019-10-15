@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 export default class LandingPage extends Component {
   render() {
@@ -46,28 +47,9 @@ export default class LandingPage extends Component {
 
         <hr className="underline"></hr>
 
-        <section className="register-section">
-          <h2 className="section-h2">Start Today!</h2>
-          <form className="register-form">
-            <div className="register-form-div">
-              <label htmlFor="first-name">First Name</label>
-              <input type="text" id="first-name"/>
-            </div>
-            <div className="register-form-div">
-              <label htmlFor="last-name">Last Name</label>
-              <input type="text" id="last-name"/>
-            </div>
-            <div className="register-form-div">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="email@example.com"/>
-            </div>
-            <div className="register-form-div">
-              <label htmlFor="password">Password</label>
-              <input type="text" id="password"/>
-            </div>
-            <button type="submit" className="reigster-button">Sign Up</button>
-          </form>
-        </section>
+       <RegistrationForm 
+        history={this.props.history}
+       />
       </main>
     </>
     )
