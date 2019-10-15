@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import LandingPage from './LandingPage/LandingPage';
 import Dashboard from './Dashboard/Dashboard';
 import AppNav from './AppNav/AppNav';
@@ -11,10 +10,6 @@ import Completed from './Completed/Completed';
 import AddForm from './AddForm/AddForm';
 
 export default class App extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
-
   //MAY WANT TO SPLIT OUT RENDERS SO ONE RENDER FUNCTION HANDLES THE LANDING PAGE / NAV / FORMS
   //ANOTHE RENDER FUNCTION WILL BE ROUTES FOR ALL OF THE PAGES WHEN USER LOGS IN
   //AND MAIN RENDER COMBINES IT ALL
