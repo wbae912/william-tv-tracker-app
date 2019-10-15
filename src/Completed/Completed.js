@@ -32,6 +32,7 @@ export default class Completed extends Component {
           <TvShowEntry 
             key={show.id}
             show={show}
+            history={this.props.history}
           />
         )}
 

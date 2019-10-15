@@ -32,6 +32,7 @@ export default class CurrentlyWatching extends Component {
           <TvShowEntry
             key={show.id}
             show={show}
+            history={this.props.history}
           />)}
 
         <section>

@@ -9,6 +9,7 @@ import CurrentlyWatching from './CurrentlyWatching/CurrentlyWatching';
 import Completed from './Completed/Completed';
 import AddForm from './AddForm/AddForm';
 import LoginForm from './LoginForm/LoginForm';
+import EditForm from './EditForm/EditForm';
 import Context from './Context';
 
 export default class App extends Component {
@@ -16,22 +17,11 @@ export default class App extends Component {
   //ANOTHE RENDER FUNCTION WILL BE ROUTES FOR ALL OF THE PAGES WHEN USER LOGS IN
   //AND MAIN RENDER COMBINES IT ALL
 
-  //DELETE AND EDIT will be in here and then send those down as contexts
   constructor(props) {
     super(props)
   
     this.state = {
-       shows: [],
-       newShow: {
-        tv_title: '',
-        status: '',
-        season_number: null,
-        episode_number: null,
-        rating: '',
-        genre: '',
-        description: '',
-        review: ''
-       }
+       shows: []
     }
   }
   
@@ -85,7 +75,6 @@ export default class App extends Component {
       return res.json();
     })
     .then(data => {
-      console.log(data);
       this.setState({
         shows: [...this.state.shows, data]
       })
@@ -93,6 +82,17 @@ export default class App extends Component {
     .catch(error => {
       alert(`Error: ${error.message}`)
     })
+  }
+
+  updateTvShow = (updatedShow) => {
+    const newShows = this.state.shows.map(show => 
+      (show.id === updatedShow.id)
+        ? updatedShow
+        : show
+      );
+      this.setState({
+        shows: newShows
+      })
   }
   
   render() {
@@ -102,6 +102,7 @@ export default class App extends Component {
         value={{
           deleteTvShow: this.deleteTvShow,
           addTvShow: this.addTvShow,
+          updateTvShow: this.updateTvShow,
           shows: this.state.shows
         }}>
           <Route 
@@ -129,6 +130,10 @@ export default class App extends Component {
           <Route
             path='/add-entry'
             component={AddForm}
+          />
+          <Route 
+            path='/edit-entry/:id'
+            component={EditForm}
           />
           <Route
             path='/login'

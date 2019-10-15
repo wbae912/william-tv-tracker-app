@@ -1,12 +1,64 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
 
-export default class AddForm extends Component {
-  static contextType = tvContext;
+export default class EditForm extends Component {
+  constructor(props) {
+    super(props)
   
-  submitForm = (e) => {
+    this.state = {
+      id: '',
+      tv_title: '',
+      status: '',
+      season_number: '',
+      episode_number: '',
+      rating: '',
+      genre: '',
+      description: '',
+      review: '',
+      user_id: 1
+    }
+  }
+  
+  static contextType = tvContext;
+
+  componentDidMount() {
+    const tvId = Number(this.props.match.params.id);
+    fetch(`http://localhost:8000/api/shows/all/${tvId}`)
+    .then(res => {
+      if(!res.ok) {
+        throw new Error('Something went wrong')
+      }
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        id: data.id,
+        tv_title: data.tv_title,
+        status: data.status,
+        season_number: data.season_number,
+        episode_number: data.episode_number,
+        rating: data.rating,
+        genre: data.genre,
+        description: data.description,
+        review: data.review,
+        user_id: data.user_id
+      })
+    })
+    .catch(error => {
+      alert(`Error: ${error.message}`)
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
     e.preventDefault();
-    const newShow = {
+    const newShowFields = {
+      id: this.state.id,
       tv_title: e.target.tv_title.value,
       status: e.target.status.value,
       season_number: Number(e.target.season_number.value),
@@ -17,25 +69,42 @@ export default class AddForm extends Component {
       review: e.target.review.value,
       user_id: 1
     };
-    this.context.addTvShow(newShow)
+
+    const tvId = Number(this.props.match.params.id);
+    fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newShowFields)
+    })
+    .then(res => {
+      if(!res.ok) {
+        throw new Error('Something went wrong'); 
+      }
+    })
+    .then(() => {
+      this.context.updateTvShow(newShowFields);
+      this.props.history.goBack();
+    })
   }
 
   render() {
+    const { tv_title, status, season_number, episode_number, rating, genre, description, review } = this.state;
     return (
       <div>
-        <h1>Add a TV Show</h1>
-        <section className="add-show-section">
-          <form className="add-show-form" onSubmit={e => {
-            this.submitForm(e);
-            this.props.history.push('/dashboard');
+        <h1>Edit a TV Show</h1>
+        <section className="edit-show-section">
+          <form className="edit-show-form" onSubmit={e => {
+            this.handleSubmit(e);
             }}>
             <div className="form-section">
               <label htmlFor="tv_title">TV Show Name</label>
-              <input type="text" name="tv_title" id="tv_title" required/>
+              <input type="text" name="tv_title" id="tv_title" value={tv_title} onChange={e => this.handleChange(e)} required/>
             </div>
             <div className="form-section">
               <label htmlFor="status">Status</label>
-              <select name="status" id="status" required>
+              <select name="status" id="status" value={status} onChange={e => this.handleChange(e)} required>
                 <option value="0">Select a Status...</option>
                 <option value="Planning to Watch">Plan to Watch</option>
                 <option value="Currently Watching">Currently Watching</option>
@@ -43,16 +112,16 @@ export default class AddForm extends Component {
               </select>
             <div className="form-section">
                 <label htmlFor="season_number">Season No.</label>
-                <input type="number" name="season_number" id="season_number"/>
+                <input type="number" name="season_number" id="season_number" value={season_number} onChange={e => this.handleChange(e)} />
             </div>
           <div className="form-section">
               <label htmlFor="episode_number">Episode No.</label>
-              <input type="number" name="episode_number" id="episode_number"/>
+              <input type="number" name="episode_number" id="episode_number" value={episode_number} onChange={e => this.handleChange(e)} />
           </div>
             </div>
             <div className="form-section">
                 <label htmlFor="rating">Rating</label>
-                <select name="rating" id="rating">
+                <select name="rating" id="rating" value={rating} onChange={e => this.handleChange(e)}>
                   <option value="0">Select a Rating...</option>
                   <option value="1">1 Star</option>
                   <option value="2">2 Stars</option>
@@ -63,7 +132,7 @@ export default class AddForm extends Component {
               </div>
               <div className="form-section">
                   <label htmlFor="genre">Genre</label>
-                  <select name="genre" id="genre" required>
+                  <select name="genre" id="genre" value={genre} onChange={e => this.handleChange(e)}>
                     <option value="0">Select a Genre...</option>
                     <option value="Action">Action</option>
                     <option value="Animated">Animated</option>
@@ -81,11 +150,11 @@ export default class AddForm extends Component {
                 </div>
               <div className="form-section">
                   <label htmlFor="description">Description</label>
-                  <textarea type="text" name="description" id="description" />
+                  <textarea type="text" name="description" id="description" value={description} onChange={e => this.handleChange(e)} />
               </div>
               <div className="form-section">
                     <label htmlFor="review">Review</label>
-                    <textarea type="text" name="review" id="review" />
+                    <textarea type="text" name="review" id="review" value={review} onChange={e => this.handleChange(e)} />
               </div>
             <button type="submit" className="add-show-button">Submit</button>
             <button type="button" className="reset-fields-button">Reset</button>

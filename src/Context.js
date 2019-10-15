@@ -3,7 +3,8 @@ import React from 'react';
 const tvContext = React.createContext({
   shows: [],
   deleteTvShow: () => {},
-  addTvShow: () => {}
+  addTvShow: () => {},
+  updateTvShow: () => {}
 })
 
 export default tvContext;

@@ -16,7 +16,7 @@ export default class TvShowEntry extends Component {
           <p>Description: {this.props.show.description}</p>
           <p>Review: {this.props.show.review}</p>
         </ul>
-        <button type="button" id="edit-button">Edit</button>
+        <button type="button" id="edit-button" onClick={() => this.props.history.push(`/edit-entry/${this.props.show.id}`)}>Edit</button>
         <button type="button" id="delete-button" onClick={() => this.context.deleteTvShow(this.props.show.id)}>Delete</button>
       </div>
     )
