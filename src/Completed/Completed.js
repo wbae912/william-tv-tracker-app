@@ -1,33 +1,12 @@
 import React, { Component } from 'react';
 import TvShowEntry from '../TvShowEntry/TvShowEntry';
+import tvContext from '../Context';
 
 export default class Completed extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       completedShows: []
-    }
-  }
+  static contextType = tvContext;
 
-  componentDidMount() {
-    fetch(`http://localhost:8000/api/shows/completed`)
-      .then(res => {
-        if(!res.ok) {
-          throw new Error('Something went wrong')
-        }
-        return res.json();
-      })
-      .then(data => {
-        this.setState({
-          completedShows: data
-        })
-      })
-      .catch(error => {
-        alert(`Error: ${error.message}`)
-      })
-  }
   render() {
+    const completedShows = this.context.shows.filter(show => show.status === 'Completed');
     return (
       <div>
         <header role="banner">
@@ -49,7 +28,7 @@ export default class Completed extends Component {
           </select>
         </header>
 
-        {this.state.completedShows.map(show =>
+        {completedShows.map(show =>
           <TvShowEntry 
             key={show.id}
             show={show}

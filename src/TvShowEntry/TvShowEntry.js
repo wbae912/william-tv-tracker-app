@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import tvContext from '../Context';
 
 export default class TvShowEntry extends Component {
+  static contextType = tvContext;
+
   render() {
-    console.log(this.props);
     return (
       <div className="tv-show-entry">
         <h2>{this.props.show.tv_title}</h2>
@@ -14,8 +16,8 @@ export default class TvShowEntry extends Component {
           <p>Description: {this.props.show.description}</p>
           <p>Review: {this.props.show.review}</p>
         </ul>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button type="button" id="edit-button">Edit</button>
+        <button type="button" id="delete-button" onClick={() => this.context.deleteTvShow(this.props.show.id)}>Delete</button>
       </div>
     )
   }

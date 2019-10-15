@@ -34,7 +34,7 @@ export default class RegistrationForm extends React.Component {
     })
     .then(res => {
       if(!res.ok) {
-        return Promise.reject('Something went wrong')
+        return Promise.reject('Something went wrong');
       }
       res.json();
     })

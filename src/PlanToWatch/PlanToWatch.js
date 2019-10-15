@@ -1,34 +1,12 @@
 import React, { Component } from 'react';
 import TvShowEntry from '../TvShowEntry/TvShowEntry';
+import tvContext from '../Context';
 
 export default class PlanToWatch extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       planningShows: []
-    }
-  }
-
-  componentDidMount() {
-    fetch(`http://localhost:8000/api/shows/planning`)
-      .then(res => {
-        if(!res.ok) {
-          throw new Error('Something went wrong')
-        }
-        return res.json();
-      })
-      .then(data => {
-        this.setState({
-          planningShows: data
-        })
-      })
-      .catch(error => {
-        alert(`Error: ${error.message}`)
-      })
-  }
+  static contextType = tvContext;
   
   render() {
+    const planningToWatchShows = this.context.shows.filter(show => show.status === 'Planning to Watch');
     return (
       <div>
         <header role="banner">
@@ -50,7 +28,7 @@ export default class PlanToWatch extends Component {
         </header>
        
 
-        {this.state.planningShows.map(show => 
+        {planningToWatchShows.map(show => 
           <TvShowEntry
             key={show.id}
             show={show}
