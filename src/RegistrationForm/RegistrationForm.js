@@ -36,7 +36,7 @@ export default class RegistrationForm extends React.Component {
       if(!res.ok) {
         return Promise.reject('Something went wrong');
       }
-      res.json();
+      return res.json();
     })
     .then(() => {
       this.props.history.push('/login')

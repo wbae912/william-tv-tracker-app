@@ -21,7 +21,17 @@ export default class App extends Component {
     super(props)
   
     this.state = {
-       shows: []
+       shows: [],
+       newShow: {
+        tv_title: '',
+        status: '',
+        season_number: null,
+        episode_number: null,
+        rating: '',
+        genre: '',
+        description: '',
+        review: ''
+       }
     }
   }
   
@@ -58,21 +68,48 @@ export default class App extends Component {
       })
     )
   }
+
+
+  addTvShow = (newShow) => {
+    fetch('http://localhost:8000/api/shows/all', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newShow)
+    })
+    .then(res => {
+      if(!res.ok) {
+        throw new Error('Something went wrong');
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+      this.setState({
+        shows: [...this.state.shows, data]
+      })
+    })
+    .catch(error => {
+      alert(`Error: ${error.message}`)
+    })
+  }
   
   render() {
     return (
       <div>
-        <Route 
-          exact
-          path='/'
-          component={LandingPage}
-        />
-        <AppNav />
         <Context.Provider
-          value={{
-            deleteTvShow: this.deleteTvShow,
-            shows: this.state.shows
-          }}>
+        value={{
+          deleteTvShow: this.deleteTvShow,
+          addTvShow: this.addTvShow,
+          shows: this.state.shows
+        }}>
+          <Route 
+            exact
+            path='/'
+            component={LandingPage}
+          />
+          <AppNav />
           <Route 
             path='/dashboard'
             component={Dashboard}

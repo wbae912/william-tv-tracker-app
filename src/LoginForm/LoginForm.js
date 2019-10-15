@@ -34,7 +34,7 @@ export default class LoginForm extends Component {
       if(!res.ok) {
         return Promise.reject('Something went wrong');
       }
-      res.json();
+      return res.json();
     })
     .then(() => {
       this.props.history.push('/dashboard');
