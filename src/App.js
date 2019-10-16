@@ -43,6 +43,8 @@ export default class App extends Component {
     })
   }
 
+  //DEFINE FUNCTION BY SEARCH TERM, ETC...IF WE WANT TO USE SAME ENDPOINT...USE SEARCH QUERIES ?SORT..GENRE
+
   deleteTvShow = (tvId) => {
     return (
       fetch(`http://localhost:8000/api/shows/all/${tvId}`, {

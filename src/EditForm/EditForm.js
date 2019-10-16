@@ -157,7 +157,7 @@ export default class EditForm extends Component {
                     <textarea type="text" name="review" id="review" value={review} onChange={e => this.handleChange(e)} />
               </div>
             <button type="submit" className="add-show-button">Submit</button>
-            <button type="button" className="reset-fields-button">Reset</button>
+            <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
           </form>
         </section>
       </div>

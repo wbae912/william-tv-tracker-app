@@ -20,6 +20,19 @@ export default class AddForm extends Component {
     this.context.addTvShow(newShow)
   }
 
+  //NEED TO REVISE THIS FUNCTION
+  resetFields = (e) => {
+    e.target.tv_title.value='';
+    e.target.status.value='';
+    e.target.season_number.value='';
+    e.target.episode_number.value='';
+    e.target.rating.value='';
+    e.target.genre.value='';
+    e.target.description.value='';
+    e.target.review.value='';
+    e.target.user_id.value=1;
+  }
+
   render() {
     return (
       <div>
@@ -89,6 +102,7 @@ export default class AddForm extends Component {
               </div>
             <button type="submit" className="add-show-button">Submit</button>
             <button type="button" className="reset-fields-button">Reset</button>
+            <button type="button" className="reset-fields-button" onClick={() => this.props.history.push('/dashboard')}>Back to Dashboard</button>
           </form>
         </section>
       </div>
