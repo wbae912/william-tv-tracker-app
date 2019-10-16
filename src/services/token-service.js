@@ -5,7 +5,7 @@ const TokenService = {
     window.localStorage.setItem(config.TOKEN_KEY, token)
   },
   getAuthToken() {
-    window.localStorage.getItem(config.TOKEN_KEY)
+    return window.localStorage.getItem(config.TOKEN_KEY)
   },
   clearAuthToken() {
     window.localStorage.removeItem(config.TOKEN_KEY)

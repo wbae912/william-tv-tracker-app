@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 export default class LandingPage extends Component {
   render() {
     return (
     <>
-      <nav className="nav">
+      {/* <nav className="nav">
         <h2 className="nav-app-title">TV Tracker</h2>
         <div className="landing-page-links">
           <button type="button" className="login-button">Login</button>
           <button type="button" className="register-button">Register</button>
         </div>
-      </nav>
+      </nav> */}
       <main>
         <header className="header">
           <h1 className="app-title">TV Tracker</h1>
@@ -47,9 +46,9 @@ export default class LandingPage extends Component {
 
         <hr className="underline"></hr>
 
-       <RegistrationForm 
+       {/* <RegistrationForm 
         history={this.props.history}
-       />
+       /> */}
       </main>
     </>
     )

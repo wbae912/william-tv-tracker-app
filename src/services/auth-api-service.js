@@ -7,12 +7,13 @@ const AuthApiService = {
       },
       body: JSON.stringify(credentials),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res => {
+        if(!res.ok) {
+          return Promise.reject('Something went wrong');
+        }
+        return res.json();
+      })
   },
 }
 
-export default AuthApiService
+export default AuthApiService;

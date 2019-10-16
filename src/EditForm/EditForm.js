@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
+import TokenService from '../services/token-service';
 
 export default class EditForm extends Component {
   constructor(props) {
@@ -23,7 +24,12 @@ export default class EditForm extends Component {
 
   componentDidMount() {
     const tvId = Number(this.props.match.params.id);
-    fetch(`http://localhost:8000/api/shows/all/${tvId}`)
+    fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
+      method: 'GET',
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
     .then(res => {
       if(!res.ok) {
         throw new Error('Something went wrong')
@@ -74,7 +80,8 @@ export default class EditForm extends Component {
     fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
       method: 'PATCH',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(newShowFields)
     })
