@@ -5,6 +5,11 @@ export default class Dashboard extends Component {
 
   static contextType = tvContext;
 
+
+  componentDidMount() {
+    this.context.getAllShows();
+  }
+
   render() {
     //PIE CHART NUMBERS
     const countPlanningToWatch = this.context.shows.filter(show => show.status === 'Planning to Watch').length;

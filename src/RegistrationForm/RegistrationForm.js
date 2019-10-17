@@ -61,7 +61,7 @@ export default class RegistrationForm extends React.Component {
           </div>
           <div className="register-form-div">
             <label htmlFor="password">Password</label>
-            <input type="text" id="password" name="password" minLength="8" maxLength="72" required onChange={e => this.handleChange(e)}/>
+            <input type="password" id="password" name="password" minLength="8" maxLength="72" required onChange={e => this.handleChange(e)}/>
           </div>
           <button type="submit" className="register-button">Sign Up</button>
           <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>

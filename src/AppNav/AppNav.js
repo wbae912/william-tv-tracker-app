@@ -15,7 +15,7 @@ export default class AppNav extends Component {
     return (
     <>
       <header className="header">
-      <Link to="/"><h2 className="nav-app-title">TV Tracker</h2></Link>
+        <Link to="/dashboard"><h2 className="nav-app-title">TV Tracker</h2></Link>
       </header>
       <nav className="nav-app">
         <div className="app-links">

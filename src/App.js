@@ -3,7 +3,6 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import LandingPage from './LandingPage/LandingPage';
 import Dashboard from './Dashboard/Dashboard';
-import Header from './Header/Header';
 import Nav from './Nav/Nav';
 import AppNav from './AppNav/AppNav';
 import PlanToWatch from './PlanToWatch/PlanToWatch';
@@ -15,14 +14,8 @@ import EditForm from './EditForm/EditForm';
 import Context from './Context';
 import TokenService from './services/token-service';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
-// import PublicOnlyRoute from './Utils/PublicOnlyRoute';
-// import PrivateRoute from './Utils/PrivateRoute';
 
 export default class App extends Component {
-  //MAY WANT TO SPLIT OUT RENDERS SO ONE RENDER FUNCTION HANDLES THE LANDING PAGE / NAV / FORMS
-  //ANOTHE RENDER FUNCTION WILL BE ROUTES FOR ALL OF THE PAGES WHEN USER LOGS IN
-  //AND MAIN RENDER COMBINES IT ALL 
-
   constructor(props) {
     super(props)
   
@@ -32,19 +25,13 @@ export default class App extends Component {
     }
   }
 
-  toggleIsLoggedIn = () => {
-    this.setState({
-      isLoggedIn: true
-    })
-  }
-
   toggleIsLoggedOff = () => {
     this.setState({
       isLoggedIn: false
     })
   }
   
-  getAllShows() {
+  getAllShows= () => {
     fetch(`http://localhost:8000/api/shows/all`, {
       headers: {
       'authorization': `bearer ${TokenService.getAuthToken()}`
@@ -58,29 +45,14 @@ export default class App extends Component {
     })
     .then(data => {
       this.setState({
-        shows: data
+        shows: data,
+        isLoggedIn: true
       })
     })
     .catch(error => {
       alert(`Error: ${error.message}`)
     })
   }
-
-  componentDidMount() {
-    if(!TokenService.getAuthToken()) {
-      return
-    } else {
-      this.getAllShows()
-    }
-  }
-
-
-  // componentDidMount() {
-  //   if(TokenService.hasAuthToken()) {
-  //     return this.getAllShows();
-  //   }
-  // }
-
 
   //DEFINE FUNCTION BY SEARCH TERM, ETC...IF WE WANT TO USE SAME ENDPOINT...USE SEARCH QUERIES ?SORT..GENRE
 
@@ -138,7 +110,6 @@ export default class App extends Component {
   }
   
   render() {
-    console.log(this.state.shows);
     return (
       <div className="app">
       <Context.Provider
@@ -148,11 +119,10 @@ export default class App extends Component {
           updateTvShow: this.updateTvShow,
           shows: this.state.shows,
           getAllShows: this.getAllShows,
-          toggleIsLoggedIn: this.toggleIsLoggedIn,
           toggleIsLoggedOff: this.toggleIsLoggedOff
         }}>
         {this.state.isLoggedIn ? <AppNav /> : <Nav />}
-        <Header />
+        {/* <Header /> */}
         <Route
           exact
           path={'/'}
@@ -166,10 +136,10 @@ export default class App extends Component {
           path={'/login'}
           component={LoginForm}
         />
-        <Route 
+        {/* <Route 
           path={['/dashboard', '/plan-to-watch', '/currently-watching', '/completed', '/add-entry', '/edit-entry/:id']} 
           component={AppNav}
-        />
+        /> */}
         <Route 
           path={'/dashboard'}
           component={Dashboard}

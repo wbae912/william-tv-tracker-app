@@ -6,7 +6,6 @@ const tvContext = React.createContext({
   addTvShow: () => {},
   updateTvShow: () => {},
   getAllShows: () => {},
-  toggleIsLoggedIn: () => {},
   toggleIsLoggedOff: () => {}
 })
 
