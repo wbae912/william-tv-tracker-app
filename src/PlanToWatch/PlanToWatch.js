@@ -7,7 +7,8 @@ export default class PlanToWatch extends Component {
     super(props)
   
     this.state = {
-       searchTerm: ''
+       searchTerm: '',
+       genre: ''
     }
   }
   
@@ -18,6 +19,8 @@ export default class PlanToWatch extends Component {
       [e.target.name]: e.target.value
     })
   }
+
+
 
   // componentDidMount() {
   //   const body = this.state.searchTerm;
@@ -34,7 +37,7 @@ export default class PlanToWatch extends Component {
     const planningToWatchShows = this.context.shows.filter(show => show.status === 'Planning to Watch');
     return (
       <div>
-        <header role="banner">
+        <section className="tv-queries">
           <h1>Plan to Watch</h1>
          <br/>
           <label htmlFor="searchTerm">Search TV Show</label>
@@ -50,8 +53,7 @@ export default class PlanToWatch extends Component {
               <option value="1">Name</option>
               <option value="1">Rating</option>
           </select>
-        </header>
-       
+        </section>
 
         {planningToWatchShows.map(show => 
           <TvShowEntry
@@ -60,10 +62,6 @@ export default class PlanToWatch extends Component {
             history={this.props.history}
           />)}
 
-
-        <section>
-          <button>Add New TV Show</button>
-        </section>
       </div>
     )
   }

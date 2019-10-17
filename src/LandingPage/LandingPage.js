@@ -16,10 +16,10 @@ export default class LandingPage extends Component {
         <header className="header">
           <h1 className="app-title">TV Tracker</h1>
           <p className="app-title-headline">track and catalog your favorite TV shows...</p>
-          <div className="login-register-buttons">
+          {/* <div className="login-register-buttons">
             <Link to='/login'><button type="button" className="login-button">Login</button></Link>
             <Link to='/register'><button type="button" className="register-button">Register</button></Link>
-          </div>
+          </div> */}
         </header>
 
         <hr className="underline"></hr>

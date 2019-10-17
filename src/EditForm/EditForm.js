@@ -16,7 +16,6 @@ export default class EditForm extends Component {
       genre: '',
       description: '',
       review: '',
-      user_id: 1
     }
   }
   
@@ -46,8 +45,7 @@ export default class EditForm extends Component {
         rating: data.rating,
         genre: data.genre,
         description: data.description,
-        review: data.review,
-        user_id: data.user_id
+        review: data.review
       })
     })
     .catch(error => {
@@ -72,8 +70,7 @@ export default class EditForm extends Component {
       rating: e.target.rating.value,
       genre: e.target.genre.value,
       description: e.target.description.value,
-      review: e.target.review.value,
-      user_id: 1
+      review: e.target.review.value
     };
 
     const tvId = Number(this.props.match.params.id);

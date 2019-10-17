@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import LandingPage from './LandingPage/LandingPage';
 import Dashboard from './Dashboard/Dashboard';
 import Header from './Header/Header';
+import Nav from './Nav/Nav';
 import AppNav from './AppNav/AppNav';
 import PlanToWatch from './PlanToWatch/PlanToWatch';
 import CurrentlyWatching from './CurrentlyWatching/CurrentlyWatching';
@@ -26,8 +27,21 @@ export default class App extends Component {
     super(props)
   
     this.state = {
-       shows: []
+       shows: [],
+       isLoggedIn: ''
     }
+  }
+
+  toggleIsLoggedIn = () => {
+    this.setState({
+      isLoggedIn: true
+    })
+  }
+
+  toggleIsLoggedOff = () => {
+    this.setState({
+      isLoggedIn: false
+    })
   }
   
   getAllShows() {
@@ -87,7 +101,6 @@ export default class App extends Component {
     )
   }
 
-
   addTvShow = (newShow) => {
     fetch('http://localhost:8000/api/shows/all', {
       method: 'POST',
@@ -134,8 +147,11 @@ export default class App extends Component {
           addTvShow: this.addTvShow,
           updateTvShow: this.updateTvShow,
           shows: this.state.shows,
-          getAllShows: this.getAllShows
+          getAllShows: this.getAllShows,
+          toggleIsLoggedIn: this.toggleIsLoggedIn,
+          toggleIsLoggedOff: this.toggleIsLoggedOff
         }}>
+        {this.state.isLoggedIn ? <AppNav /> : <Nav />}
         <Header />
         <Route
           exact

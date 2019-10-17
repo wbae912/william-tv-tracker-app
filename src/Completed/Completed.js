@@ -9,7 +9,7 @@ export default class Completed extends Component {
     const completedShows = this.context.shows.filter(show => show.status === 'Completed');
     return (
       <div>
-        <header role="banner">
+        <section className="tv-queries">
           <h1>Completed</h1>
          <br/>
 
@@ -26,7 +26,7 @@ export default class Completed extends Component {
               <option value="1">Name</option>
               <option value="1">Rating</option>
           </select>
-        </header>
+        </section>
 
         {completedShows.map(show =>
           <TvShowEntry 
@@ -35,10 +35,7 @@ export default class Completed extends Component {
             history={this.props.history}
           />
         )}
-
-        <section>
-          <button>Add New TV Show</button>
-        </section>
+        
       </div>
     )
   }

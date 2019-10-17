@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
           password.value = '';
           TokenService.saveAuthToken(res.authToken);
           this.props.history.push('/dashboard')
-          window.location.reload(); //TEMPORARY FIX
+          // window.location.reload(); //TEMPORARY FIX
         })
         .catch(error => {
           alert(`Error: ${error.message}`)
@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmitJwtAuth}>
+      <form className="login-form" onSubmit={(e) => {this.handleSubmitJwtAuth(e); this.context.toggleIsLoggedIn();}}>
         <div className="login__user_name">
           <label htmlFor="user_name">Username</label>
           <input type="text" name="user_name" id="user_name" required />

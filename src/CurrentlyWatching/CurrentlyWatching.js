@@ -9,8 +9,8 @@ export default class CurrentlyWatching extends Component {
     const currentlyWatchingShows = this.context.shows.filter(show => show.status === 'Currently Watching');
     return (
       <div>
-        <header role="banner">
-          <h1>CurrentlyWatching</h1>
+        <section className="tv-queries">
+          <h1>Currently Watching</h1>
          <br/>
 
           <label>Search TV Show</label>
@@ -26,7 +26,7 @@ export default class CurrentlyWatching extends Component {
               <option value="1">Name</option>
               <option value="1">Rating</option>
           </select>
-        </header>
+        </section>
 
         {currentlyWatchingShows.map(show => 
           <TvShowEntry
@@ -35,9 +35,6 @@ export default class CurrentlyWatching extends Component {
             history={this.props.history}
           />)}
 
-        <section>
-          <button>Add New TV Show</button>
-        </section>
       </div>
     )
   }
