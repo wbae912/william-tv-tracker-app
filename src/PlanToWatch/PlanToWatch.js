@@ -3,7 +3,32 @@ import TvShowEntry from '../TvShowEntry/TvShowEntry';
 import tvContext from '../Context';
 
 export default class PlanToWatch extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       searchTerm: ''
+    }
+  }
+  
   static contextType = tvContext;
+
+  handleSearchTermChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  // componentDidMount() {
+  //   const body = this.state.searchTerm;
+  //   fetch('http://localhost:8000/api/shows/all/search', {
+  //     method: 'GET',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify(body)
+  //   })
+  // }
   
   render() {
     const planningToWatchShows = this.context.shows.filter(show => show.status === 'Planning to Watch');
@@ -12,8 +37,8 @@ export default class PlanToWatch extends Component {
         <header role="banner">
           <h1>Plan to Watch</h1>
          <br/>
-          <label>Search TV Show</label>
-          <input type="text"/>
+          <label htmlFor="searchTerm">Search TV Show</label>
+          <input type="text" name="searchTerm" id="searchTerm" placeholder="Search TV Show"/>
           <button>Search</button>
           <select name="list-options" id="list-options">
               <option value="0">Filter By</option>

@@ -1,52 +1,12 @@
 import React, { Component } from 'react';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
+import tvContext from '../Context';
 
 export default class LoginForm extends Component {
-  constructor(props) {
-    super(props)
   
-    this.state = {
-       user_name: '',
-       password: ''
-    }
-  }
+  static contextType = tvContext;
   
-  // handleChange = e => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const credentials = {
-  //     user_name: this.state.user_name,
-  //     password: this.state.password
-  //   }
-
-  //   fetch('http://localhost:8000/api/auth/login', {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify(credentials)
-  //   })
-  //   .then(res => {
-  //     if(!res.ok) {
-  //       return Promise.reject('Something went wrong');
-  //     }
-  //     return res.json();
-  //   })
-  //   .then(res => {})
-  //   .then(() => {
-  //     this.props.history.push('/dashboard');
-  //   })
-  //   .catch(error => {
-  //     alert(`Error: ${error.message}`);
-  //   })
-  // }
-
   handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       // this.setState({ error: null })
@@ -59,8 +19,9 @@ export default class LoginForm extends Component {
         .then(res => {
           user_name.value = '';
           password.value = '';
-          TokenService.saveAuthToken(res.authToken)
+          TokenService.saveAuthToken(res.authToken);
           this.props.history.push('/dashboard')
+          window.location.reload(); //TEMPORARY FIX
         })
         .catch(error => {
           alert(`Error: ${error.message}`)
@@ -79,6 +40,7 @@ export default class LoginForm extends Component {
           <input type="password" name="password" id="password" minLength="8" maxLength="72" required />
         </div>
         <button type="submit" className="login-button">Login</button>
+        <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>
       </form>
     )
   }

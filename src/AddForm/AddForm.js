@@ -56,17 +56,17 @@ export default class AddForm extends Component {
               </select>
             <div className="form-section">
                 <label htmlFor="season_number">Season No.</label>
-                <input type="number" name="season_number" id="season_number"/>
+                <input type="number" name="season_number" id="season_number" min="1" placeholder="1"/>
             </div>
           <div className="form-section">
               <label htmlFor="episode_number">Episode No.</label>
-              <input type="number" name="episode_number" id="episode_number"/>
+              <input type="number" name="episode_number" id="episode_number" min="1" placeholder="1"/>
           </div>
             </div>
             <div className="form-section">
                 <label htmlFor="rating">Rating</label>
                 <select name="rating" id="rating">
-                  <option value="0">Select a Rating...</option>
+                  <option value="">Select a Rating...</option>
                   <option value="1">1 Star</option>
                   <option value="2">2 Stars</option>
                   <option value="3">3 Stars</option>
@@ -76,8 +76,8 @@ export default class AddForm extends Component {
               </div>
               <div className="form-section">
                   <label htmlFor="genre">Genre</label>
-                  <select name="genre" id="genre" required>
-                    <option value="0">Select a Genre...</option>
+                  <select name="genre" id="genre">
+                    <option value="N/A">Select a Genre...</option>
                     <option value="Action">Action</option>
                     <option value="Animated">Animated</option>
                     <option value="Comedy">Comedy</option>
@@ -86,7 +86,9 @@ export default class AddForm extends Component {
                     <option value="Educational">Educational</option>
                     <option value="Fantasy">Fantasy</option>
                     <option value="Horror">Horror</option>
+                    <option value="Mystery">Horror</option>
                     <option value="Reality">Reality</option>
+                    <option value="Sitcom">Sitcom</option>
                     <option value="Sci-Fi">Sci-Fi</option>
                     <option value="Thriller">Thriller</option>
                     <option value="Variety">Variety</option>
