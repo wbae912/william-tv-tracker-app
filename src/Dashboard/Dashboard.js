@@ -46,12 +46,14 @@ export default class Dashboard extends Component {
       <section className="dashboard-section">
         <h1 className="dashboard-title">My TV Shows</h1>
         <div className="pie-chart">
+          <h2>SHOW STATUS PIE CHART</h2>
           <p>Plan to Watch: {countPlanningToWatch}</p>
           <p>Currently Watching: {countCurrentlyWatching}</p>
           <p>Completed: {countCompleted}</p>
           <p>Total # of Shows: {totalShows}</p>
         </div>
         <div className="rating-chart">
+          <h2>RATING BAR CHART</h2>
           <p>5 stars: {countFiveStars}</p>
           <p>4 stars: {countFourStars}</p>
           <p>3 stars: {countThreeStars}</p>
@@ -60,6 +62,7 @@ export default class Dashboard extends Component {
           <p>Not Rated: {notRated}</p>
         </div>
         <div className="genre-chart">
+          <h2>GENRE BAR CHART</h2>
           <p>No Genre: {noGenre}</p>
           <p>Action: {countAction}</p>
           <p>Animated: {countAnimated}</p>

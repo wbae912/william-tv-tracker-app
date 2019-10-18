@@ -53,7 +53,7 @@ export default class RegistrationForm extends React.Component {
         <form className="register-form" onSubmit={e => this.handleSubmit(e)}>
           <div className="register-form-div">
             <label htmlFor="full_name">Full Name</label>
-            <input type="text" id="full_name" name="full_name" placeholder="Bob Smith" onChange={e => this.handleChange(e)}/>
+            <input type="text" id="full_name" name="full_name" placeholder="Bob Smith" required onChange={e => this.handleChange(e)}/>
           </div>
           <div className="register-form-div">
             <label htmlFor="user_name">Username</label>

@@ -3,6 +3,9 @@ import TvShowEntry from '../TvShowEntry/TvShowEntry';
 import tvContext from '../Context';
 
 export default class PlanToWatch extends Component {
+
+  static contextType = tvContext;
+
   constructor(props) {
     super(props)
   
@@ -13,9 +16,11 @@ export default class PlanToWatch extends Component {
        sort: ''
     }
   }
-  
-  static contextType = tvContext;
 
+  componentDidMount() {
+    this.context.getAllShows();
+  }
+  
   handleSearchTermChange = (e) => {
     this.setState({
       searchTerm: e.target.value
@@ -64,14 +69,15 @@ export default class PlanToWatch extends Component {
     if(this.state.sort === '4') {
       planningToWatchShows = planningToWatchShows.sort((a,b) => b.rating - a.rating)
     }
-    console.log(this.state.sort);
     return (
       <div>
         <section className="tv-queries">
           <h1>Plan to Watch</h1>
          <br/>
           <label htmlFor="searchTerm">Search TV Show</label>
-          <input type="text" name="searchTerm" id="searchTerm" value={this.state.searchTerm} onChange={this.handleSearchTermChange} placeholder="Search TV Show"/>
+          <input type="text" name="searchTerm" id="searchTerm" placeholder="Search TV Show"
+            value={this.state.searchTerm} 
+            onChange={this.handleSearchTermChange} />
           <button type="button">Search</button>
           <select name="list-options" id="list-options" onChange={this.handleGenreChange}>
             <option value="">Filter By Genre...</option>
@@ -92,7 +98,7 @@ export default class PlanToWatch extends Component {
             <option value="Variety">Variety</option>
           </select>
           <select name="list-options" id="list-options" onChange={this.handleMinRatingChange}>
-            <option value="">Filter By Rating...</option>
+            <option value="">Filter By Min. Rating...</option>
             <option value="0">No Rating</option>
             <option value="1">1 Star</option>
             <option value="2">2 Stars</option>
