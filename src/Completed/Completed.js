@@ -77,7 +77,6 @@ export default class Completed extends Component {
           <input type="text" name="searchTerm" id="searchTerm" placeholder="Search TV Show"
             value={this.state.searchTerm} 
             onChange={this.handleSearchTermChange} />
-          <button type="button">Search</button>
           <select name="list-options" id="list-options" onChange={this.handleGenreChange}>
             <option value="">Filter By Genre...</option>
             <option value="N/A">N/A</option>
