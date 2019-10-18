@@ -129,7 +129,7 @@ export default class EditForm extends Component {
             <div className="form-section">
                 <label htmlFor="rating">Rating</label>
                 <select name="rating" id="rating" value={rating} onChange={e => this.handleChange(e)}>
-                  <option value="0">Select a Rating...</option>
+                  <option value="">Select a Rating...</option>
                   <option value="1">1 Star</option>
                   <option value="2">2 Stars</option>
                   <option value="3">3 Stars</option>
@@ -140,7 +140,7 @@ export default class EditForm extends Component {
               <div className="form-section">
                   <label htmlFor="genre">Genre</label>
                   <select name="genre" id="genre" value={genre} onChange={e => this.handleChange(e)}>
-                    <option value="0">Select a Genre...</option>
+                    <option value="N/A">Select a Genre...</option>
                     <option value="Action">Action</option>
                     <option value="Animated">Animated</option>
                     <option value="Comedy">Comedy</option>
@@ -149,7 +149,9 @@ export default class EditForm extends Component {
                     <option value="Educational">Educational</option>
                     <option value="Fantasy">Fantasy</option>
                     <option value="Horror">Horror</option>
+                    <option value="Mystery">Horror</option>
                     <option value="Reality">Reality</option>
+                    <option value="Sitcom">Sitcom</option>
                     <option value="Sci-Fi">Sci-Fi</option>
                     <option value="Thriller">Thriller</option>
                     <option value="Variety">Variety</option>
