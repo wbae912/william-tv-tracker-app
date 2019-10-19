@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
-import RatingChart from '../BarChart/RatingChart';
+import RatingChart from '../RatingChart/RatingChart';
 import GenreChart from '../GenreChart/GenreChart';
 import StatusChart from '../StatusChart/StatusChart';
 import Chart from 'chart.js';

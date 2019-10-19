@@ -12,8 +12,6 @@ export default class RatingChart extends Component {
     const countTwoStars = this.context.shows.filter(show => show.rating === 2).length;
     const countOneStar = this.context.shows.filter(show => show.rating === 1).length;
     const notRated = this.context.shows.filter(show => show.rating === 0).length;  
-    // console.log(notRated, countOneStar, countTwoStars, countThreeStars, countFourStars, countFiveStars)
-    console.log(countFiveStars);
     const data = {
     labels: ['Not Rated', 'One Star', 'Two Stars', 'Three Stars', 'Four Stars', 'Five Stars'],
     datasets: [

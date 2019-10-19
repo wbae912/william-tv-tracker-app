@@ -112,60 +112,60 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-      <Context.Provider
-        value={{
-          deleteTvShow: this.deleteTvShow,
-          addTvShow: this.addTvShow,
-          updateTvShow: this.updateTvShow,
-          shows: this.state.shows,
-          getAllShows: this.getAllShows,
-          toggleIsLoggedOff: this.toggleIsLoggedOff
-        }}>
-        {this.state.isLoggedIn ? <AppNav /> : <Nav />}
-        {/* <Header /> */}
-        <Route
-          exact
-          path={'/'}
-          component={LandingPage}
-        />
-        <Route
-          path={'/register'}
-          component={RegistrationForm}
-        />
-        <Route
-          path={'/login'}
-          component={LoginForm}
-        />
-        {/* <Route 
-          path={['/dashboard', '/plan-to-watch', '/currently-watching', '/completed', '/add-entry', '/edit-entry/:id']} 
-          component={AppNav}
-        /> */}
-        <Route 
-          path={'/dashboard'}
-          component={Dashboard}
-        />
-        <Route
-          path={'/plan-to-watch'}
-          component={PlanToWatch}
-        />
-        <Route
-          path={'/currently-watching'}
-          component={CurrentlyWatching}
-        />
-        <Route
-          path={'/completed'}
-          component={Completed}
-        />
-        <Route
-          path={'/add-entry'}
-          component={AddForm}
-        />
-        <Route 
-          path={'/edit-entry/:id'}
-          component={EditForm}
-        />
-      </Context.Provider>
-    </div>
+        <Context.Provider
+          value={{
+            deleteTvShow: this.deleteTvShow,
+            addTvShow: this.addTvShow,
+            updateTvShow: this.updateTvShow,
+            shows: this.state.shows,
+            getAllShows: this.getAllShows,
+            toggleIsLoggedOff: this.toggleIsLoggedOff
+          }}>
+          {this.state.isLoggedIn ? <AppNav /> : <Nav />}
+          {/* <Header /> */}
+          <Route
+            exact
+            path={'/'}
+            component={LandingPage}
+          />
+          <Route
+            path={'/register'}
+            component={RegistrationForm}
+          />
+          <Route
+            path={'/login'}
+            component={LoginForm}
+          />
+          {/* <Route 
+            path={['/dashboard', '/plan-to-watch', '/currently-watching', '/completed', '/add-entry', '/edit-entry/:id']} 
+            component={AppNav}
+          /> */}
+          <Route 
+            path={'/dashboard'}
+            component={Dashboard}
+          />
+          <Route
+            path={'/plan-to-watch'}
+            component={PlanToWatch}
+          />
+          <Route
+            path={'/currently-watching'}
+            component={CurrentlyWatching}
+          />
+          <Route
+            path={'/completed'}
+            component={Completed}
+          />
+          <Route
+            path={'/add-entry'}
+            component={AddForm}
+          />
+          <Route 
+            path={'/edit-entry/:id'}
+            component={EditForm}
+          />
+        </Context.Provider>
+      </div>
     )
   }
 }

@@ -1,0 +1,27 @@
+.landing-page {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(43, 38, 38);
+  color: white;
+}
+
+main {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.header-tag {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.underline {
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+
+.section-p {
+  margin-right: 2%;
+  margin-left: 2%;
+  font-size: 13px;
+}

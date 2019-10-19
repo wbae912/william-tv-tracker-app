@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
 import tvContext from '../Context';
+import './LoginForm.css';
 
 export default class LoginForm extends Component {
   
@@ -29,18 +30,27 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <form className="login-form" onSubmit={(e) => this.handleSubmitJwtAuth(e)}>
-        <div className="login__user_name">
-          <label htmlFor="user_name">Username</label>
-          <input type="text" name="user_name" id="user_name" required />
-        </div>
-        <div className="login__password">
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" minLength="8" maxLength="72" required />
-        </div>
-        <button type="submit" className="login-button">Login</button>
-        <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>
-      </form>
+      <section className="login-section">
+        <h2 className="login-h2">Login</h2>
+        <form className="login-form" onSubmit={(e) => this.handleSubmitJwtAuth(e)}>
+          <div className="login__user_name">
+            <label htmlFor="user_name" className="login-label">Username</label>
+            <input type="text" name="user_name" id="user_name" className="login-input" required/>
+          </div>
+          <div className="login__password">
+            <label htmlFor="password" className="login-label">Password</label>
+            <input type="password" name="password" id="password" minLength="8" maxLength="72" className="login-input" required />
+          </div>
+          <div className="buttons-flex">
+            <div className="login-button-div">
+              <button type="submit" className="form__login-button">Login</button>
+            </div>
+            <div className="back-button-div">
+              <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>
+            </div>
+          </div>
+        </form>
+      </section>
     )
   }
 }

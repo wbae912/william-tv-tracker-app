@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './LandingPage.css';
 
 export default class LandingPage extends Component {
   render() {
     return (
-    <>
+    <div className="landing-page">
       {/* <nav className="nav">
         <h2 className="nav-app-title">TV Tracker</h2>
         <div className="landing-page-links">
@@ -11,10 +12,11 @@ export default class LandingPage extends Component {
           <button type="button" className="register-button">Register</button>
         </div>
       </nav> */}
-      <main>
+      <main role="main">
         <header className="header">
-          <h1 className="app-title">TV Tracker</h1>
-          <p className="app-title-headline">track and catalog your favorite TV shows...</p>
+          {/* <h1 className="app-title">TV Tracker</h1> */}
+          <h1 className="header-tag">Explore TV Tracker</h1>
+          <h2 className="app-title-headline">Track and catalog your favorite TV shows...</h2>
           {/* <div className="login-register-buttons">
             <Link to='/login'><button type="button" className="login-button">Login</button></Link>
             <Link to='/register'><button type="button" className="register-button">Register</button></Link>
@@ -32,7 +34,7 @@ export default class LandingPage extends Component {
         <hr className="underline"></hr>
 
         <section className="section-two">
-          <h2 className="section-h2">Keep track of your Shows</h2>
+          <h2 className="section-h2">Track Your Shows</h2>
           <p className="section-p">TV Tracker keeps a record of your TV shows so you can always have them on hand. Are you having a hard 
             time remembering which episode you left off for that one show? Keep track of it within the app? Like seeing a list of all the 
             TV shows you've watched? Go through your list and recommend one to a friend!</p>
@@ -54,7 +56,7 @@ export default class LandingPage extends Component {
         history={this.props.history}
        /> */}
       </main>
-    </>
+    </div>
     )
   }
 }

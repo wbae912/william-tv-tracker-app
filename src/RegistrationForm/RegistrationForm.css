@@ -1,0 +1,73 @@
+.register-section {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-align: center;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+.register-h2 {
+  margin-top: 0;
+  margin-top: 4%
+}
+
+.register-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.register-label {
+  display: inline-block;
+  width: 150px;
+}
+
+.register-input {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.buttons-flex {
+  display: flex;
+  margin-top: 2%;
+}
+
+.buttons-flex > .back-button-div, .signup-button-div {
+  flex: 1
+}
+
+.signup-button-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back-button-div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.signup-button, .back-button {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  border: 1.5px solid white;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  transition-duration: 0.4s;
+}
+
+.signup-button {
+  margin-right: 1%;
+}
+
+.back-button {
+  margin-left: 1%;
+}
+
+.signup-button:hover, .back-button:hover {
+  background-color: white;
+  color: black;
+}

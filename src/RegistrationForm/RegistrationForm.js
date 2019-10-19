@@ -1,4 +1,5 @@
 import React from 'react';
+import './RegistrationForm.css';
 
 export default class RegistrationForm extends React.Component {
   constructor(props) {
@@ -49,22 +50,31 @@ export default class RegistrationForm extends React.Component {
   render() {
     return (
       <section className="register-section">
-        <h2 className="section-h2">Start Today!</h2>
+        <h2 className="register-h2">Start Today!</h2>
         <form className="register-form" onSubmit={e => this.handleSubmit(e)}>
           <div className="register-form-div">
-            <label htmlFor="full_name">Full Name</label>
-            <input type="text" id="full_name" name="full_name" placeholder="Bob Smith" required onChange={e => this.handleChange(e)}/>
+            <label htmlFor="full_name" className="register-label">Full Name</label>
+            <input type="text" className="register-input" id="full_name" name="full_name" placeholder="Bob Smith" required
+              onChange={e => this.handleChange(e)}/>
           </div>
           <div className="register-form-div">
-            <label htmlFor="user_name">Username</label>
-            <input type="text" id="user_name" name="user_name" placeholder="username" required onChange={e => this.handleChange(e)}/>
+            <label htmlFor="user_name" className="register-label">Username</label>
+            <input type="text" className="register-input" id="user_name" name="user_name" placeholder="username" required 
+              onChange={e => this.handleChange(e)}/>
           </div>
           <div className="register-form-div">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" minLength="8" maxLength="72" required onChange={e => this.handleChange(e)}/>
+            <label htmlFor="password" className="register-label">Password</label>
+            <input type="password" className="register-input" id="password" name="password" minLength="8" maxLength="72" required 
+              onChange={e => this.handleChange(e)}/>
           </div>
-          <button type="submit" className="register-button">Sign Up</button>
-          <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>
+          <div className="buttons-flex">
+            <div className="signup-button-div">
+              <button type="submit" className="signup-button">Sign Up</button>
+            </div>
+            <div className="back-button-div">
+              <button type="button" className="back-button" onClick={() => this.props.history.push('/')}>Back</button>
+            </div>
+          </div>
         </form>
       </section>
     )
