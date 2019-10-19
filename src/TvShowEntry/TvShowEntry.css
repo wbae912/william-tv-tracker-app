@@ -1,0 +1,47 @@
+.tv-show-entry {
+  border: 1px solid rgb(33, 56, 56);
+  background-color: rgb(33, 56, 56);
+  border-radius: 10px;
+  margin-bottom: 3%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.checked {
+  color: orange;
+}
+
+.fa-trash, .fa-edit {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  height: 30px;
+  cursor: pointer;
+}
+
+.fa-trash {
+  margin-left: 8%;
+  /* MAKE THIS 2-3% ON BIGGER DEVICES */
+}
+
+.fa-edit:hover {
+  color: blue;
+}
+
+.fa-trash:hover {
+  color: red;
+}
+
+.p-edit, .p-delete {
+  margin: 0;
+  margin-top: 1%;
+}
+
+.p-edit {
+  color: blue;
+}
+
+.p-delete {
+  color: red;
+}

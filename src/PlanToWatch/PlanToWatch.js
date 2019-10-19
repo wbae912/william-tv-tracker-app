@@ -73,7 +73,7 @@ export default class PlanToWatch extends Component {
     return (
       <div className="plan-section">
         <section className="tv-queries">
-          <h1 classname="plan-h1">Plan to Watch</h1>
+          <h1 className="plan-h1">Plan to Watch</h1>
           <div className="search-div">
             <label htmlFor="searchTerm" className="search-label">Search TV Show</label>
             <input type="text" name="searchTerm" id="searchTerm" placeholder="Enter TV Show Name..."

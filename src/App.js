@@ -54,6 +54,14 @@ export default class App extends Component {
     })
   }
 
+  componentDidMount() {
+    if(TokenService.hasAuthToken()) {
+      this.setState({
+        isLoggedIn: true
+      })
+    }
+  }
+
   //DEFINE FUNCTION BY SEARCH TERM, ETC...IF WE WANT TO USE SAME ENDPOINT...USE SEARCH QUERIES ?SORT..GENRE
 
   deleteTvShow = (tvId) => {
