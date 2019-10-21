@@ -35,15 +35,19 @@ export default class StatusChart extends Component {
       position: 'top',
       fullWidth: true,
       reverse: false,
+      labels: {
+        boxWidth: 20,
+        fontColor: 'white',
+        fontSize: 14,
+      }
     };
 
     return (
-      <div style={{width: '50%'}}>
+      <div className="status-chart" style={{width: '80%'}}>
         <Doughnut 
           data={data} 
           legend={legendOpts}
-          width={100}
-          height={350}  
+          height={250}  
           options={{
             responsive: true,
             maintainAspectRatio: false

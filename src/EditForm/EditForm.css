@@ -1,0 +1,79 @@
+.edit-form-div {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(33, 56, 56);
+  border: 1px solid rgb(33, 56, 56);
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  width: 90%;
+  /* MAKE WIDTH ABOUT 50% ON BIGGER DEVICES */
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  margin-top: 65px;
+}
+
+.form-section {
+  margin-bottom: 4%;
+  /* MAKE SMALLER ON LARGER SCREENS */
+}
+
+.edit-form-label {
+  display: block;
+  margin-bottom: 0.5%;
+  /* CHANGE TO INLINE-BLOCK FOR BIGGER DEVICES */
+}
+
+.edit-form-input {
+  width: 60%;
+}
+
+.edit-form-select {
+  width: 60.5%;
+}
+
+.required {
+  color: red;
+}
+
+#description, #review {
+  width: 80%;
+  height: 70px;
+  /* CHANGE THE HEIGHT ON LARGER DEVICES */
+}
+
+.required-p {
+  font-size: 11px;
+  margin-top: 0;
+  margin-top: 0.5%;
+}
+
+.form-buttons-div {
+  margin-top: 4%;
+  margin-bottom: 5%;
+}
+
+.edit-show-button, .cancel-button {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  border: 1.5px solid white;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  transition-duration: 0.4s;
+}
+
+.edit-show-button {
+  margin-right: 2%;
+}
+
+.cancel-button {
+  margin-left: 2%;
+}
+
+.edit-show-button:hover, .cancel-button:hover {
+  background-color: white;
+  color: black;
+}

@@ -26,27 +26,29 @@ export default class RatingChart extends Component {
       }
     ]
   };
+
     return (
-      <div style={{width: '50%'}}>
+      <div style={{width: '90%'}}>
         <HorizontalBar 
           data={data}
+          redraw
           height={300}
           options={{
             responsive: true,
             maintainAspectRatio: false,
             scales: {
               xAxes: [{
-                  ticks: { display: true, stepSize: 1, beginAtZero: true, min: 0 },
+                  ticks: { display: true, stepSize: 1, beginAtZero: true, min: 0, fontColor: 'white' },
                   gridLines: {
                       display: true,
-                      drawBorder: true
+                      drawBorder: true,
                   }
               }],
               yAxes: [{
-                  ticks: { display: true },
+                  ticks: { display: true, fontColor: 'white' },
                   gridLines: {
                       display: false,
-                      drawBorder: true
+                      drawBorder: true,
                   }
               }]
           }

@@ -8,7 +8,6 @@ import './Dashboard.css'
 
 //Global styling for charts
 Chart.defaults.global.legend.display = false;
-//End styling for charts
 
 export default class Dashboard extends Component {
   static contextType = tvContext;
@@ -18,26 +17,32 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const countPlanningToWatch = this.context.shows.filter(show => show.status === 'Planning to Watch').length;
-    const countCurrentlyWatching = this.context.shows.filter(show => show.status === 'Currently Watching').length;
-    const countCompleted = this.context.shows.filter(show => show.status === 'Completed').length;
-    const totalShows = countPlanningToWatch + countCurrentlyWatching + countCompleted;
+    const totalShows = this.context.shows.length; 
 
     return (
       <section className="dashboard-section">
-        <h1 className="dashboard-title">My TV Shows</h1>
-        <h2>Total Shows: {totalShows}</h2>
-        <div className="pie-chart">
-          <h2>TV Shows per Status</h2>
-          <StatusChart />
+        <h1 className="dashboard-title">My Dashboard</h1>
+        <h2 className="total-shows">Total TV Shows: {totalShows}</h2>
+        <div className="chart-div">
+          <h3 className="chart-title">TV Shows per Status</h3>
+          <hr className="underline-mini" />
+          <div className="chart">
+            <StatusChart />
+          </div>
         </div>
-        <div className="rating-chart">
-          <h2>TV Shows per Rating</h2>
-          <RatingChart />
+        <div className="chart-div">
+          <h3 className="chart-title">TV Shows per Rating</h3>
+          <hr className="underline-mini" />
+          <div className="chart">
+            <RatingChart />
+          </div>
         </div>
-        <div className="genre-chart">
-          <h2>TV Shows per Genre</h2>
-          <GenreChart />
+        <div className="chart-div">
+          <h3 className="chart-title">TV Shows per Genre</h3>
+          <hr className="underline-mini" />
+          <div className="chart">
+            <GenreChart />
+          </div>
         </div>
       </section>
     )

@@ -1,0 +1,50 @@
+.dashboard-section {
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 65px;
+}
+
+.dashboard-title {
+  margin-bottom: 15%;
+}
+
+.total-shows {
+  font-size: 20px;
+  margin-bottom: 10%;
+  border: 2px solid white;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.chart-title {
+  margin-bottom: 2%;
+}
+
+.underline-mini {
+  border: 0;
+  height: 2px;
+  width: 3rem;
+  border-top: 2px solid white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.chart-div {
+  margin-top: 30px;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.rating-chart {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}

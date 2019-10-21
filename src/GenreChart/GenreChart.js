@@ -53,9 +53,10 @@ export default class GenreChart extends Component {
       ]
     };
     return (
-      <div style={{width: '50%'}}>
+      <div style={{width: '90%'}}>
         <Bar
           data={data}
+          redraw
           width={100}
           height={250}
           options={{
@@ -63,14 +64,14 @@ export default class GenreChart extends Component {
             maintainAspectRatio: false,
             scales: {
               xAxes: [{
-                  ticks: { display: true },
+                  ticks: { display: true, fontColor: 'white' },
                   gridLines: {
                       display: false,
                       drawBorder: true
                   }
               }],
               yAxes: [{
-                  ticks: { display: true, stepSize: 1, beginAtZero: true, min: 0 },
+                  ticks: { display: true, stepSize: 1, beginAtZero: true, min: 0, fontColor: 'white' },
                   gridLines: {
                       display: true,
                       drawBorder: true

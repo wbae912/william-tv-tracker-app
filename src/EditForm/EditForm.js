@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
 import TokenService from '../services/token-service';
+import './EditForm.css';
 
 export default class EditForm extends Component {
   constructor(props) {
@@ -99,36 +100,41 @@ export default class EditForm extends Component {
   render() {
     const { tv_title, status, season_number, episode_number, rating, genre, description, review } = this.state;
     return (
-      <div>
-        <h1>Edit a TV Show</h1>
+      <div className="edit-form-div">
+        <h1 className="edit-form-title">Edit TV Show</h1>
         <section className="edit-show-section">
           <form className="edit-show-form" onSubmit={e => {
             this.handleSubmit(e);
             }}>
             <div className="form-section">
-              <label htmlFor="tv_title">TV Show Name</label>
-              <input type="text" name="tv_title" id="tv_title" value={tv_title} onChange={e => this.handleChange(e)} required/>
+              <label htmlFor="tv_title" className="edit-form-label">TV Show Name<span className="required">*</span></label>
+              <input type="text" name="tv_title" id="tv_title" value={tv_title} className="edit-form-input"
+                onChange={e => this.handleChange(e)} required/>
             </div>
             <div className="form-section">
-              <label htmlFor="status">Status</label>
-              <select name="status" id="status" value={status} onChange={e => this.handleChange(e)} required>
+              <label htmlFor="status" className="edit-form-label">Status<span className="required">*</span></label>
+              <select name="status" id="status" value={status} className="edit-form-select"
+                onChange={e => this.handleChange(e)} required>
                 <option value="0">Select a Status...</option>
                 <option value="Planning to Watch">Plan to Watch</option>
                 <option value="Currently Watching">Currently Watching</option>
                 <option value="Completed">Completed</option>
               </select>
-            <div className="form-section">
-                <label htmlFor="season_number">Season No.</label>
-                <input type="number" name="season_number" id="season_number" value={season_number} onChange={e => this.handleChange(e)} />
-            </div>
-          <div className="form-section">
-              <label htmlFor="episode_number">Episode No.</label>
-              <input type="number" name="episode_number" id="episode_number" value={episode_number} onChange={e => this.handleChange(e)} />
-          </div>
             </div>
             <div className="form-section">
-                <label htmlFor="rating">Rating</label>
-                <select name="rating" id="rating" value={rating} onChange={e => this.handleChange(e)}>
+                <label htmlFor="season_number" className="edit-form-label">Season No.</label>
+                <input type="number" name="season_number" id="season_number" value={season_number} className="edit-form-input"
+                 onChange={e => this.handleChange(e)} />
+            </div>
+            <div className="form-section">
+                <label htmlFor="episode_number" className="edit-form-label">Episode No.</label>
+                <input type="number" name="episode_number" id="episode_number" value={episode_number} className="edit-form-input"
+                 onChange={e => this.handleChange(e)} />
+            </div>
+            <div className="form-section">
+                <label htmlFor="rating" className="edit-form-label">Rating</label>
+                <select name="rating" id="rating" value={rating} className="edit-form-select"
+                 onChange={e => this.handleChange(e)}>
                   <option value="">Select a Rating...</option>
                   <option value="1">1 Star</option>
                   <option value="2">2 Stars</option>
@@ -138,8 +144,9 @@ export default class EditForm extends Component {
                 </select>
               </div>
               <div className="form-section">
-                  <label htmlFor="genre">Genre</label>
-                  <select name="genre" id="genre" value={genre} onChange={e => this.handleChange(e)}>
+                  <label htmlFor="genre" className="edit-form-label">Genre</label>
+                  <select name="genre" id="genre" value={genre} className="edit-form-select"
+                   onChange={e => this.handleChange(e)}>
                     <option value="N/A">Select a Genre...</option>
                     <option value="Action">Action</option>
                     <option value="Animated">Animated</option>
@@ -158,18 +165,23 @@ export default class EditForm extends Component {
                   </select>
                 </div>
               <div className="form-section">
-                  <label htmlFor="description">Description</label>
-                  <textarea type="text" name="description" id="description" value={description} onChange={e => this.handleChange(e)} />
+                  <label htmlFor="description" className="edit-form-label">Description</label>
+                  <textarea type="text" name="description" id="description" value={description} className="edit-form-input"
+                   onChange={e => this.handleChange(e)} />
               </div>
               <div className="form-section">
-                    <label htmlFor="review">Review</label>
-                    <textarea type="text" name="review" id="review" value={review} onChange={e => this.handleChange(e)} />
+                    <label htmlFor="review" className="edit-form-label">Review</label>
+                    <textarea type="text" name="review" id="review" value={review} className="edit-form-input"
+                     onChange={e => this.handleChange(e)} />
               </div>
-            <button type="submit" className="add-show-button">Submit</button>
-            <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
-          </form>
-        </section>
-      </div>
+              <p className="required-p"><span className="required">*</span>Required Fields</p>
+              <div className="form-buttons-div">
+                <button type="submit" className="edit-show-button">Submit</button>
+                <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
+              </div>
+            </form>
+          </section>
+        </div>
     )
   }
 }
