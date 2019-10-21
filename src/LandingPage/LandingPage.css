@@ -1,14 +1,13 @@
 .landing-page {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(43, 38, 38);
+  background-color: #887878;
   color: white;
   padding-top: 65px;
 }
 
 main {
   text-align: center;
-  border: 1px solid black;
 }
 
 .header-tag {
@@ -26,3 +25,15 @@ main {
   margin-left: 2%;
   font-size: 13px;
 }
+
+.hero {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://static.adweek.com/adweek.com-prod/wp-content/uploads/2019/07/tv-ratings-same-CONTENT-2019.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

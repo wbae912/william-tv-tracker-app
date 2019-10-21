@@ -5,56 +5,35 @@ export default class LandingPage extends Component {
   render() {
     return (
     <div className="landing-page">
-      {/* <nav className="nav">
-        <h2 className="nav-app-title">TV Tracker</h2>
-        <div className="landing-page-links">
-          <button type="button" className="login-button">Login</button>
-          <button type="button" className="register-button">Register</button>
-        </div>
-      </nav> */}
       <main role="main">
         <header className="header">
-          {/* <h1 className="app-title">TV Tracker</h1> */}
           <h1 className="header-tag">Explore TV Tracker</h1>
-          <h2 className="app-title-headline">Track and catalog your favorite TV shows...</h2>
-          {/* <div className="login-register-buttons">
-            <Link to='/login'><button type="button" className="login-button">Login</button></Link>
-            <Link to='/register'><button type="button" className="register-button">Register</button></Link>
-          </div> */}
+          <div className="hero">     
+            <h2 className="app-title-headline">Track and catalog your favorite TV shows...</h2>
+          </div>
         </header>
-
-        <hr className="underline"></hr>
-
         <section className="section-one">
-          <h2 className="section-h2">Create Your TV Show Entries</h2>
-          <p className="section-p">TV Tracker allows you to submit TV shows that you are planning to watch, currently watching, or completed! Did a friend tell 
-            you about a good show to watch? Add it as an entry as a reminder to see later.</p>
+          <h2 className="section-h2">Add Your TV Shows</h2>
+          <i className="fa fa-plus fa-2x"></i>
+          <p className="section-p">Did a friend recommend you a good show to watch? Add it as an entry so you don't forget.</p>
         </section>
 
         <hr className="underline"></hr>
 
         <section className="section-two">
           <h2 className="section-h2">Track Your Shows</h2>
-          <p className="section-p">TV Tracker keeps a record of your TV shows so you can always have them on hand. Are you having a hard 
-            time remembering which episode you left off for that one show? Keep track of it within the app? Like seeing a list of all the 
-            TV shows you've watched? Go through your list and recommend one to a friend!</p>
+          <i className="fa fa-eye fa-2x"></i>
+          <p className="section-p">Having a hard time remembering which episode you left off on for that one show? TV Tracker has you covered.</p>
         </section>
 
         <hr className="underline"></hr>
 
         <section className="section-three">
           <h2 className="section-h2">View Your Dashboard</h2>
-          <p className="section-p">TV Tracker provides a convenient dashboard that displays useful and easily digestible information for 
-            you. Want to see how many TV shows you are currently watching? Curious about how many shows you rated 5 stars? Or, perhaps 
-            you want to see what your favorite TV show genre is? The dashboard is there for you so it takes all the leg work out of having 
-            to find out for yourself!</p>
+          <i className="fa fa-list fa-2x"></i>
+          <p className="section-p">Curious about how many shows you rated 5 stars? TV Tracker's built-in dashboard provides a quick snapshot 
+            view of all the important metrics.</p>
         </section>
-
-        <hr className="underline"></hr>
-
-       {/* <RegistrationForm 
-        history={this.props.history}
-       /> */}
       </main>
     </div>
     )

@@ -14,6 +14,7 @@ import EditForm from './EditForm/EditForm';
 import Context from './Context';
 import TokenService from './services/token-service';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
+import Footer from './Footer/Footer';
 
 export default class App extends Component {
   constructor(props) {
@@ -172,6 +173,7 @@ export default class App extends Component {
             path={'/edit-entry/:id'}
             component={EditForm}
           />
+          <Footer />
         </Context.Provider>
       </div>
     )
