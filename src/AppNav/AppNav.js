@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import tvContext from '../Context';
 import './AppNav.css';
@@ -24,18 +24,18 @@ export default class AppNav extends Component {
 
         <nav className="appnav">
           <ul className="appnav-links">
-            <Link to='/dashboard'><li className="appnav-li">Dashboard</li></Link>
+            <NavLink to='/dashboard' activeClassName="selected" className="appnav-li"><li>Dashboard</li></NavLink>
             <li className="appnav-li" id="dropdown-li">
               <div className="dropdown">
                 <button className="dropbtn">TV Show Status</button>
                 <div className="dropdown-content">
-                  <Link to='/plan-to-watch' className="dropdown-link"><span className="dropdown-span">Plan to Watch</span></Link>
-                  <Link to='/currently-watching'><span className="dropdown-span">Currently Watching</span></Link>
-                  <Link to='/completed'><span className="dropdown-span">Completed</span></Link>
+                  <NavLink to='/plan-to-watch' activeClassName="selected" className="dropdown-link"><span className="dropdown-span">Plan to Watch</span></NavLink>
+                  <NavLink to='/currently-watching' activeClassName="selected" className="dropdown-link"><span className="dropdown-span">Currently Watching</span></NavLink>
+                  <NavLink to='/completed' activeClassName="selected" className="dropdown-link"><span className="dropdown-span">Completed</span></NavLink>
                 </div>
               </div>
             </li>
-            <Link to='/add-entry'><li className="appnav-li">Add New Show</li></Link>
+            <NavLink to='/add-entry' activeClassName="selected" className="appnav-li"><li >Add New Show</li></NavLink>
             <Link to='/'>
               <li className="appnav-li">
                 <button type="button" className="logout-button"

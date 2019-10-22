@@ -14,8 +14,8 @@ export default class Nav extends Component {
         </div>
         <nav className="nav">
           <ul className="nav-links">
-            <NavLink to='/login' activeClassName="selected"><li className="nav-li">Login</li></NavLink>
-            <NavLink to='/register' activeClassName="selected"><li className="nav-li register-li">Register</li></NavLink>
+            <NavLink to='/login' activeClassName="selected" className="nav-li"><li className="login-li">Login</li></NavLink>
+            <NavLink to='/register' activeClassName="selected" className="nav-li"><li className="register-li">Register</li></NavLink>
           </ul>
         </nav>
       </header>

@@ -16,6 +16,7 @@ import TokenService from './services/token-service';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
 import Footer from './Footer/Footer';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 export default class App extends Component {
   constructor(props) {
@@ -52,7 +53,8 @@ export default class App extends Component {
       })
     })
     .catch(error => {
-      alert(`Error: ${error.message}`)
+      console.log(error);
+      alert(`Error: ${error}`)
     })
   }
 
@@ -130,48 +132,50 @@ export default class App extends Component {
             toggleIsLoggedOff: this.toggleIsLoggedOff
           }}>
           {this.state.isLoggedIn ? <AppNav /> : <Nav />}
-          <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={LandingPage}
-            />
-            <Route
-              path={'/register'}
-              component={RegistrationForm}
-            />
-            <Route
-              path={'/login'}
-              component={LoginForm}
-            />
-            <Route 
-              path={'/dashboard'}
-              component={Dashboard}
-            />
-            <Route
-              path={'/plan-to-watch'}
-              component={PlanToWatch}
-            />
-            <Route
-              path={'/currently-watching'}
-              component={CurrentlyWatching}
-            />
-            <Route
-              path={'/completed'}
-              component={Completed}
-            />
-            <Route
-              path={'/add-entry'}
-              component={AddForm}
-            />
-            <Route 
-              path={'/edit-entry/:id'}
-              component={EditForm}
-            />
-            <Route
-              component={NotFoundPage}
-            />
-          </Switch>
+          <ErrorBoundary>
+            <Switch>
+              <Route
+                exact
+                path={'/'}
+                component={LandingPage}
+              />
+              <Route
+                path={'/register'}
+                component={RegistrationForm}
+              />
+              <Route
+                path={'/login'}
+                component={LoginForm}
+              />
+              <Route 
+                path={'/dashboard'}
+                component={Dashboard}
+              />
+              <Route
+                path={'/plan-to-watch'}
+                component={PlanToWatch}
+              />
+              <Route
+                path={'/currently-watching'}
+                component={CurrentlyWatching}
+              />
+              <Route
+                path={'/completed'}
+                component={Completed}
+              />
+              <Route
+                path={'/add-entry'}
+                component={AddForm}
+              />
+              <Route 
+                path={'/edit-entry/:id'}
+                component={EditForm}
+              />
+              <Route
+                component={NotFoundPage}
+              />
+            </Switch>
+          </ErrorBoundary>
           <Footer />
         </Context.Provider>
       </div>

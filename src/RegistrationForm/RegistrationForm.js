@@ -133,7 +133,7 @@ export default class RegistrationForm extends React.Component {
               onChange={e => {this.handleChange(e);this.handlePasswordTouch(e)}}/>
           </div>
           {this.state.passwordTouch.touched && <FormError message={passwordError} />}
-          <p class="password-requirements"><span className="required">*</span>Password must contain at least one uppercase, lowercase, and number character</p>
+          <p className="password-requirements"><span className="required">*</span>Password must contain at least one uppercase, lowercase, and number character</p>
           <div className="buttons-flex">
             <div className="signup-button-div">
               <button type="submit" className="signup-button" disabled={fullNameError || userNameError || passwordError}>Sign Up</button>

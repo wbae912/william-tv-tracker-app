@@ -1,0 +1,34 @@
+.error-boundary-h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 100px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.error-boundary-p {
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 750px) {
+  .error-boundary-h2 {
+    font-size: 24px;
+  }
+  .error-boundary-p {
+    font-size: 14px
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .error-boundary-h2 {
+    font-size: 30px;
+  }
+  .error-boundary-p {
+    font-size: 16px
+  }
+}

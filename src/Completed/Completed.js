@@ -92,7 +92,7 @@ export default class Completed extends Component {
                 <option value="Educational">Educational</option>
                 <option value="Fantasy">Fantasy</option>
                 <option value="Horror">Horror</option>
-                <option value="Mystery">Horror</option>
+                <option value="Mystery">Mystery</option>
                 <option value="Reality">Reality</option>
                 <option value="Sitcom">Sitcom</option>
                 <option value="Sci-Fi">Sci-Fi</option>
