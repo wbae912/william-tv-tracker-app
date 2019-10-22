@@ -3,6 +3,16 @@
   color: white;
   font-family: 'Montserrat', sans-serif;
   padding-top: 65px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.tv-queries {
+  margin-bottom: 30px;
+}
+
+.current-h1 {
+  font-size: 34px;
 }
 
 .search-label {
@@ -18,29 +28,16 @@
   padding: 1%;
 }
 
-.filter-genre {
-  margin-top: 2%
-}
-
 #genre-options {
   width: 62%;
   border-radius: 8px;
   padding: 1%;
 }
 
-.filter-rating {
-  margin-top: 2%
-}
-
 #rating-options {
   width: 62%;
   border-radius: 8px;
   padding: 1%;
-}
-
-.sort-div {
-  margin-top: 2%;
-  margin-bottom: 4.5%;
 }
 
 #sort-options {
@@ -55,4 +52,22 @@ option {
 
 select {
   font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (min-width: 750px) {
+  .current-h1 {
+    font-size: 36px;
+  }
+  .search-label {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .current-h1 {
+    font-size: 40px;
+  }
+  .search-label {
+    font-size: 20px;
+  }
 }

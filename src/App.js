@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LandingPage from './LandingPage/LandingPage';
 import Dashboard from './Dashboard/Dashboard';
 import Nav from './Nav/Nav';
@@ -15,6 +15,7 @@ import Context from './Context';
 import TokenService from './services/token-service';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
 import Footer from './Footer/Footer';
+import NotFoundPage from './NotFoundPage/NotFoundPage';
 
 export default class App extends Component {
   constructor(props) {
@@ -131,48 +132,48 @@ export default class App extends Component {
             toggleIsLoggedOff: this.toggleIsLoggedOff
           }}>
           {this.state.isLoggedIn ? <AppNav /> : <Nav />}
-          {/* <Header /> */}
-          <Route
-            exact
-            path={'/'}
-            component={LandingPage}
-          />
-          <Route
-            path={'/register'}
-            component={RegistrationForm}
-          />
-          <Route
-            path={'/login'}
-            component={LoginForm}
-          />
-          {/* <Route 
-            path={['/dashboard', '/plan-to-watch', '/currently-watching', '/completed', '/add-entry', '/edit-entry/:id']} 
-            component={AppNav}
-          /> */}
-          <Route 
-            path={'/dashboard'}
-            component={Dashboard}
-          />
-          <Route
-            path={'/plan-to-watch'}
-            component={PlanToWatch}
-          />
-          <Route
-            path={'/currently-watching'}
-            component={CurrentlyWatching}
-          />
-          <Route
-            path={'/completed'}
-            component={Completed}
-          />
-          <Route
-            path={'/add-entry'}
-            component={AddForm}
-          />
-          <Route 
-            path={'/edit-entry/:id'}
-            component={EditForm}
-          />
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={LandingPage}
+            />
+            <Route
+              path={'/register'}
+              component={RegistrationForm}
+            />
+            <Route
+              path={'/login'}
+              component={LoginForm}
+            />
+            <Route 
+              path={'/dashboard'}
+              component={Dashboard}
+            />
+            <Route
+              path={'/plan-to-watch'}
+              component={PlanToWatch}
+            />
+            <Route
+              path={'/currently-watching'}
+              component={CurrentlyWatching}
+            />
+            <Route
+              path={'/completed'}
+              component={Completed}
+            />
+            <Route
+              path={'/add-entry'}
+              component={AddForm}
+            />
+            <Route 
+              path={'/edit-entry/:id'}
+              component={EditForm}
+            />
+            <Route
+              component={NotFoundPage}
+            />
+          </Switch>
           <Footer />
         </Context.Provider>
       </div>

@@ -3,25 +3,32 @@
   color: white;
   font-family: 'Montserrat', sans-serif;
   padding-top: 65px;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 .dashboard-title {
-  margin-bottom: 15%;
+  margin-bottom: 40px;
+  font-size: 34px;
 }
 
 .total-shows {
-  font-size: 20px;
-  margin-bottom: 10%;
-  border: 2px solid white;
-  width: 60%;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
-  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+#underline-total {
+  display: none;
 }
 
 .chart-title {
   margin-bottom: 2%;
+  font-size: 21px;
 }
 
 .underline-mini {
@@ -34,7 +41,7 @@
 }
 
 .chart-div {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .chart {
@@ -47,4 +54,48 @@
 .rating-chart {
   margin-bottom: 40px;
   margin-top: 10px;
+}
+
+@media only screen and (min-width: 750px) {
+  .dashboard-title {
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+  .total-shows {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  .chart-title {
+    font-size: 23px;
+  }
+  .chart-div {
+    margin-bottom: 40px;
+  }
+  .underline-mini {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .dashboard-title {
+    margin-bottom: 50px;
+    font-size: 40px;
+  }
+  .total-shows {
+    font-size: 30px;
+  }
+  .chart-title {
+    font-size: 25px;
+  }
+  #chart-one, #chart-two {
+    width: 40%;
+    display: inline-block;
+  }
+  .underline-mini {
+    margin-bottom: 20px;
+  }
+  .chart-flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

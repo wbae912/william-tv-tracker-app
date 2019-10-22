@@ -6,7 +6,7 @@
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 5%;
+  margin-top: 40px;
   padding-top: 65px;
 }
 
@@ -14,18 +14,6 @@
   margin-top: 0;
   margin-top: 4%
 }
-
-/* .login__user_name {
-  margin-top: 2.5%;
-  display: flex;
-  justify-content: center;
-}
-
-.login__password {
-  margin-top: 2.5%;
-  display: flex;
-  justify-content: center;
-} */
 
 .login-label {
   display: inline-block;
@@ -78,4 +66,8 @@
 .form__login-button:hover, .back-button:hover {
   background-color: white;
   color: black;
+}
+
+@media only screen and (min-width: 750px) {
+
 }

@@ -4,6 +4,7 @@
   background-color: #887878;
   color: white;
   padding-top: 65px;
+  margin-bottom: 70px;
 }
 
 main {
@@ -12,7 +13,13 @@ main {
 
 .header-tag {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.app-title-headline {
+  font-size: 22px;
+  line-height: 30px;
 }
 
 .underline {
@@ -20,14 +27,19 @@ main {
   margin-right: 1.5%;
 }
 
+.section-h2 {
+  font-size: 20px;
+}
+
 .section-p {
   margin-right: 2%;
   margin-left: 2%;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .hero {
   background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://static.adweek.com/adweek.com-prod/wp-content/uploads/2019/07/tv-ratings-same-CONTENT-2019.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 250px;
@@ -37,3 +49,74 @@ main {
   align-items: center;
 }
 
+@media only screen and (min-width: 750px) {
+ .header-tag {
+   padding-top: 2%;
+   padding-bottom: 2%;
+   font-size: 36px;
+   letter-spacing: 2px;
+ }
+
+ .app-title-headline {
+   font-size: 30px;
+ }
+
+ .section-one, .section-two, .section-three {
+   margin-top: 3%;
+ }
+
+ .section-three {
+   margin-bottom: 4%;
+ }
+
+ .section-h2 {
+   font-size: 22px;
+ }
+
+ .section-p {
+   font-size: 14px;
+ }
+}
+
+@media only screen and (min-width: 1300px) {
+  .header-tag {
+    font-size: 50px;
+    letter-spacing: 3.5px;
+  }
+
+  .hero {
+    height: 520px;
+  }
+
+  .app-title-headline {
+    font-size: 35px;
+  }
+
+  .section-flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .section-one, .section-two, .section-three {
+    width: 30%;
+  }
+
+  .section-two {
+    border-right: 1.5px solid white;
+    border-left: 1.5px solid white;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .underline {
+    display: none;
+  }
+
+  .section-h2 {
+    font-size: 30px;
+  }
+
+  .section-p {
+    font-size: 18px;
+  }
+}

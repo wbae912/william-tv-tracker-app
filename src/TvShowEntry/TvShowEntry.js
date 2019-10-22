@@ -132,29 +132,13 @@ export default class TvShowEntry extends Component {
             onMouseOver={this.toggleEditHovered}
             onMouseOut={this.mouseOutEdit}>
           </i>
-          {/* <button type="button" id="edit-button" onClick={() => this.props.history.push(`/edit-entry/${this.props.show.id}`)}>Edit</button> */}
           <i className="fa fa-trash fa-lg" aria-hidden="true" id="delete-button" 
             onClick={() => this.context.deleteTvShow(this.props.show.id)}
             onMouseOver={this.toggleDeleteHovered}
             onMouseOut={this.mouseOutDelete}>
           </i>
-          {/* <button type="button" id="delete-button" onClick={() => this.context.deleteTvShow(this.props.show.id)}>Delete</button> */}
         </div>
       </div>
     )
   }
 }
-
-
-// <div className="tv-show-entry">
-//   <h2>{this.props.show.tv_title}</h2>
-//   <div className="entry-p">
-//     <p>Season: {this.props.show.season_number}</p>
-//     <p>Episode: {this.props.show.episode_number}</p> 
-//     <p>Rating: {this.props.show.rating}</p>
-//   </div>
-//   <div className="entry-buttons">
-//     <button type="button" id="edit-button" onClick={() => this.props.history.push(`/edit-entry/${this.props.show.id}`)}>Edit</button>
-//     <button type="button" id="delete-button" onClick={() => this.context.deleteTvShow(this.props.show.id)}>Delete</button>
-//   </div>
-// </div>

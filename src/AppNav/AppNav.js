@@ -19,9 +19,8 @@ export default class AppNav extends Component {
           <div className="appnav-logo-div">
             <Link to='/dashboard'><i className="fa fa-tv fa-2x"></i></Link>
           </div>
-          <Link to='/dashboard'><h2 className="nav-title">TV Tracker</h2></Link>
+          <Link to='/dashboard'><h2 className="appnav-title">TV Tracker</h2></Link>
         </div>
-
 
         <nav className="appnav">
           <ul className="appnav-links">
@@ -36,12 +35,6 @@ export default class AppNav extends Component {
                 </div>
               </div>
             </li>
-
-            {/* <Link to='/plan-to-watch'><li className="appnav-li">Plan to Watch</li></Link>
-            <Link to='/currently-watching'><li className="appnav-li">Currently Watching</li></Link>
-            <Link to='/completed'><li className="appnav-li">Completed</li></Link> */}
-
-
             <Link to='/add-entry'><li className="appnav-li">Add New Show</li></Link>
             <Link to='/'>
               <li className="appnav-li">
@@ -53,7 +46,6 @@ export default class AppNav extends Component {
             </Link>
           </ul>
         </nav>
-
 
         <div className="hamburger">
             <label htmlFor="toggle" className="hamburger-logo">&#9776;</label>
@@ -72,9 +64,7 @@ export default class AppNav extends Component {
                 </Link>
             </ul>
         </div>
-
-
-
+        
       </header>
     )
   }

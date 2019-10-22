@@ -12,28 +12,30 @@ export default class LandingPage extends Component {
             <h2 className="app-title-headline">Track and catalog your favorite TV shows...</h2>
           </div>
         </header>
-        <section className="section-one">
-          <h2 className="section-h2">Add Your TV Shows</h2>
-          <i className="fa fa-plus fa-2x"></i>
-          <p className="section-p">Did a friend recommend you a good show to watch? Add it as an entry so you don't forget.</p>
-        </section>
+          <div className="section-flex">
+          <section className="section-one">
+            <h2 className="section-h2">Add Your TV Shows</h2>
+            <i className="fa fa-plus fa-2x"></i>
+            <p className="section-p">Did a friend recommend you a good show to watch? Add it as an entry so you don't forget.</p>
+          </section>
 
-        <hr className="underline"></hr>
+          <hr className="underline"></hr>
 
-        <section className="section-two">
-          <h2 className="section-h2">Track Your Shows</h2>
-          <i className="fa fa-eye fa-2x"></i>
-          <p className="section-p">Having a hard time remembering which episode you left off on for that one show? TV Tracker has you covered.</p>
-        </section>
+          <section className="section-two">
+            <h2 className="section-h2">Track Your Shows</h2>
+            <i className="fa fa-eye fa-2x"></i>
+            <p className="section-p">Struggling to remember which episode you left off on? TV Tracker has you covered.</p>
+          </section>
 
-        <hr className="underline"></hr>
+          <hr className="underline"></hr>
 
-        <section className="section-three">
-          <h2 className="section-h2">View Your Dashboard</h2>
-          <i className="fa fa-list fa-2x"></i>
-          <p className="section-p">Curious about how many shows you rated 5 stars? TV Tracker's built-in dashboard provides a quick snapshot 
-            view of all the important metrics.</p>
-        </section>
+          <section className="section-three">
+            <h2 className="section-h2">View Your Dashboard</h2>
+            <i className="fa fa-list fa-2x"></i>
+            <p className="section-p">Curious about how many shows you rated 5 stars? TV Tracker's built-in dashboard provides a quick snapshot 
+              view of all the important metrics.</p>
+          </section>
+        </div>
       </main>
     </div>
     )

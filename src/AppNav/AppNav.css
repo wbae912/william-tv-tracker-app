@@ -28,13 +28,12 @@
 }
 
 .appnav-logo-div {
-  margin-right: 2%;
+  margin-right: 10px;
 }
 
 .appnav-title {
   display: inline-block;
   cursor: pointer;
-  color: black;
   font-family: 'Esteban', serif;
   color: white;
   text-decoration: none;
@@ -138,6 +137,12 @@
 }
 /* END HAMBURGER MENU STYLING */
 
+@media only screen and (min-width: 750px) {
+  .appnav-title {
+    font-size: 24px;
+  }
+}
+
 @media only screen and (min-width: 1300px) {
   .hamburger {
     display: none;
@@ -156,7 +161,7 @@
     font-family: 'Montserrat', sans-serif;
     padding: 0px 10px;
     margin-bottom: 0px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -204,9 +209,7 @@
   }
 
   .appnav-links li {
-    font-size: 16px;
+    font-size: 17px;
     padding: 0 10px;
   }
-
-
 }

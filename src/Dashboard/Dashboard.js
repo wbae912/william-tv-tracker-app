@@ -23,21 +23,24 @@ export default class Dashboard extends Component {
       <section className="dashboard-section">
         <h1 className="dashboard-title">My Dashboard</h1>
         <h2 className="total-shows">Total TV Shows: {totalShows}</h2>
-        <div className="chart-div">
-          <h3 className="chart-title">TV Shows per Status</h3>
-          <hr className="underline-mini" />
-          <div className="chart">
-            <StatusChart />
+        <hr className="underline-mini" id="underline-total" />
+        <div className="chart-flex">
+          <div className="chart-div" id="chart-one">
+            <h3 className="chart-title">TV Shows per Status</h3>
+            <hr className="underline-mini" />
+            <div className="chart">
+              <StatusChart />
+            </div>
+          </div>
+          <div className="chart-div" id="chart-two">
+            <h3 className="chart-title">TV Shows per Rating</h3>
+            <hr className="underline-mini" />
+            <div className="chart">
+              <RatingChart />
+            </div>
           </div>
         </div>
-        <div className="chart-div">
-          <h3 className="chart-title">TV Shows per Rating</h3>
-          <hr className="underline-mini" />
-          <div className="chart">
-            <RatingChart />
-          </div>
-        </div>
-        <div className="chart-div">
+        <div className="chart-div" id="chart-three">
           <h3 className="chart-title">TV Shows per Genre</h3>
           <hr className="underline-mini" />
           <div className="chart">

@@ -2,11 +2,16 @@
   border: 1px solid rgb(33, 56, 56);
   background-color: rgb(33, 56, 56);
   border-radius: 10px;
-  margin-bottom: 3%;
+  margin-bottom: 20px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  transition: ease width 0.5s;
+}
+
+.tv-show-entry:hover {
+  width: 85%;
 }
 
 .checked {
@@ -22,7 +27,6 @@
 
 .fa-trash {
   margin-left: 8%;
-  /* MAKE THIS 2-3% ON BIGGER DEVICES */
 }
 
 .fa-edit:hover {
@@ -35,13 +39,40 @@
 
 .p-edit, .p-delete {
   margin: 0;
-  margin-top: 1%;
 }
 
 .p-edit {
   color: blue;
+  font-weight: bold;
 }
 
 .p-delete {
   color: red;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 750px) {
+  .fa-trash, .fa-edit {
+    margin-top: 20px;
+    height: 35px;
+  }
+  .tv-show-entry {
+    width: 70%;
+  }
+  .tv-show-entry:hover {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .fa-trash, .fa-edit {
+    margin-top: 25px;
+    height: 35px;
+  }
+  .tv-show-entry {
+    width: 60%;
+  }
+  .tv-show-entry:hover {
+    width: 65%;
+  }
 }

@@ -74,55 +74,57 @@ export default class PlanToWatch extends Component {
       <div className="plan-section">
         <section className="tv-queries">
           <h1 className="plan-h1">Plan to Watch</h1>
-          <div className="search-div">
-            <label htmlFor="searchTerm" className="search-label">Search TV Show</label>
-            <input type="text" name="searchTerm" id="searchTerm" placeholder="Enter TV Show Name..."
-              value={this.state.searchTerm} 
-              onChange={this.handleSearchTermChange} />
-          </div>
-          <div className="filter-genre">
-            <select name="genre-options" id="genre-options" onChange={this.handleGenreChange}>
-              <option value="">Filter By Genre...</option>
-              <option value="N/A">N/A</option>
-              <option value="Action">Action</option>
-              <option value="Animated">Animated</option>
-              <option value="Comedy">Comedy</option>
-              <option value="Documentary">Documentary</option>
-              <option value="Drama">Drama</option>
-              <option value="Educational">Educational</option>
-              <option value="Fantasy">Fantasy</option>
-              <option value="Horror">Horror</option>
-              <option value="Mystery">Horror</option>
-              <option value="Reality">Reality</option>
-              <option value="Sitcom">Sitcom</option>
-              <option value="Sci-Fi">Sci-Fi</option>
-              <option value="Thriller">Thriller</option>
-              <option value="Variety">Variety</option>
-            </select>
-          </div>
-          <div className="filter-rating">
-            <select name="rating-options" id="rating-options" onChange={this.handleMinRatingChange}>
-              <option value="">Filter By Min. Rating...</option>
-              <option value="0">No Rating</option>
-              <option value="1">1 Star</option>
-              <option value="2">2 Stars</option>
-              <option value="3">3 Stars</option>
-              <option value="4">4 Stars</option>
-              <option value="5">5 Stars</option>
-            </select>
-          </div>
-          <div className="sort-div">
-            <select name="sort-options" id="sort-options" onChange={this.handleSortChange}>
-                <option value="0">Sort By...</option>
-                <optgroup label="TV Show Name">
-                  <option value="1">Name (A-Z)</option>
-                  <option value="2">Name (Z-A)</option>
-                </optgroup>
-                <optgroup label="Rating">
-                  <option value="3">Rating (Low to High)</option>
-                  <option value="4">Rating (High to Low)</option>
-                </optgroup>
-            </select>
+          <div className="query-flex">
+            <div className="search-div">
+              <label htmlFor="searchTerm" className="search-label">Search TV Show</label>
+              <input type="text" name="searchTerm" id="searchTerm" placeholder="Enter TV Show Name..."
+                value={this.state.searchTerm} 
+                onChange={this.handleSearchTermChange} />
+            </div>
+            <div className="filter-genre">
+              <select name="genre-options" id="genre-options" onChange={this.handleGenreChange}>
+                <option value="">Filter By Genre...</option>
+                <option value="N/A">N/A</option>
+                <option value="Action">Action</option>
+                <option value="Animated">Animated</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Drama">Drama</option>
+                <option value="Educational">Educational</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
+                <option value="Mystery">Horror</option>
+                <option value="Reality">Reality</option>
+                <option value="Sitcom">Sitcom</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Variety">Variety</option>
+              </select>
+            </div>
+            <div className="filter-rating">
+              <select name="rating-options" id="rating-options" onChange={this.handleMinRatingChange}>
+                <option value="">Filter By Min. Rating...</option>
+                <option value="0">No Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+              </select>
+            </div>
+            <div className="sort-div">
+              <select name="sort-options" id="sort-options" onChange={this.handleSortChange}>
+                  <option value="0">Sort By...</option>
+                  <optgroup label="TV Show Name">
+                    <option value="1">Name (A-Z)</option>
+                    <option value="2">Name (Z-A)</option>
+                  </optgroup>
+                  <optgroup label="Rating">
+                    <option value="3">Rating (Low to High)</option>
+                    <option value="4">Rating (High to Low)</option>
+                  </optgroup>
+              </select>
+            </div>
           </div>
         </section>
 
