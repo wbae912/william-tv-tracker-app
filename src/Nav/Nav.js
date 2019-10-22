@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Nav.css';
 
 export default class Nav extends Component {
@@ -14,8 +14,8 @@ export default class Nav extends Component {
         </div>
         <nav className="nav">
           <ul className="nav-links">
-            <Link to='/login'><li className="nav-li">Login</li></Link>
-            <Link to='/register'><li className="nav-li register-li">Register</li></Link>
+            <NavLink to='/login' activeClassName="selected"><li className="nav-li">Login</li></NavLink>
+            <NavLink to='/register' activeClassName="selected"><li className="nav-li register-li">Register</li></NavLink>
           </ul>
         </nav>
       </header>

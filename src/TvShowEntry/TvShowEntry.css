@@ -30,7 +30,7 @@
 }
 
 .fa-edit:hover {
-  color: blue;
+  color: lightblue;
 }
 
 .fa-trash:hover {
@@ -42,7 +42,7 @@
 }
 
 .p-edit {
-  color: blue;
+  color: lightblue;
   font-weight: bold;
 }
 

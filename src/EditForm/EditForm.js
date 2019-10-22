@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
 import TokenService from '../services/token-service';
+import FormError from '../FormError/FormError';
 import './EditForm.css';
 
 export default class EditForm extends Component {
+  static contextType = tvContext;
+
   constructor(props) {
     super(props)
   
@@ -17,11 +20,15 @@ export default class EditForm extends Component {
       genre: '',
       description: '',
       review: '',
-      user_id: ''
+      user_id: '',
+      titleTouch: {
+        touched: false
+      },
+      statusTouch: {
+        touched: false
+      }
     }
   }
-  
-  static contextType = tvContext;
 
   componentDidMount() {
     const tvId = Number(this.props.match.params.id);
@@ -62,6 +69,18 @@ export default class EditForm extends Component {
     })
   }
 
+  handleTitleTouch = (e) => {
+    this.setState({
+      titleTouch: {touched: true}
+    })
+  }
+
+  handleStatusTouch = (e) => {
+    this.setState({
+      statusTouch: {touched: true}
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const newShowFields = {
@@ -97,8 +116,25 @@ export default class EditForm extends Component {
     })
   }
 
+  validateTitle = () => {
+    const title = this.state.tv_title;
+    if(title.length === 0) {
+      return 'Please enter a TV show name';
+    }
+  }
+
+  validateStatus = () => {
+    const status = this.state.status;
+    if(parseInt(status) === 0) {
+      return 'Please enter a status';
+    }
+  }
+
   render() {
     const { tv_title, status, season_number, episode_number, rating, genre, description, review } = this.state;
+    let titleError = this.validateTitle();
+    let statusError = this.validateStatus();
+
     return (
       <div className="edit-form-div">
         <h1 className="edit-form-title">Edit TV Show</h1>
@@ -108,18 +144,22 @@ export default class EditForm extends Component {
             }}>
             <div className="form-section">
               <label htmlFor="tv_title" className="edit-form-label">TV Show Name<span className="required">*</span></label>
-              <input type="text" name="tv_title" id="tv_title" value={tv_title} className="edit-form-input"
-                onChange={e => this.handleChange(e)} required/>
+              <input type="text" name="tv_title" id="tv_title" value={tv_title} className="edit-form-input" required
+                onChange={e => {this.handleChange(e); this.handleTitleTouch(e)}}
+              />
+              {this.state.titleTouch.touched && <FormError message={titleError} />}
             </div>
             <div className="form-section">
               <label htmlFor="status" className="edit-form-label">Status<span className="required">*</span></label>
-              <select name="status" id="status" value={status} className="edit-form-select"
-                onChange={e => this.handleChange(e)} required>
+              <select name="status" id="status" value={status} className="edit-form-select" required
+                onChange={e => {this.handleChange(e); this.handleStatusTouch(e)}}
+              >
                 <option value="0">Select a Status...</option>
                 <option value="Planning to Watch">Plan to Watch</option>
                 <option value="Currently Watching">Currently Watching</option>
                 <option value="Completed">Completed</option>
               </select>
+              {this.state.statusTouch.touched && <FormError message={statusError} />}
             </div>
             <div className="form-section">
                 <label htmlFor="season_number" className="edit-form-label">Season No.</label>
@@ -176,7 +216,7 @@ export default class EditForm extends Component {
               </div>
               <p className="required-p"><span className="required">*</span>Required Fields</p>
               <div className="form-buttons-div">
-                <button type="submit" className="edit-show-button">Submit</button>
+                <button type="submit" className="edit-show-button" disabled={titleError || statusError}>Submit</button>
                 <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
               </div>
             </form>

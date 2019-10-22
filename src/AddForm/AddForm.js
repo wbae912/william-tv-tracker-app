@@ -1,10 +1,44 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
+import FormError from '../FormError/FormError';
 import './AddForm.css';
 
 export default class AddForm extends Component {
   static contextType = tvContext;
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       tv_title: '',
+       status: '',
+       titleTouch: {
+        touched: false
+      },
+      statusTouch: {
+        touched: false
+      },
+    }
+  }
+
+  handleChange = e => {
+    this.setState({
+    [e.target.name]: e.target.value
+    })
+  }
+
+  handleTitleTouch = (e) => {
+    this.setState({
+      titleTouch: {touched: true}
+    })
+  }
+
+  handleStatusTouch = (e) => {
+    this.setState({
+      statusTouch: {touched: true}
+    })
+  }
+  
   componentDidMount() {
     this.context.getAllShows();
   }
@@ -25,7 +59,24 @@ export default class AddForm extends Component {
     this.context.addTvShow(newShow)
   }
 
+  validateTitle = () => {
+    const title = this.state.tv_title;
+    if(title.length === 0) {
+      return 'Please enter a TV show name';
+    }
+  }
+
+  validateStatus = () => {
+    const status = this.state.status;
+    if(parseInt(status) === 0) {
+      return 'Please enter a status';
+    }
+  }
+
   render() {
+    let titleError = this.validateTitle();
+    let statusError = this.validateStatus();
+
     return (
       <div className="add-form-div">
         <h1 className="add-form-title">Add a TV Show</h1>
@@ -36,16 +87,21 @@ export default class AddForm extends Component {
             }}>
             <div className="form-section">
               <label htmlFor="tv_title" className="add-form-label">TV Show Name<span className="required">*</span></label>
-              <input type="text" name="tv_title" id="tv_title" className="add-form-input" required/>
+              <input type="text" name="tv_title" id="tv_title" className="add-form-input" required 
+                onChange={e => {this.handleChange(e); this.handleTitleTouch(e)}}
+              />
+              {this.state.titleTouch.touched && <FormError message={titleError} />}
             </div>
             <div className="form-section">
               <label htmlFor="status" className="add-form-label">Status<span className="required">*</span></label>
-              <select name="status" id="status" className="add-form-select" required>
-                <option value="0">Select a Status...</option>
+              <select name="status" id="status" className="add-form-select" required
+                onChange={e => {this.handleChange(e); this.handleStatusTouch(e)}}
+              >
                 <option value="Planning to Watch">Plan to Watch</option>
                 <option value="Currently Watching">Currently Watching</option>
                 <option value="Completed">Completed</option>
               </select>
+              {this.state.statusTouch.touched && <FormError message={statusError} />}
             </div>
             <div className="form-section">
                 <label htmlFor="season_number" className="add-form-label">Season No.</label>
@@ -96,7 +152,7 @@ export default class AddForm extends Component {
               </div>
               <p className="required-p"><span className="required">*</span>Required Fields</p>
               <div className="form-buttons-div">
-                <button type="submit" className="add-show-button">Submit</button>
+                <button type="submit" className="add-show-button" disabled={titleError || statusError}>Submit</button>
                 <button type="button" className="dashboard-button" 
                   onClick={() => this.props.history.goBack()}>
                   Back</button>

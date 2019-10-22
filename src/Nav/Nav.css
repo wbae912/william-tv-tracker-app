@@ -52,11 +52,14 @@
   font-weight: bold;
   color: white;
   font-size: 12px;
-  /* CHANGE FONT SIZE WHEN LARGER SCREEN */
 }
 
 .nav-links li:hover {
   color: rgb(133, 70, 133);
+}
+
+.selected {
+  color: black; 
 }
 
 @media only screen and (min-width: 500px) {
