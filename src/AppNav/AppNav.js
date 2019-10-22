@@ -17,9 +17,9 @@ export default class AppNav extends Component {
       <header className="appnav-header">
         <div className="appnav-logo-header">
           <div className="appnav-logo-div">
-            <Link to='/dashboard'><i className="fa fa-tv fa-2x"></i></Link>
+            <Link to='/'><i className="fa fa-tv fa-2x"></i></Link>
           </div>
-          <Link to='/dashboard'><h2 className="appnav-title">TV Tracker</h2></Link>
+          <Link to='/'><h2 className="appnav-title">TV Tracker</h2></Link>
         </div>
 
         <nav className="appnav">

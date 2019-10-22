@@ -12,10 +12,18 @@ export default class AddForm extends Component {
     this.state = {
        tv_title: '',
        status: '',
+       episode_number: 1,
+       season_number: 1,
        titleTouch: {
         touched: false
       },
       statusTouch: {
+        touched: false
+      },
+      seasonTouch: {
+        touched: false
+      },
+      episodeTouch: {
         touched: false
       },
     }
@@ -38,6 +46,18 @@ export default class AddForm extends Component {
       statusTouch: {touched: true}
     })
   }
+
+  handleSeasonTouch = (e) => {
+    this.setState({
+      seasonTouch: {touched: true}
+    })
+  }
+
+  handleEpisodeTouch = (e) => {
+    this.setState({
+      episodeTouch: {touched: true}
+    })
+  }
   
   componentDidMount() {
     this.context.getAllShows();
@@ -48,8 +68,8 @@ export default class AddForm extends Component {
     const newShow = {
       tv_title: e.target.tv_title.value,
       status: e.target.status.value,
-      season_number: Number(e.target.season_number.value),
-      episode_number: Number(e.target.episode_number.value),
+      season_number: Number(this.state.season_number),
+      episode_number: Number(this.state.episode_number),
       rating: e.target.rating.value,
       genre: e.target.genre.value,
       description: e.target.description.value,
@@ -73,9 +93,25 @@ export default class AddForm extends Component {
     }
   }
 
+  validateSeasonNumber = () => {
+    const seasonNumber = this.state.season_number;
+    if(seasonNumber <= 0 || seasonNumber % 1 !== 0) {
+      return 'Please enter a number greater than 0';
+    }
+  }
+
+  validateEpisodeNumber = () => {
+    const episodeNumber = this.state.episode_number;
+    if(episodeNumber <= 0 || episodeNumber % 1 !== 0) {
+      return 'Please enter a whole number greater than 0';
+    }
+  }
+
   render() {
     let titleError = this.validateTitle();
     let statusError = this.validateStatus();
+    let seasonNumberError = this.validateSeasonNumber();
+    let episodeNumberError = this.validateEpisodeNumber();
 
     return (
       <div className="add-form-div">
@@ -105,11 +141,17 @@ export default class AddForm extends Component {
             </div>
             <div className="form-section">
                 <label htmlFor="season_number" className="add-form-label">Season No.</label>
-                <input type="number" name="season_number" id="season_number" min="1" className="add-form-input" placeholder="1"/>
+                <input type="number" name="season_number" id="season_number" min="1" className="add-form-input" value={this.state.season_number} 
+                  onChange={e => {this.handleChange(e); this.handleSeasonTouch(e)}}
+                />
+                {this.state.seasonTouch.touched && <FormError message={seasonNumberError} />}
             </div>
             <div className="form-section">
                 <label htmlFor="episode_number" className="add-form-label">Episode No.</label>
-                <input type="number" name="episode_number" id="episode_number" min="1" className="add-form-input" placeholder="1"/>
+                <input type="number" name="episode_number" id="episode_number" min="1" className="add-form-input" value={this.state.episode_number}
+                  onChange={e => {this.handleChange(e); this.handleEpisodeTouch(e)}}
+                />
+                {this.state.episodeTouch.touched && <FormError message={episodeNumberError} />}
             </div>
             <div className="form-section">
                 <label htmlFor="rating" className="add-form-label">Rating</label>
@@ -152,7 +194,7 @@ export default class AddForm extends Component {
               </div>
               <p className="required-p"><span className="required">*</span>Required Fields</p>
               <div className="form-buttons-div">
-                <button type="submit" className="add-show-button" disabled={titleError || statusError}>Submit</button>
+                <button type="submit" className="add-show-button" disabled={titleError || statusError || seasonNumberError || episodeNumberError}>Submit</button>
                 <button type="button" className="dashboard-button" 
                   onClick={() => this.props.history.goBack()}>
                   Back</button>
