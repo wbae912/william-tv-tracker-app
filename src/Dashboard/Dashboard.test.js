@@ -1,30 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
-import Completed from './Completed';
+import Dashboard from './Dashboard';
 import Context from '../Context';
 import TokenService from '../services/token-service';
 
 describe(`Completed component`, () => {
-  const props = {
-    show:
-      {
-        "id": "1",
-        "tv_title": "Example",
-        "status": "Completed",
-        "season_number": "1",
-        "episode_number": "1",
-        "rating": "3",
-        "genre": "Action",
-        "description": "Lorem ipsum",
-        "review": "Lorem ipsum"
-      },
-    key: "1"
-  }
-
   const shows = [
       {
         "id": "1",
@@ -74,24 +57,13 @@ describe(`Completed component`, () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter>
-        <Context.Provider value={{getAllShows, shows}}><Completed /></Context.Provider>
+        <Context.Provider value={{getAllShows, shows}}><Dashboard /></Context.Provider>
       </MemoryRouter>
       , div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  it('renders UI as expected', () => {
-    const tree = renderer
-      .create(<MemoryRouter><Context.Provider value={{getAllShows, shows}}><Completed /></Context.Provider></MemoryRouter>)
-      .toJSON();
-      expect(tree).toMatchSnapshot();
-  })
-  it('renders a .Completed by default', () => {
-    const wrapper = shallow(<Context.Provider value={{shows}}><Completed /></Context.Provider>)
+  it('renders a .Dashboard by default', () => {
+    const wrapper = shallow(<Context.Provider value={{getAllShows, shows}}><Dashboard /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
-  })
-  it('renders a Show in section for each notes in array', () => {
-    const section = shallow(<Context.Provider value={(shows)}><Completed {...props} /></Context.Provider>)
-      .find('section')
-    expect(toJson(section)).toMatchSnapshot()
-  })
-})
+  });
+});

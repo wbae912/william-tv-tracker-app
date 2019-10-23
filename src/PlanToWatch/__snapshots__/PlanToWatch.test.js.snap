@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Completed component renders UI as expected 1`] = `
+exports[`PlanToWatch component renders UI as expected 1`] = `
 <div
-  className="completed-section"
+  className="plan-section"
 >
   <div
     className="error-bigger"
@@ -12,9 +12,9 @@ exports[`Completed component renders UI as expected 1`] = `
     className="tv-queries"
   >
     <h1
-      className="completed-h1"
+      className="plan-h1"
     >
-      Completed
+      Plan to Watch
     </h1>
     <div
       className="query-flex"
@@ -32,7 +32,7 @@ exports[`Completed component renders UI as expected 1`] = `
           id="searchTerm"
           name="searchTerm"
           onChange={[Function]}
-          placeholder="Search TV Show"
+          placeholder="Enter TV Show Name..."
           type="text"
           value=""
         />
@@ -217,127 +217,9 @@ exports[`Completed component renders UI as expected 1`] = `
       </div>
     </div>
   </section>
-  <section
-    className="tv-entries"
-  >
-    <div
-      className="tv-show-entry"
-      onClick={[Function]}
-    >
-      <h2
-        className="entry-title"
-      >
-        Example
-      </h2>
-      <div
-        className="entry-div"
-      >
-        <p
-          className="entry-p"
-        >
-          Season: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Episode: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Genre: 
-          Action
-        </p>
-        <p
-          className="entry-p"
-        >
-          Rating: 
-          3
-        </p>
-      </div>
-      <div
-        className="entry-buttons"
-      >
-        <i
-          className="fa fa-edit fa-lg"
-          id="edit-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-        <i
-          aria-hidden="true"
-          className="fa fa-trash fa-lg"
-          id="delete-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-      </div>
-    </div>
-    <div
-      className="tv-show-entry"
-      onClick={[Function]}
-    >
-      <h2
-        className="entry-title"
-      >
-        Example 2
-      </h2>
-      <div
-        className="entry-div"
-      >
-        <p
-          className="entry-p"
-        >
-          Season: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Episode: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Genre: 
-          Action
-        </p>
-        <p
-          className="entry-p"
-        >
-          Rating: 
-          3
-        </p>
-      </div>
-      <div
-        className="entry-buttons"
-      >
-        <i
-          className="fa fa-edit fa-lg"
-          id="edit-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-        <i
-          aria-hidden="true"
-          className="fa fa-trash fa-lg"
-          id="delete-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-      </div>
-    </div>
-  </section>
 </div>
 `;
 
-exports[`Completed component renders a .Completed by default 1`] = `<Completed />`;
+exports[`PlanToWatch component renders a .PlanToWatch by default 1`] = `<PlanToWatch />`;
 
-exports[`Completed component renders a Show in section for each notes in array 1`] = `null`;
+exports[`PlanToWatch component renders a Show in section for each notes in array 1`] = `null`;

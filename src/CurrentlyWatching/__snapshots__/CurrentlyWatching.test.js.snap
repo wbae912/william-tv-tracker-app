@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Completed component renders UI as expected 1`] = `
+exports[`CurrentlyWatching component renders UI as expected 1`] = `
 <div
-  className="completed-section"
+  className="currently-section"
 >
   <div
     className="error-bigger"
@@ -12,9 +12,9 @@ exports[`Completed component renders UI as expected 1`] = `
     className="tv-queries"
   >
     <h1
-      className="completed-h1"
+      className="current-h1"
     >
-      Completed
+      Currently Watching
     </h1>
     <div
       className="query-flex"
@@ -217,127 +217,123 @@ exports[`Completed component renders UI as expected 1`] = `
       </div>
     </div>
   </section>
-  <section
-    className="tv-entries"
+  <div
+    className="tv-show-entry"
+    onClick={[Function]}
   >
-    <div
-      className="tv-show-entry"
-      onClick={[Function]}
+    <h2
+      className="entry-title"
     >
-      <h2
-        className="entry-title"
+      Example
+    </h2>
+    <div
+      className="entry-div"
+    >
+      <p
+        className="entry-p"
       >
-        Example
-      </h2>
-      <div
-        className="entry-div"
+        Season: 
+        1
+      </p>
+      <p
+        className="entry-p"
       >
-        <p
-          className="entry-p"
-        >
-          Season: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Episode: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Genre: 
-          Action
-        </p>
-        <p
-          className="entry-p"
-        >
-          Rating: 
-          3
-        </p>
-      </div>
-      <div
-        className="entry-buttons"
+        Episode: 
+        1
+      </p>
+      <p
+        className="entry-p"
       >
-        <i
-          className="fa fa-edit fa-lg"
-          id="edit-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-        <i
-          aria-hidden="true"
-          className="fa fa-trash fa-lg"
-          id="delete-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-      </div>
+        Genre: 
+        Action
+      </p>
+      <p
+        className="entry-p"
+      >
+        Rating: 
+        3
+      </p>
     </div>
     <div
-      className="tv-show-entry"
-      onClick={[Function]}
+      className="entry-buttons"
     >
-      <h2
-        className="entry-title"
-      >
-        Example 2
-      </h2>
-      <div
-        className="entry-div"
-      >
-        <p
-          className="entry-p"
-        >
-          Season: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Episode: 
-          1
-        </p>
-        <p
-          className="entry-p"
-        >
-          Genre: 
-          Action
-        </p>
-        <p
-          className="entry-p"
-        >
-          Rating: 
-          3
-        </p>
-      </div>
-      <div
-        className="entry-buttons"
-      >
-        <i
-          className="fa fa-edit fa-lg"
-          id="edit-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-        <i
-          aria-hidden="true"
-          className="fa fa-trash fa-lg"
-          id="delete-button"
-          onClick={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-        />
-      </div>
+      <i
+        className="fa fa-edit fa-lg"
+        id="edit-button"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
+      <i
+        aria-hidden="true"
+        className="fa fa-trash fa-lg"
+        id="delete-button"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
     </div>
-  </section>
+  </div>
+  <div
+    className="tv-show-entry"
+    onClick={[Function]}
+  >
+    <h2
+      className="entry-title"
+    >
+      Example 2
+    </h2>
+    <div
+      className="entry-div"
+    >
+      <p
+        className="entry-p"
+      >
+        Season: 
+        1
+      </p>
+      <p
+        className="entry-p"
+      >
+        Episode: 
+        1
+      </p>
+      <p
+        className="entry-p"
+      >
+        Genre: 
+        Action
+      </p>
+      <p
+        className="entry-p"
+      >
+        Rating: 
+        3
+      </p>
+    </div>
+    <div
+      className="entry-buttons"
+    >
+      <i
+        className="fa fa-edit fa-lg"
+        id="edit-button"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
+      <i
+        aria-hidden="true"
+        className="fa fa-trash fa-lg"
+        id="delete-button"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+      />
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Completed component renders a .Completed by default 1`] = `<Completed />`;
+exports[`CurrentlyWatching component renders a .CurrentlyWatching by default 1`] = `<CurrentlyWatching />`;
 
-exports[`Completed component renders a Show in section for each notes in array 1`] = `null`;
+exports[`CurrentlyWatching component renders a Show in section for each notes in array 1`] = `null`;

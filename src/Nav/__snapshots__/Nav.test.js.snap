@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component renders UI as expected 1`] = `
+<header
+  className="nav-header"
+>
+  <div
+    className="nav-logo-header"
+  >
+    <div
+      className="logo-div"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-tv fa-2x"
+        />
+      </a>
+    </div>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h2
+        className="nav-title"
+      >
+        TV Tracker
+      </h2>
+    </a>
+  </div>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="nav-links"
+    >
+      <a
+        aria-current={null}
+        className="nav-li"
+        href="/login"
+        onClick={[Function]}
+      >
+        <li
+          className="login-li"
+        >
+          Login
+        </li>
+      </a>
+      <a
+        aria-current={null}
+        className="nav-li"
+        href="/register"
+        onClick={[Function]}
+      >
+        <li
+          className="register-li"
+        >
+          Register
+        </li>
+      </a>
+    </ul>
+  </nav>
+</header>
+`;

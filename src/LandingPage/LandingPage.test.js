@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppNav from './AppNav';
+import LandingPage from './LandingPage';
 import { MemoryRouter } from 'react-router';
 import renderer from 'react-test-renderer';
 
-describe('AppNav component', () => {
+describe('LandingPage component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<MemoryRouter><AppNav /></MemoryRouter>, div);
+    ReactDOM.render(<MemoryRouter><LandingPage /></MemoryRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
   
   it('renders UI as expected', () => {
     const tree = renderer
-      .create(<MemoryRouter><AppNav /></MemoryRouter>)
+      .create(<MemoryRouter><LandingPage /></MemoryRouter>)
       .toJSON();
       expect(tree).toMatchSnapshot();
   })

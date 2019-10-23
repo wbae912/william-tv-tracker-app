@@ -4,17 +4,17 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
-import Completed from './Completed';
 import Context from '../Context';
 import TokenService from '../services/token-service';
+import CurrentlyWatching from './CurrentlyWatching';
 
-describe(`Completed component`, () => {
+describe(`CurrentlyWatching component`, () => {
   const props = {
     show:
       {
         "id": "1",
         "tv_title": "Example",
-        "status": "Completed",
+        "status": "Currently Watching",
         "season_number": "1",
         "episode_number": "1",
         "rating": "3",
@@ -29,7 +29,7 @@ describe(`Completed component`, () => {
       {
         "id": "1",
         "tv_title": "Example",
-        "status": "Completed",
+        "status": "Currently Watching",
         "season_number": "1",
         "episode_number": "1",
         "rating": "3",
@@ -40,7 +40,7 @@ describe(`Completed component`, () => {
       {
         "id": "2",
         "tv_title": "Example 2",
-        "status": "Completed",
+        "status": "Currently Watching",
         "season_number": "1",
         "episode_number": "1",
         "rating": "3",
@@ -74,24 +74,24 @@ describe(`Completed component`, () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter>
-        <Context.Provider value={{getAllShows, shows}}><Completed /></Context.Provider>
+        <Context.Provider value={{getAllShows, shows}}><CurrentlyWatching /></Context.Provider>
       </MemoryRouter>
       , div);
     ReactDOM.unmountComponentAtNode(div);
   });
   it('renders UI as expected', () => {
     const tree = renderer
-      .create(<MemoryRouter><Context.Provider value={{getAllShows, shows}}><Completed /></Context.Provider></MemoryRouter>)
+      .create(<MemoryRouter><Context.Provider value={{getAllShows, shows}}><CurrentlyWatching /></Context.Provider></MemoryRouter>)
       .toJSON();
       expect(tree).toMatchSnapshot();
   })
-  it('renders a .Completed by default', () => {
-    const wrapper = shallow(<Context.Provider value={{shows}}><Completed /></Context.Provider>)
+  it('renders a .CurrentlyWatching by default', () => {
+    const wrapper = shallow(<Context.Provider value={{shows}}><CurrentlyWatching /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
-  })
+  });
   it('renders a Show in section for each notes in array', () => {
-    const section = shallow(<Context.Provider value={(shows)}><Completed {...props} /></Context.Provider>)
+    const section = shallow(<Context.Provider value={(shows)}><CurrentlyWatching {...props} /></Context.Provider>)
       .find('section')
     expect(toJson(section)).toMatchSnapshot()
-  })
-})
+  });
+});
