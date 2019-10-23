@@ -15,3 +15,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.red {
+  color: rgb(148, 7, 7);
+  text-shadow: 0.3px 0.3px rgb(148, 7, 7);
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.error-div {
+  margin: 0;
+  padding: 0;
+}
+
+.error-form {
+  margin-top: 90px;
+  display: block;
+  text-align: center;
+}
+
+.red-bigger {
+  color: rgb(148, 7, 7);
+  text-shadow: 0.3px 0.3px rgb(148, 7, 7);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
+}
+
+@media only screen and (min-width: 750px) {
+  .red-bigger {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .red-bigger {
+    font-size: 30px;
+  }
+}

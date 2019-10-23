@@ -13,12 +13,18 @@ export default class CurrentlyWatching extends Component {
        searchTerm: '',
        genre: '',
        minRating: '',
-       sort: ''
+       sort: '',
+       error: null
     }
   }
 
   componentDidMount() {
-    this.context.getAllShows();
+    this.context.getAllShows()
+    .catch(res => {
+      this.setState({
+        error: res.error
+      })
+    })
   }
 
   handleSearchTermChange = (e) => {
@@ -71,6 +77,9 @@ export default class CurrentlyWatching extends Component {
     }
     return (
       <div className="currently-section">
+        <div role="alert" className="error-bigger">
+          {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
+        </div>
         <section className="tv-queries">
           <h1 className="current-h1">Currently Watching</h1>
           <div className="query-flex">

@@ -43,27 +43,24 @@ export default class LoginForm extends Component {
   }
   
   handleSubmitJwtAuth = ev => {
-      ev.preventDefault()
-      // this.setState({ error: null })
-      const { user_name, password } = ev.target
+    ev.preventDefault()
+    const { user_name, password } = ev.target
 
-      AuthApiService.postLogin({
-        user_name: user_name.value,
-        password: password.value,
+    AuthApiService.postLogin({
+      user_name: user_name.value,
+      password: password.value,
+    })
+      .then(res => {
+        user_name.value = '';
+        password.value = '';
+        TokenService.saveAuthToken(res.authToken);
+        this.props.history.push('/dashboard')
       })
-        .then(res => {
-          user_name.value = '';
-          password.value = '';
-          TokenService.saveAuthToken(res.authToken);
-          this.props.history.push('/dashboard')
+      .catch(res => {
+        this.setState({
+          error: res.error
         })
-        .catch(error => {
-          alert(`Error: ${error.message}`)
-        })
-        // .catch(res => {
-        //   console.log(res);
-        //   this.setState({error: res})
-        // })
+      })
     }
 
   validateUserName = () => {
@@ -96,11 +93,11 @@ export default class LoginForm extends Component {
 
     return (
       <section className="login-section">
+        <div role="alert" className="error-div">
+            {this.state.error && <p className='red'>{this.state.error}</p>}
+          </div>
         <h2 className="login-h2">Login</h2>
         <form className="login-form" onSubmit={(e) => this.handleSubmitJwtAuth(e)}>
-          {/* <div role='alert'>
-            {this.state.error && <p className='red'>{this.state.error}</p>}
-          </div> */}
           <div className="login__user_name">
             <label htmlFor="user_name" className="login-label">Username</label>
             <input type="text" name="user_name" id="user_name" className="login-input" required

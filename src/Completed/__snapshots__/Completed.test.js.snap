@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Completed component renders a .Completed by default 1`] = `<Completed />`;
+
+exports[`NoteListMain component renders a .Completed by default 1`] = `<Completed />`;

@@ -9,7 +9,7 @@ const AuthApiService = {
     })
       .then(res => {
         if(!res.ok) {
-          return Promise.reject('Something went wrong');
+          return res.json().then(err => Promise.reject(err));
         }
         return res.json();
       })

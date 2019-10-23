@@ -13,12 +13,18 @@ export default class Completed extends Component {
        searchTerm: '',
        genre: '',
        minRating: '',
-       sort: ''
+       sort: '',
+       error: null
     }
   }
 
   componentDidMount() {
-    this.context.getAllShows();
+    this.context.getAllShows()
+    .catch(res => {
+      this.setState({
+        error: res.error
+      })
+    })
   }
 
   handleSearchTermChange = (e) => {
@@ -71,6 +77,9 @@ export default class Completed extends Component {
     }
     return (
       <div className="completed-section">
+        <div role="alert" className="error-bigger">
+          {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
+        </div>
         <section className="tv-queries">
           <h1 className="completed-h1">Completed</h1>
           <div className="query-flex">
@@ -127,14 +136,15 @@ export default class Completed extends Component {
           </div>
         </section>
 
-        {completedShows.map(show =>
-          <TvShowEntry 
-            key={show.id}
-            show={show}
-            history={this.props.history}
-          />
-        )}
-        
+        <section className="tv-entries">
+          {completedShows.map(show =>
+            <TvShowEntry 
+              key={show.id}
+              show={show}
+              history={this.props.history}
+            />
+          )}
+        </section>
       </div>
     )
   }

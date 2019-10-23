@@ -12,15 +12,32 @@ Chart.defaults.global.legend.display = false;
 export default class Dashboard extends Component {
   static contextType = tvContext;
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       error: null
+    }
+  }
+  
+  
   componentDidMount() {
-    this.context.getAllShows();
+    this.context.getAllShows()
+    .catch(res => {
+      this.setState({
+        error: res.error
+      })
+    })
   }
 
   render() {
     const totalShows = this.context.shows.length; 
 
     return (
-      <section className="dashboard-section">
+      <section className="dashboard-section"> 
+        <div role="alert" className="error-bigger">
+          {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
+        </div>
         <h1 className="dashboard-title">My Dashboard</h1>
         <h2 className="total-shows">Total TV Shows: {totalShows}</h2>
         <hr className="underline-mini" id="underline-total" />
@@ -51,3 +68,5 @@ export default class Dashboard extends Component {
     )
   }
 }
+
+//reset the error in more places

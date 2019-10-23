@@ -7,6 +7,7 @@ export default class RegistrationForm extends React.Component {
     super(props)
   
     this.state = {
+       error: null,
        full_name: '',
        user_name: '',
        password: '',
@@ -18,7 +19,7 @@ export default class RegistrationForm extends React.Component {
        },
        passwordTouch: {
         touched: false
-      },
+      }
     }
   }
   
@@ -63,15 +64,17 @@ export default class RegistrationForm extends React.Component {
     })
     .then(res => {
       if(!res.ok) {
-        return Promise.reject('Something went wrong');
+        return res.json().then(err => Promise.reject(err));
       }
       return res.json();
     })
     .then(() => {
       this.props.history.push('/login')
     })
-    .catch(error => {
-      alert(`Error: ${error.message}`);
+    .catch(res => {
+      this.setState({
+        error: res.error
+      })
     })
   }
 
@@ -112,6 +115,9 @@ export default class RegistrationForm extends React.Component {
 
     return (
       <section className="register-section">
+        <div role="alert" className="error-div">
+          {this.state.error && <p className='red'>{this.state.error}</p>}
+        </div>
         <h2 className="register-h2">Start Today!</h2>
         <form className="register-form" onSubmit={e => this.handleSubmit(e)}>
           <div className="register-form-div">

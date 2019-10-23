@@ -34,15 +34,15 @@ export default class App extends Component {
     })
   }
   
-  getAllShows= () => {
-    fetch(`http://localhost:8000/api/shows/all`, {
+  getAllShows = () => {
+    return fetch(`http://localhost:8000/api/shows/all`, {
       headers: {
       'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
     .then(res => {
       if(!res.ok) {
-        throw new Error('Something went wrong')
+        return res.json().then(err => Promise.reject(err));
       }
       return res.json();
     })
@@ -51,10 +51,6 @@ export default class App extends Component {
         shows: data,
         isLoggedIn: true
       })
-    })
-    .catch(error => {
-      console.log(error);
-      alert(`Error: ${error}`)
     })
   }
 
@@ -75,6 +71,11 @@ export default class App extends Component {
           'authorization': `bearer ${TokenService.getAuthToken()}`
         }
       })
+      .then(res => {
+        if(!res.ok) {
+          return res.json().then(err => Promise.reject(err));
+        }
+      })
       .then(() => {
         this.setState({
           shows: this.state.shows.filter(show => show.id !== tvId)
@@ -84,7 +85,7 @@ export default class App extends Component {
   }
 
   addTvShow = (newShow) => {
-    fetch('http://localhost:8000/api/shows/all', {
+    return fetch('http://localhost:8000/api/shows/all', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -94,7 +95,7 @@ export default class App extends Component {
     })
     .then(res => {
       if(!res.ok) {
-        throw new Error('Something went wrong');
+        return res.json().then(err => Promise.reject(err));
       }
       return res.json();
     })
@@ -102,9 +103,6 @@ export default class App extends Component {
       this.setState({
         shows: [...this.state.shows, data]
       })
-    })
-    .catch(error => {
-      alert(`Error: ${error.message}`)
     })
   }
 
