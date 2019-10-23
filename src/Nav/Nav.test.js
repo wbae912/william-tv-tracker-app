@@ -4,7 +4,7 @@ import Nav from './Nav';
 import { MemoryRouter } from 'react-router';
 import renderer from 'react-test-renderer';
 
-describe.only('Nav component', () => {
+describe('Nav component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<MemoryRouter><Nav /></MemoryRouter>, div);
@@ -17,4 +17,4 @@ describe.only('Nav component', () => {
       .toJSON();
       expect(tree).toMatchSnapshot();
   })
-})
+});

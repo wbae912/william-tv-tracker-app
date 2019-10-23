@@ -8,7 +8,7 @@ import PlanToWatch from './PlanToWatch';
 import Context from '../Context';
 import TokenService from '../services/token-service';
 
-describe.only(`PlanToWatch component`, () => {
+describe(`PlanToWatch component`, () => {
   const props = {
     show:
       {

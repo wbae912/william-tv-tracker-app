@@ -24,7 +24,8 @@ export default class LandingPage extends Component {
           <section className="section-two">
             <h2 className="section-h2">Track Your Shows</h2>
             <i className="fa fa-eye fa-2x"></i>
-            <p className="section-p">Struggling to remember which episode you left off on? TV Tracker has you covered.</p>
+            <p className="section-p">Struggling to remember which episode you left off on? TV Tracker saves all your entries
+            and organizes them into convenient lists. Take control by editing and deleting entries on your lists.</p>
           </section>
 
           <hr className="underline"></hr>

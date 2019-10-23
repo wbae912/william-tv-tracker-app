@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json';
 import Context from '../Context';
 import GenreChart from './GenreChart';
 
-describe.only(`Completed component`, () => {
+describe(`Completed component`, () => {
   const shows = [
       {
         "id": "1",
