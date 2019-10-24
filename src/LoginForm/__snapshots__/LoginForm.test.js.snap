@@ -27,6 +27,9 @@ exports[`LoginForm component renders UI as expected 1`] = `
         Username
       </label>
       <input
+        aria-invalid="true"
+        aria-label="username"
+        aria-required="true"
         className="login-input"
         id="user_name"
         name="user_name"
@@ -45,6 +48,9 @@ exports[`LoginForm component renders UI as expected 1`] = `
         Password
       </label>
       <input
+        aria-invalid="true"
+        aria-label="password"
+        aria-required="true"
         autoComplete="on"
         className="login-input"
         id="password"

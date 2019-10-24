@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tvContext from '../Context';
+import PropTypes from 'prop-types';
 import './TvShowEntry.css';
 
 export default class TvShowEntry extends Component {
@@ -105,7 +106,7 @@ export default class TvShowEntry extends Component {
     }
 
     return (
-      <div className="tv-show-entry" onClick={e => this.toggleTouched(e)}>
+      <li className="tv-show-entry" onClick={e => this.toggleTouched(e)}>
         <h2 className="entry-title">{this.props.show.tv_title}</h2>
         <div className="entry-div">
           <p className="entry-p">Season: {this.props.show.season_number}</p>
@@ -116,7 +117,7 @@ export default class TvShowEntry extends Component {
 
         {this.state.touched
           ? (
-            <div className="touched-p">
+            <div className="touched-p" aria-live="polite">
               <p className="entry-p">Description: {this.props.show.description}</p>
               <p className="entry-p">Review: {this.props.show.review}</p>
              </div>
@@ -124,21 +125,25 @@ export default class TvShowEntry extends Component {
           : null
         }
 
-        <div className="entry-buttons">
+        <div className="entry-buttons" aria-live="polite">
           {this.state.editHovered ? <p className="p-edit">Edit TV Show</p> : null}
           {this.state.deleteHovered ? <p className="p-delete">Delete TV Show</p> : null}
-          <i className="fa fa-edit fa-lg" id="edit-button" 
+          <i className="fa fa-edit fa-lg edit-button" aria-label="Edit TV show button"
             onClick={() => this.props.history.push(`/edit-entry/${this.props.show.id}`)} 
             onMouseOver={this.toggleEditHovered}
             onMouseOut={this.mouseOutEdit}>
           </i>
-          <i className="fa fa-trash fa-lg" aria-hidden="true" id="delete-button" 
+          <i className="fa fa-trash fa-lg" aria-label="Delete TV show button"
             onClick={() => this.context.deleteTvShow(this.props.show.id)}
             onMouseOver={this.toggleDeleteHovered}
             onMouseOut={this.mouseOutDelete}>
           </i>
         </div>
-      </div>
+      </li>
     )
   }
+}
+
+TvShowEntry.propTypes = {
+  show: PropTypes.object
 }

@@ -17,22 +17,20 @@ describe(`EditForm component`, () => {
       })
     }
   
-    const props = {
-      match: {
-        params: {
-          id: '1'
-        }
+    const match = {
+      params: {
+        id: 1
       }
     }
 
   it('renders an .EditForm by default', () => {
-    const wrapper = shallow(<Context.Provider value={updateTvShow} {...props}><EditForm /></Context.Provider>)
+    const wrapper = shallow(<Context.Provider value={updateTvShow}><EditForm match={match}/></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
-  // it('renders UI as expected', () => {
-  //   const tree = renderer
-  //     .create(<Context.Provider value={updateTvShow} {...props}><EditForm /></Context.Provider>)
-  //     .toJSON();
-  //     expect(tree).toMatchSnapshot();
-  // })
+  it('renders UI as expected', () => { 
+    const tree = renderer
+      .create(<Context.Provider value={updateTvShow} ><EditForm match={match}/></Context.Provider>)
+      .toJSON();
+      expect(tree).toMatchSnapshot();
+  })
 });

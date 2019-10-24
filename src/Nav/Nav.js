@@ -5,7 +5,7 @@ import './Nav.css';
 export default class Nav extends Component {
   render() {
     return (
-      <header className="nav-header">
+      <header className="nav-header" aria-live="polite">
         <div className="nav-logo-header">
           <div className="logo-div">
             <Link to='/'><i className="fa fa-tv fa-2x"></i></Link>

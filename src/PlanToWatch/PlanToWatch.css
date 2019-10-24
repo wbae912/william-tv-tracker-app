@@ -68,6 +68,16 @@ select {
   font-family: 'Montserrat', sans-serif;
 }
 
+.tv-entries-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
 @media only screen and (min-width: 750px) {
   .plan-h1 {
     font-size: 36px;

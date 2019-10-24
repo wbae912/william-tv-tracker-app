@@ -90,6 +90,7 @@ export default class Completed extends Component {
                 onChange={this.handleSearchTermChange} />
             </div>
             <div className="filter-genre">
+              <label className="hidden" htmlFor="genre-options" aria-hidden="true">Genre Options</label>
               <select name="genre-options" id="genre-options" onChange={this.handleGenreChange}>
                 <option value="">Filter By Genre...</option>
                 <option value="N/A">N/A</option>
@@ -110,6 +111,7 @@ export default class Completed extends Component {
               </select>
             </div>
             <div className="filter-rating">
+              <label className="hidden" htmlFor="rating-options" aria-hidden="true">Rating Options</label>
               <select name="rating-options" id="rating-options" onChange={this.handleMinRatingChange}>
                 <option value="">Filter By Min. Rating...</option>
                 <option value="0">No Rating</option>
@@ -121,6 +123,7 @@ export default class Completed extends Component {
               </select>
             </div>
             <div className="sort-div">
+              <label className="hidden" htmlFor="sort-options" aria-hidden="true">Sort Options</label>
               <select name="sort-options" id="sort-options" onChange={this.handleSortChange}>
                   <option value="0">Sort By...</option>
                   <optgroup label="TV Show Name">
@@ -136,7 +139,7 @@ export default class Completed extends Component {
           </div>
         </section>
 
-        <section className="tv-entries">
+        <ul className="tv-entries-list" aria-live="polite">
           {completedShows.map(show =>
             <TvShowEntry 
               key={show.id}
@@ -144,7 +147,8 @@ export default class Completed extends Component {
               history={this.props.history}
             />
           )}
-        </section>
+        </ul>
+        
       </div>
     )
   }

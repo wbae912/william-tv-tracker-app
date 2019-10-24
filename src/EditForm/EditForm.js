@@ -178,99 +178,95 @@ export default class EditForm extends Component {
     let episodeNumberError = this.validateEpisodeNumber();
 
     return (
-      <>
+      <section className="edit-form-section">
         <div role="alert" className="error-form">
           {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
         </div>
-        <div className="edit-form-div">
-          <h1 className="edit-form-title">Edit TV Show</h1>
-          <section className="edit-show-section">
-            <form className="edit-show-form" onSubmit={e => {
-              this.handleSubmit(e);
-              }}>
-              <div className="form-section">
-                <label htmlFor="tv_title" className="edit-form-label">TV Show Name<span className="required">*</span></label>
-                <input type="text" name="tv_title" id="tv_title" value={tv_title} className="edit-form-input" required
-                  onChange={e => {this.handleChange(e); this.handleTitleTouch(e)}}
-                />
-                {this.state.titleTouch.touched && <FormError message={titleError} />}
-              </div>
-              <div className="form-section">
-                <label htmlFor="status" className="edit-form-label">Status<span className="required">*</span></label>
-                <select name="status" id="status" value={status} className="edit-form-select" required
-                  onChange={e => {this.handleChange(e); this.handleStatusTouch(e)}}
-                >
-                  <option value="0">Select a Status...</option>
-                  <option value="Planning to Watch">Plan to Watch</option>
-                  <option value="Currently Watching">Currently Watching</option>
-                  <option value="Completed">Completed</option>
+          <form className="edit-show-form" onSubmit={e => {
+            this.handleSubmit(e);
+            }}>
+            <h1 className="edit-form-title">Edit TV Show</h1>
+            <div className="form-section">
+              <label htmlFor="tv_title" className="edit-form-label">TV Show Name<span className="required">*</span></label>
+              <input type="text" name="tv_title" id="tv_title" value={tv_title} className="edit-form-input" required aria-required="true" aria-invalid="true"
+                onChange={e => {this.handleChange(e); this.handleTitleTouch(e)}}
+              />
+              {this.state.titleTouch.touched && <FormError message={titleError} />}
+            </div>
+            <div className="form-section">
+              <label htmlFor="status" className="edit-form-label">Status<span className="required">*</span></label>
+              <select name="status" id="status" value={status} className="edit-form-select" required aria-required="true" aria-invalid="true"
+                onChange={e => {this.handleChange(e); this.handleStatusTouch(e)}}
+              >
+                <option value="0">Select a Status...</option>
+                <option value="Planning to Watch">Plan to Watch</option>
+                <option value="Currently Watching">Currently Watching</option>
+                <option value="Completed">Completed</option>
+              </select>
+              {this.state.statusTouch.touched && <FormError message={statusError} />}
+            </div>
+            <div className="form-section">
+                <label htmlFor="season_number" className="edit-form-label">Season No.</label>
+                <input type="number" name="season_number" id="season_number" value={season_number} min="1" className="edit-form-input"
+                onChange={e => {this.handleChange(e); this.handleSeasonTouch(e)}} />
+                {this.state.seasonTouch.touched && <FormError message={seasonNumberError} />}
+            </div>
+            <div className="form-section">
+                <label htmlFor="episode_number" className="edit-form-label">Episode No.</label>
+                <input type="number" name="episode_number" id="episode_number" value={episode_number} min="1" className="edit-form-input"
+                onChange={e => {this.handleChange(e); this.handleEpisodeTouch(e);}} />
+                {this.state.episodeTouch.touched && <FormError message={episodeNumberError} />}
+            </div>
+            <div className="form-section">
+                <label htmlFor="rating" className="edit-form-label">Rating</label>
+                <select name="rating" id="rating" value={rating} className="edit-form-select"
+                onChange={e => this.handleChange(e)}>
+                  <option value="">Select a Rating...</option>
+                  <option value="1">1 Star</option>
+                  <option value="2">2 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="5">5 Stars</option>
                 </select>
-                {this.state.statusTouch.touched && <FormError message={statusError} />}
               </div>
               <div className="form-section">
-                  <label htmlFor="season_number" className="edit-form-label">Season No.</label>
-                  <input type="number" name="season_number" id="season_number" value={season_number} min="1" className="edit-form-input"
-                  onChange={e => {this.handleChange(e); this.handleSeasonTouch(e)}} />
-                  {this.state.seasonTouch.touched && <FormError message={seasonNumberError} />}
-              </div>
-              <div className="form-section">
-                  <label htmlFor="episode_number" className="edit-form-label">Episode No.</label>
-                  <input type="number" name="episode_number" id="episode_number" value={episode_number} min="1" className="edit-form-input"
-                  onChange={e => {this.handleChange(e); this.handleEpisodeTouch(e);}} />
-                  {this.state.episodeTouch.touched && <FormError message={episodeNumberError} />}
-              </div>
-              <div className="form-section">
-                  <label htmlFor="rating" className="edit-form-label">Rating</label>
-                  <select name="rating" id="rating" value={rating} className="edit-form-select"
+                  <label htmlFor="genre" className="edit-form-label">Genre</label>
+                  <select name="genre" id="genre" value={genre} className="edit-form-select"
                   onChange={e => this.handleChange(e)}>
-                    <option value="">Select a Rating...</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
+                    <option value="N/A">Select a Genre...</option>
+                    <option value="Action">Action</option>
+                    <option value="Animated">Animated</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Educational">Educational</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Reality">Reality</option>
+                    <option value="Sitcom">Sitcom</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Variety">Variety</option>
                   </select>
                 </div>
-                <div className="form-section">
-                    <label htmlFor="genre" className="edit-form-label">Genre</label>
-                    <select name="genre" id="genre" value={genre} className="edit-form-select"
-                    onChange={e => this.handleChange(e)}>
-                      <option value="N/A">Select a Genre...</option>
-                      <option value="Action">Action</option>
-                      <option value="Animated">Animated</option>
-                      <option value="Comedy">Comedy</option>
-                      <option value="Documentary">Documentary</option>
-                      <option value="Drama">Drama</option>
-                      <option value="Educational">Educational</option>
-                      <option value="Fantasy">Fantasy</option>
-                      <option value="Horror">Horror</option>
-                      <option value="Mystery">Mystery</option>
-                      <option value="Reality">Reality</option>
-                      <option value="Sitcom">Sitcom</option>
-                      <option value="Sci-Fi">Sci-Fi</option>
-                      <option value="Thriller">Thriller</option>
-                      <option value="Variety">Variety</option>
-                    </select>
-                  </div>
-                <div className="form-section">
-                    <label htmlFor="description" className="edit-form-label">Description</label>
-                    <textarea type="text" name="description" id="description" value={description} className="edit-form-input"
+              <div className="form-section">
+                  <label htmlFor="description" className="edit-form-label">Description</label>
+                  <textarea type="text" name="description" id="description" value={description} className="edit-form-input"
+                  onChange={e => this.handleChange(e)} />
+              </div>
+              <div className="form-section">
+                    <label htmlFor="review" className="edit-form-label">Review</label>
+                    <textarea type="text" name="review" id="review" value={review} className="edit-form-input"
                     onChange={e => this.handleChange(e)} />
-                </div>
-                <div className="form-section">
-                      <label htmlFor="review" className="edit-form-label">Review</label>
-                      <textarea type="text" name="review" id="review" value={review} className="edit-form-input"
-                      onChange={e => this.handleChange(e)} />
-                </div>
-                <p className="required-p"><span className="required">*</span>Required Fields</p>
-                <div className="form-buttons-div">
-                  <button type="submit" className="edit-show-button" disabled={titleError || statusError || seasonNumberError || episodeNumberError}>Submit</button>
-                  <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
-                </div>
-              </form>
-            </section>
-          </div>
-        </>
+              </div>
+              <p className="required-p"><span className="required">*</span>Required Fields</p>
+              <div className="form-buttons-div">
+                <button type="submit" className="edit-show-button" disabled={titleError || statusError || seasonNumberError || episodeNumberError}>Submit</button>
+                <button type="button" className="cancel-button" onClick={() => this.props.history.goBack()}>Cancel</button>
+              </div>
+            </form>
+        </section>
     )
   }
 }

@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ErrorBoundary from './ErrorBoundary';
 import renderer from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 describe(`ErrorBoundary component`, () => {
   const error = true;

@@ -123,19 +123,21 @@ export default class RegistrationForm extends React.Component {
           <div className="register-form-div">
             <label htmlFor="full_name" className="register-label">Full Name</label>
             <input type="text" className="register-input" id="full_name" name="full_name" placeholder="Bob Smith" required
+              aria-required="true" aria-label="Full name" aria-invalid="true"
               onChange={e => {this.handleChange(e); this.handleFullNameTouch(e)}}/>
           </div>
           {this.state.fullNameTouch.touched && <FormError message={fullNameError} />}
           <div className="register-form-div">
             <label htmlFor="user_name" className="register-label">Username</label>
-            <input type="text" className="register-input" id="user_name" name="user_name" placeholder="username" required 
+            <input type="text" className="register-input" id="user_name" name="user_name" placeholder="username" required
+              aria-required="true" aria-label="username" aria-invalid="true"
               onChange={e => {this.handleChange(e); this.handleUserNameTouch(e)}}/>
           </div>
           {this.state.userNameTouch.touched && <FormError message={userNameError} />}
           <div className="register-form-div">
             <label htmlFor="password" className="register-label">Password<span className="required">*</span></label>
             <input type="password" className="register-input" id="password" name="password" minLength="8" maxLength="72" required
-              autoComplete="on" 
+              autoComplete="on" aria-required="true" aria-label="password" aria-invalid="true"
               onChange={e => {this.handleChange(e);this.handlePasswordTouch(e)}}/>
           </div>
           {this.state.passwordTouch.touched && <FormError message={passwordError} />}

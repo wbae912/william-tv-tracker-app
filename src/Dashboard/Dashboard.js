@@ -39,20 +39,20 @@ export default class Dashboard extends Component {
           {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
         </div>
         <h1 className="dashboard-title">My Dashboard</h1>
-        <h2 className="total-shows">Total TV Shows: {totalShows}</h2>
+        <h2 className="total-shows" aria-live="polite">Total TV Shows: {totalShows}</h2>
         <hr className="underline-mini" id="underline-total" />
         <div className="chart-flex">
           <div className="chart-div" id="chart-one">
             <h3 className="chart-title">TV Shows per Status</h3>
             <hr className="underline-mini" />
-            <div className="chart">
+            <div className="chart" aria-live="polite">
               <StatusChart />
             </div>
           </div>
           <div className="chart-div" id="chart-two">
             <h3 className="chart-title">TV Shows per Rating</h3>
             <hr className="underline-mini" />
-            <div className="chart">
+            <div className="chart" aria-live="polite">
               <RatingChart />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default class Dashboard extends Component {
         <div className="chart-div" id="chart-three">
           <h3 className="chart-title">TV Shows per Genre</h3>
           <hr className="underline-mini" />
-          <div className="chart">
+          <div className="chart" aria-live="polite">
             <GenreChart />
           </div>
         </div>
@@ -68,5 +68,3 @@ export default class Dashboard extends Component {
     )
   }
 }
-
-//reset the error in more places

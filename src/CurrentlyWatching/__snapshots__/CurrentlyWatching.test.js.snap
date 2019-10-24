@@ -40,6 +40,13 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
       <div
         className="filter-genre"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="genre-options"
+        >
+          Genre Options
+        </label>
         <select
           id="genre-options"
           name="genre-options"
@@ -130,6 +137,13 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
       <div
         className="filter-rating"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="rating-options"
+        >
+          Rating Options
+        </label>
         <select
           id="rating-options"
           name="rating-options"
@@ -175,6 +189,13 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
       <div
         className="sort-div"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="sort-options"
+        >
+          Sort Options
+        </label>
         <select
           id="sort-options"
           name="sort-options"
@@ -217,120 +238,125 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
       </div>
     </div>
   </section>
-  <div
-    className="tv-show-entry"
-    onClick={[Function]}
+  <ul
+    aria-live="polite"
+    className="tv-entries-list"
   >
-    <h2
-      className="entry-title"
+    <li
+      className="tv-show-entry"
+      onClick={[Function]}
     >
-      Example
-    </h2>
-    <div
-      className="entry-div"
+      <h2
+        className="entry-title"
+      >
+        Example
+      </h2>
+      <div
+        className="entry-div"
+      >
+        <p
+          className="entry-p"
+        >
+          Season: 
+          1
+        </p>
+        <p
+          className="entry-p"
+        >
+          Episode: 
+          1
+        </p>
+        <p
+          className="entry-p"
+        >
+          Genre: 
+          Action
+        </p>
+        <p
+          className="entry-p"
+        >
+          Rating: 
+          3
+        </p>
+      </div>
+      <div
+        aria-live="polite"
+        className="entry-buttons"
+      >
+        <i
+          aria-label="Edit TV show button"
+          className="fa fa-edit fa-lg edit-button"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        />
+        <i
+          aria-label="Delete TV show button"
+          className="fa fa-trash fa-lg"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        />
+      </div>
+    </li>
+    <li
+      className="tv-show-entry"
+      onClick={[Function]}
     >
-      <p
-        className="entry-p"
+      <h2
+        className="entry-title"
       >
-        Season: 
-        1
-      </p>
-      <p
-        className="entry-p"
+        Example 2
+      </h2>
+      <div
+        className="entry-div"
       >
-        Episode: 
-        1
-      </p>
-      <p
-        className="entry-p"
+        <p
+          className="entry-p"
+        >
+          Season: 
+          1
+        </p>
+        <p
+          className="entry-p"
+        >
+          Episode: 
+          1
+        </p>
+        <p
+          className="entry-p"
+        >
+          Genre: 
+          Action
+        </p>
+        <p
+          className="entry-p"
+        >
+          Rating: 
+          3
+        </p>
+      </div>
+      <div
+        aria-live="polite"
+        className="entry-buttons"
       >
-        Genre: 
-        Action
-      </p>
-      <p
-        className="entry-p"
-      >
-        Rating: 
-        3
-      </p>
-    </div>
-    <div
-      className="entry-buttons"
-    >
-      <i
-        className="fa fa-edit fa-lg"
-        id="edit-button"
-        onClick={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-      />
-      <i
-        aria-hidden="true"
-        className="fa fa-trash fa-lg"
-        id="delete-button"
-        onClick={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-      />
-    </div>
-  </div>
-  <div
-    className="tv-show-entry"
-    onClick={[Function]}
-  >
-    <h2
-      className="entry-title"
-    >
-      Example 2
-    </h2>
-    <div
-      className="entry-div"
-    >
-      <p
-        className="entry-p"
-      >
-        Season: 
-        1
-      </p>
-      <p
-        className="entry-p"
-      >
-        Episode: 
-        1
-      </p>
-      <p
-        className="entry-p"
-      >
-        Genre: 
-        Action
-      </p>
-      <p
-        className="entry-p"
-      >
-        Rating: 
-        3
-      </p>
-    </div>
-    <div
-      className="entry-buttons"
-    >
-      <i
-        className="fa fa-edit fa-lg"
-        id="edit-button"
-        onClick={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-      />
-      <i
-        aria-hidden="true"
-        className="fa fa-trash fa-lg"
-        id="delete-button"
-        onClick={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-      />
-    </div>
-  </div>
+        <i
+          aria-label="Edit TV show button"
+          className="fa fa-edit fa-lg edit-button"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        />
+        <i
+          aria-label="Delete TV show button"
+          className="fa fa-trash fa-lg"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        />
+      </div>
+    </li>
+  </ul>
 </div>
 `;
 

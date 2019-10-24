@@ -101,6 +101,7 @@ export default class LoginForm extends Component {
           <div className="login__user_name">
             <label htmlFor="user_name" className="login-label">Username</label>
             <input type="text" name="user_name" id="user_name" className="login-input" required
+              aria-required="true" aria-label="username" aria-invalid="true"
               onChange={(e) => {this.handleInputChange(e); this.handleUserNameTouch(e)}}
             />
             {this.state.usernameTouch.touched && <FormError message={userNameError} />}
@@ -108,7 +109,7 @@ export default class LoginForm extends Component {
           <div className="login__password">
             <label htmlFor="password" className="login-label">Password</label>
             <input type="password" name="password" id="password" minLength="8" maxLength="72" className="login-input" 
-              autoComplete="on" required 
+              autoComplete="on" required aria-required="true" aria-label="password" aria-invalid="true"
               onChange={(e) => {this.handleInputChange(e); this.handlePasswordTouch(e)}}
             />
             {this.state.passwordTouch.touched && <FormError message={passwordError} />}

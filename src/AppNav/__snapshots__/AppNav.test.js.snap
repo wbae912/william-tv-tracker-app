@@ -2,6 +2,7 @@
 
 exports[`AppNav component renders UI as expected 1`] = `
 <header
+  aria-live="polite"
   className="appnav-header"
 >
   <div

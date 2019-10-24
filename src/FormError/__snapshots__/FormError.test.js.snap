@@ -2,6 +2,7 @@
 
 exports[`FormError component renders a .FormError by default 1`] = `
 <div
+  aria-live="polite"
   className="error-message"
 >
   Error message

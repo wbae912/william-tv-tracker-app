@@ -27,6 +27,9 @@ exports[`RegistrationForm component renders UI as expected 1`] = `
         Full Name
       </label>
       <input
+        aria-invalid="true"
+        aria-label="Full name"
+        aria-required="true"
         className="register-input"
         id="full_name"
         name="full_name"
@@ -46,6 +49,9 @@ exports[`RegistrationForm component renders UI as expected 1`] = `
         Username
       </label>
       <input
+        aria-invalid="true"
+        aria-label="username"
+        aria-required="true"
         className="register-input"
         id="user_name"
         name="user_name"
@@ -70,6 +76,9 @@ exports[`RegistrationForm component renders UI as expected 1`] = `
         </span>
       </label>
       <input
+        aria-invalid="true"
+        aria-label="password"
+        aria-required="true"
         autoComplete="on"
         className="register-input"
         id="password"

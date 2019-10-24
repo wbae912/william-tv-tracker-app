@@ -40,6 +40,13 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
       <div
         className="filter-genre"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="genre-options"
+        >
+          Genre Options
+        </label>
         <select
           id="genre-options"
           name="genre-options"
@@ -130,6 +137,13 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
       <div
         className="filter-rating"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="rating-options"
+        >
+          Rating Options
+        </label>
         <select
           id="rating-options"
           name="rating-options"
@@ -175,6 +189,13 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
       <div
         className="sort-div"
       >
+        <label
+          aria-hidden="true"
+          className="hidden"
+          htmlFor="sort-options"
+        >
+          Sort Options
+        </label>
         <select
           id="sort-options"
           name="sort-options"
@@ -217,6 +238,10 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
       </div>
     </div>
   </section>
+  <ul
+    aria-live="polite"
+    className="tv-entries-list"
+  />
 </div>
 `;
 

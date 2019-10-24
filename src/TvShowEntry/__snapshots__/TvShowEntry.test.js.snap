@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TvShowEntry component renders a .TvShowEntry by default 1`] = `
-<div
+<li
   className="tv-show-entry"
   onClick={[Function]}
 >
@@ -39,23 +39,23 @@ exports[`TvShowEntry component renders a .TvShowEntry by default 1`] = `
     </p>
   </div>
   <div
+    aria-live="polite"
     className="entry-buttons"
   >
     <i
-      className="fa fa-edit fa-lg"
-      id="edit-button"
+      aria-label="Edit TV show button"
+      className="fa fa-edit fa-lg edit-button"
       onClick={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
     />
     <i
-      aria-hidden="true"
+      aria-label="Delete TV show button"
       className="fa fa-trash fa-lg"
-      id="delete-button"
       onClick={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
     />
   </div>
-</div>
+</li>
 `;

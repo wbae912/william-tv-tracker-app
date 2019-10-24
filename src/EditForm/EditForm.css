@@ -1,17 +1,20 @@
-.edit-form-div {
-  box-sizing: border-box;
+.edit-form-section {
+  text-align: center;
+  color: white;
   font-family: 'Montserrat', sans-serif;
+  padding-top: 65px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.edit-show-form {
   background-color: rgb(33, 56, 56);
   border: 1px solid rgb(33, 56, 56);
   border-radius: 10px;
-  color: white;
-  text-align: center;
   width: 90%;
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
-  margin-bottom: 70px;
 }
 
 .form-section {

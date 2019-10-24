@@ -1,3 +1,349 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EditForm component renders an .EditForm by default 1`] = `<EditForm />`;
+exports[`EditForm component renders UI as expected 1`] = `
+<section
+  className="edit-form-section"
+>
+  <div
+    className="error-form"
+    role="alert"
+  />
+  <form
+    className="edit-show-form"
+    onSubmit={[Function]}
+  >
+    <h1
+      className="edit-form-title"
+    >
+      Edit TV Show
+    </h1>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="tv_title"
+      >
+        TV Show Name
+        <span
+          className="required"
+        >
+          *
+        </span>
+      </label>
+      <input
+        aria-invalid="true"
+        aria-required="true"
+        className="edit-form-input"
+        id="tv_title"
+        name="tv_title"
+        onChange={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="status"
+      >
+        Status
+        <span
+          className="required"
+        >
+          *
+        </span>
+      </label>
+      <select
+        aria-invalid="true"
+        aria-required="true"
+        className="edit-form-select"
+        id="status"
+        name="status"
+        onChange={[Function]}
+        required={true}
+        value=""
+      >
+        <option
+          value="0"
+        >
+          Select a Status...
+        </option>
+        <option
+          value="Planning to Watch"
+        >
+          Plan to Watch
+        </option>
+        <option
+          value="Currently Watching"
+        >
+          Currently Watching
+        </option>
+        <option
+          value="Completed"
+        >
+          Completed
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="season_number"
+      >
+        Season No.
+      </label>
+      <input
+        className="edit-form-input"
+        id="season_number"
+        min="1"
+        name="season_number"
+        onChange={[Function]}
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="episode_number"
+      >
+        Episode No.
+      </label>
+      <input
+        className="edit-form-input"
+        id="episode_number"
+        min="1"
+        name="episode_number"
+        onChange={[Function]}
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="rating"
+      >
+        Rating
+      </label>
+      <select
+        className="edit-form-select"
+        id="rating"
+        name="rating"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value=""
+        >
+          Select a Rating...
+        </option>
+        <option
+          value="1"
+        >
+          1 Star
+        </option>
+        <option
+          value="2"
+        >
+          2 Stars
+        </option>
+        <option
+          value="3"
+        >
+          3 Stars
+        </option>
+        <option
+          value="4"
+        >
+          4 Stars
+        </option>
+        <option
+          value="5"
+        >
+          5 Stars
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="genre"
+      >
+        Genre
+      </label>
+      <select
+        className="edit-form-select"
+        id="genre"
+        name="genre"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="N/A"
+        >
+          Select a Genre...
+        </option>
+        <option
+          value="Action"
+        >
+          Action
+        </option>
+        <option
+          value="Animated"
+        >
+          Animated
+        </option>
+        <option
+          value="Comedy"
+        >
+          Comedy
+        </option>
+        <option
+          value="Documentary"
+        >
+          Documentary
+        </option>
+        <option
+          value="Drama"
+        >
+          Drama
+        </option>
+        <option
+          value="Educational"
+        >
+          Educational
+        </option>
+        <option
+          value="Fantasy"
+        >
+          Fantasy
+        </option>
+        <option
+          value="Horror"
+        >
+          Horror
+        </option>
+        <option
+          value="Mystery"
+        >
+          Mystery
+        </option>
+        <option
+          value="Reality"
+        >
+          Reality
+        </option>
+        <option
+          value="Sitcom"
+        >
+          Sitcom
+        </option>
+        <option
+          value="Sci-Fi"
+        >
+          Sci-Fi
+        </option>
+        <option
+          value="Thriller"
+        >
+          Thriller
+        </option>
+        <option
+          value="Variety"
+        >
+          Variety
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="description"
+      >
+        Description
+      </label>
+      <textarea
+        className="edit-form-input"
+        id="description"
+        name="description"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-section"
+    >
+      <label
+        className="edit-form-label"
+        htmlFor="review"
+      >
+        Review
+      </label>
+      <textarea
+        className="edit-form-input"
+        id="review"
+        name="review"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <p
+      className="required-p"
+    >
+      <span
+        className="required"
+      >
+        *
+      </span>
+      Required Fields
+    </p>
+    <div
+      className="form-buttons-div"
+    >
+      <button
+        className="edit-show-button"
+        disabled="Please enter a TV show name"
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        className="cancel-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>
+`;
+
+exports[`EditForm component renders an .EditForm by default 1`] = `
+<EditForm
+  match={
+    Object {
+      "params": Object {
+        "id": 1,
+      },
+    }
+  }
+/>
+`;

@@ -5,7 +5,7 @@ import './FormError.css';
 function FormError (props) {
     if (props.message) {
         return (
-            <div className="error-message">
+            <div className="error-message" aria-live="polite">
                 {props.message}
             </div>
         );

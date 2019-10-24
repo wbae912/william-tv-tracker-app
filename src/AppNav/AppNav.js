@@ -14,7 +14,7 @@ export default class AppNav extends Component {
 
   render() {
     return (
-      <header className="appnav-header">
+      <header className="appnav-header" aria-live="polite">
         <div className="appnav-logo-header">
           <div className="appnav-logo-div">
             <Link to='/'><i className="fa fa-tv fa-2x"></i></Link>
