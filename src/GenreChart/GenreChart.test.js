@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import Context from '../Context';
 import GenreChart from './GenreChart';
-import renderer from 'react-test-renderer';
 
 describe(`GenreChart component`, () => {
   const shows = [
@@ -32,38 +31,6 @@ describe(`GenreChart component`, () => {
         "review": "Lorem ipsum"
       }
     ];
-
-    const data = {
-      labels: [
-        'N/A',
-        'Action',
-        'Animated',
-        'Comedy',
-        'Documentary',
-        'Drama',
-        'Educational',
-        'Fantasy',
-        'Horror',
-        'Mystery',
-        'Reality',
-        'Sci-Fi',
-        'Sitcom',
-        'Thriller',
-        'Variety',
-      ],
-      datasets: [
-        {
-          label: 'TV Shows per Genre',
-          backgroundColor: 'rgba(59, 45, 255, 0.2)',
-          borderColor: 'rgba(59, 45, 255, 0.2)',
-          borderWidth: 1,
-          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-          hoverBorderColor: 'rgba(255,99,132,1)',
-          data: [1, 1, 1, 1, 1, 1, 0, 0,
-            0, 1, 1, 1, 1, 1, 1]
-        }
-      ]
-    };
   
   it('renders component without crashing', () => {
     const div = document.createElement('div');
@@ -78,10 +45,4 @@ describe(`GenreChart component`, () => {
     const wrapper = shallow(<Context.Provider value={{shows}}><GenreChart /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
   });
-  // it('renders UI as expected', () => {
-  //   const tree = renderer
-  //     .create(<GenreChart data={data} />)
-  //     .toJSON();
-  //     expect(tree).toMatchSnapshot();
-  // });
 })

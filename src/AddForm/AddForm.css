@@ -57,7 +57,7 @@
   margin-bottom: 5%;
 }
 
-.add-show-button, .dashboard-button {
+.add-show-button, .add-back-button, .reset-button {
   background-color: transparent;
   color: white;
   border-radius: 10px;
@@ -72,11 +72,11 @@
   margin-right: 2%;
 }
 
-.dasboard-button {
+.add-back-button {
   margin-left: 2%;
 }
 
-.add-show-button:hover, .dashboard-button:hover {
+.add-show-button:hover, .add-back-button:hover, .reset-button:hover {
   background-color: white;
   color: black;
 }

@@ -10,6 +10,7 @@ exports[`AddForm component renders UI as expected 1`] = `
   />
   <form
     className="add-show-form"
+    id="add-show-form"
     onSubmit={[Function]}
   >
     <h1
@@ -310,7 +311,14 @@ exports[`AddForm component renders UI as expected 1`] = `
         Submit
       </button>
       <button
-        className="dashboard-button"
+        className="reset-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Reset
+      </button>
+      <button
+        className="add-back-button"
         onClick={[Function]}
         type="button"
       >

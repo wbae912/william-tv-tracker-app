@@ -90,6 +90,17 @@ export default class AddForm extends Component {
     })
   }
 
+  resetForm = () => {
+    document.getElementById("add-show-form").reset();
+  }
+
+  resetControlledInputs = () => {
+    this.setState({
+      season_number: 1,
+      episode_number: 1
+    })
+  }
+
   validateTitle = () => {
     const title = this.state.tv_title;
     if(title.length === 0) {
@@ -129,7 +140,7 @@ export default class AddForm extends Component {
         <div role="alert" className="error-form">
           {this.state.error && <p className="red-bigger">{this.state.error}</p>}
         </div>
-        <form className="add-show-form" onSubmit={e => {
+        <form className="add-show-form" id="add-show-form" onSubmit={e => {
           this.submitForm(e);
           this.props.history.push('/dashboard');
           }}>
@@ -208,7 +219,8 @@ export default class AddForm extends Component {
             <p className="required-p"><span className="required">*</span>Required Fields</p>
             <div className="form-buttons-div">
               <button type="submit" className="add-show-button" disabled={titleError || statusError || seasonNumberError || episodeNumberError}>Submit</button>
-              <button type="button" className="dashboard-button" 
+              <button type="button" className="reset-button" onClick={() => {this.resetForm(); this.resetControlledInputs();}}>Reset</button>
+              <button type="button" className="add-back-button" 
                 onClick={() => this.props.history.goBack()}>
                 Back</button>
             </div>

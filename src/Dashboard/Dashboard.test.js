@@ -6,7 +6,6 @@ import toJson from 'enzyme-to-json';
 import Dashboard from './Dashboard';
 import Context from '../Context';
 import TokenService from '../services/token-service';
-import renderer from 'react-test-renderer';
 
 describe(`Dashboard component`, () => {
   const shows = [
@@ -67,10 +66,4 @@ describe(`Dashboard component`, () => {
     const wrapper = shallow(<Context.Provider value={{getAllShows, shows}}><Dashboard /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
   });
-  // it('renders UI as expected', () => {
-  //   const tree = renderer
-  //     .create(<Context.Provider value={{getAllShows, shows}}><Dashboard /></Context.Provider>)
-  //     .toJSON();
-  //     expect(tree).toMatchSnapshot();
-  // })
 });

@@ -2,8 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ErrorBoundary from './ErrorBoundary';
-import renderer from 'react-router-dom';
-import ReactDOM from 'react-dom';
 
 describe(`ErrorBoundary component`, () => {
   const error = true;
@@ -12,10 +10,4 @@ describe(`ErrorBoundary component`, () => {
     const wrapper = shallow(<ErrorBoundary error={error}/>)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
-  // it('renders UI as expected', () => {
-  //   const tree = renderer
-  //     .create(<ErrorBoundary error={error}/>)
-  //     .toJSON();
-  //     expect(tree).toMatchSnapshot();
-  // })
 })
