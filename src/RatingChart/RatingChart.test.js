@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import Context from '../Context';
-import GenreChart from './GenreChart';
+import RatingChart from './RatingChart';
 
-describe(`GenreChart component`, () => {
+describe(`RatingChart component`, () => {
   const shows = [
       {
         "id": "1",
@@ -36,13 +36,13 @@ describe(`GenreChart component`, () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <BrowserRouter>
-        <Context.Provider value={{shows}}><GenreChart /></Context.Provider>
+        <Context.Provider value={{shows}}><RatingChart /></Context.Provider>
       </BrowserRouter>
       , div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  it('renders a .GenreChart by default', () => {
-    const wrapper = shallow(<Context.Provider value={{shows}}><GenreChart /></Context.Provider>)
+  it('renders a .RatingChart by default', () => {
+    const wrapper = shallow(<Context.Provider value={{shows}}><RatingChart /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })

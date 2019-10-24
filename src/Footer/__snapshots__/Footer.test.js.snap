@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppNav component renders UI as expected 1`] = `
+exports[`Footer component renders UI as expected 1`] = `
 <footer
   className="footer"
 >

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component renders UI as expected 1`] = `
+<section
+  className="login-section"
+>
+  <div
+    className="error-div"
+    role="alert"
+  />
+  <h2
+    className="login-h2"
+  >
+    Login
+  </h2>
+  <form
+    className="login-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="login__user_name"
+    >
+      <label
+        className="login-label"
+        htmlFor="user_name"
+      >
+        Username
+      </label>
+      <input
+        className="login-input"
+        id="user_name"
+        name="user_name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="login__password"
+    >
+      <label
+        className="login-label"
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        autoComplete="on"
+        className="login-input"
+        id="password"
+        maxLength="72"
+        minLength="8"
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="buttons-flex"
+    >
+      <div
+        className="login-button-div"
+      >
+        <button
+          className="form__login-button"
+          disabled="Please enter a username"
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="back-button-div"
+      >
+        <button
+          className="back-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+`;

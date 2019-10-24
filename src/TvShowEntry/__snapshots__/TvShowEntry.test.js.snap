@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowEntry component renders a .TvShowEntry by default 1`] = `
+<div
+  className="tv-show-entry"
+  onClick={[Function]}
+>
+  <h2
+    className="entry-title"
+  >
+    Example
+  </h2>
+  <div
+    className="entry-div"
+  >
+    <p
+      className="entry-p"
+    >
+      Season: 
+      1
+    </p>
+    <p
+      className="entry-p"
+    >
+      Episode: 
+      1
+    </p>
+    <p
+      className="entry-p"
+    >
+      Genre: 
+      Action
+    </p>
+    <p
+      className="entry-p"
+    >
+      Rating: 
+      3
+    </p>
+  </div>
+  <div
+    className="entry-buttons"
+  >
+    <i
+      className="fa fa-edit fa-lg"
+      id="edit-button"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <i
+      aria-hidden="true"
+      className="fa fa-trash fa-lg"
+      id="delete-button"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+  </div>
+</div>
+`;

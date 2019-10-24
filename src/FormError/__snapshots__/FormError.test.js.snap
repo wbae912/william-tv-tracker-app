@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormError component renders a .FormError by default 1`] = `
+<div
+  className="error-message"
+>
+  Error message
+</div>
+`;

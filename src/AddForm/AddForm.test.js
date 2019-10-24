@@ -6,6 +6,7 @@ import AddForm from './AddForm';
 import toJson from 'enzyme-to-json';
 import TokenService from '../services/token-service';
 import Context from '../Context';
+import renderer from 'react-test-renderer';
 
 describe(`AddForm component`, () => {
   const shows = [
@@ -87,5 +88,11 @@ describe(`AddForm component`, () => {
   it('renders an .AddForm by default', () => {
     const wrapper = shallow(<Context.Provider value={{shows, getAllShows, addTvShow}}><AddForm /></Context.Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
+  })
+  it('renders UI as expected', () => {
+    const tree = renderer
+      .create(<Context.Provider value={{shows, getAllShows, addTvShow}}><AddForm /></Context.Provider>)
+      .toJSON();
+      expect(tree).toMatchSnapshot();
   })
 });

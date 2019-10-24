@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationForm component renders UI as expected 1`] = `
+<section
+  className="register-section"
+>
+  <div
+    className="error-div"
+    role="alert"
+  />
+  <h2
+    className="register-h2"
+  >
+    Start Today!
+  </h2>
+  <form
+    className="register-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="register-form-div"
+    >
+      <label
+        className="register-label"
+        htmlFor="full_name"
+      >
+        Full Name
+      </label>
+      <input
+        className="register-input"
+        id="full_name"
+        name="full_name"
+        onChange={[Function]}
+        placeholder="Bob Smith"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="register-form-div"
+    >
+      <label
+        className="register-label"
+        htmlFor="user_name"
+      >
+        Username
+      </label>
+      <input
+        className="register-input"
+        id="user_name"
+        name="user_name"
+        onChange={[Function]}
+        placeholder="username"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="register-form-div"
+    >
+      <label
+        className="register-label"
+        htmlFor="password"
+      >
+        Password
+        <span
+          className="required"
+        >
+          *
+        </span>
+      </label>
+      <input
+        autoComplete="on"
+        className="register-input"
+        id="password"
+        maxLength="72"
+        minLength="8"
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <p
+      className="password-requirements"
+    >
+      <span
+        className="required"
+      >
+        *
+      </span>
+      Password must contain at least one uppercase, lowercase, and number character
+    </p>
+    <div
+      className="buttons-flex"
+    >
+      <div
+        className="signup-button-div"
+      >
+        <button
+          className="signup-button"
+          disabled="Please enter your full name"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </div>
+      <div
+        className="back-button-div"
+      >
+        <button
+          className="back-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+`;
