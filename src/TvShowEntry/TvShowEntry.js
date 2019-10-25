@@ -107,7 +107,7 @@ export default class TvShowEntry extends Component {
 
     return (
       <li className="tv-show-entry" onClick={e => this.toggleTouched(e)}>
-        <h2 className="entry-title">{this.props.show.tv_title}</h2>
+        <h2 className="entry-title" id="show-entry-h2">{this.props.show.tv_title}</h2>
         <div className="entry-div">
           <p className="entry-p">Season: {this.props.show.season_number}</p>
           <p className="entry-p">Episode: {this.props.show.episode_number}</p>
@@ -118,8 +118,8 @@ export default class TvShowEntry extends Component {
         {this.state.touched
           ? (
             <div className="touched-p" aria-live="polite">
-              <p className="entry-p">Description: {this.props.show.description}</p>
-              <p className="entry-p">Review: {this.props.show.review}</p>
+              <p className="entry-p" id="description-p">Description: {this.props.show.description}</p>
+              <p className="entry-p" id="review-p">Review: {this.props.show.review}</p>
              </div>
             )
           : null

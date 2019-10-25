@@ -35,7 +35,7 @@ export default class App extends Component {
   }
   
   getAllShows = () => {
-    return fetch(`http://localhost:8000/api/shows/all`, {
+    return fetch(`https://whispering-brook-43228.herokuapp.com/api/shows/all`, {
       headers: {
       'authorization': `bearer ${TokenService.getAuthToken()}`
       }
@@ -64,7 +64,7 @@ export default class App extends Component {
 
   deleteTvShow = (tvId) => {
     return (
-      fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
+      fetch(`https://whispering-brook-43228.herokuapp.com/api/shows/all/${tvId}`, {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',
@@ -85,7 +85,7 @@ export default class App extends Component {
   }
 
   addTvShow = (newShow) => {
-    return fetch('http://localhost:8000/api/shows/all', {
+    return fetch('https://whispering-brook-43228.herokuapp.com/api/shows/all', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

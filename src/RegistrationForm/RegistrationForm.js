@@ -55,7 +55,7 @@ export default class RegistrationForm extends React.Component {
       password: this.state.password
     }
 
-    fetch('http://localhost:8000/api/users', {
+    fetch('https://whispering-brook-43228.herokuapp.com/api/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

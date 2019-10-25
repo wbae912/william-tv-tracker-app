@@ -7,6 +7,7 @@ exports[`TvShowEntry component renders a .TvShowEntry by default 1`] = `
 >
   <h2
     className="entry-title"
+    id="show-entry-h2"
   >
     Example
   </h2>

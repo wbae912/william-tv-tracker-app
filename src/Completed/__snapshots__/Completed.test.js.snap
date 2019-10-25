@@ -246,6 +246,7 @@ exports[`Completed component renders UI as expected 1`] = `
     >
       <h2
         className="entry-title"
+        id="show-entry-h2"
       >
         Example
       </h2>
@@ -303,6 +304,7 @@ exports[`Completed component renders UI as expected 1`] = `
     >
       <h2
         className="entry-title"
+        id="show-entry-h2"
       >
         Example 2
       </h2>

@@ -59,6 +59,12 @@
   font-size: 14px;
 }
 
+#show-entry-h2, #description-p, #review-p {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media only screen and (min-width: 750px) {
   .fa-trash, .fa-edit {
     margin-top: 20px;

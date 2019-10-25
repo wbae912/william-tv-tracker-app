@@ -39,7 +39,7 @@ export default class EditForm extends Component {
 
   componentDidMount() {
     const tvId = Number(this.props.match.params.id);
-    fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
+    fetch(`https://whispering-brook-43228.herokuapp.com/api/shows/all/${tvId}`, {
       method: 'GET',
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
@@ -118,7 +118,7 @@ export default class EditForm extends Component {
     };
 
     const tvId = Number(this.props.match.params.id);
-    fetch(`http://localhost:8000/api/shows/all/${tvId}`, {
+    fetch(`https://whispering-brook-43228.herokuapp.com/api/shows/all/${tvId}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',

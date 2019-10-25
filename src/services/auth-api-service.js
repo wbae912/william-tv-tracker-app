@@ -1,6 +1,6 @@
 const AuthApiService = {
   postLogin(credentials) {
-    return fetch('http://localhost:8000/api/auth/login', {
+    return fetch('https://whispering-brook-43228.herokuapp.com/api/auth/login', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
