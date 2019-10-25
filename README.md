@@ -23,6 +23,12 @@ TV Tracker is a React application that provides users a convenient platform to t
 #### Landing Page
 ![](public/images/landing-page.PNG)
 
+#### Registration Page (Once user successfully creates an account they are directed to Login page)
+![](public/images/register.PNG)
+
+#### Login Page (Once user successfully logs in they are directed to the Dashboard page)
+![](public/images/login.PNG)
+
 #### Dashboard
 ![](public/images/dashboard.PNG)
 
