@@ -123,6 +123,11 @@ export default class LoginForm extends Component {
             </div>
           </div>
         </form>
+        <div className="demo-div">
+          <h3 className="demo-h3">Demo Account:</h3>
+          <p className="demo-p">Username: testuser</p>
+          <p className="demo-p">Password: Password1</p>
+        </div>
       </section>
     )
   }

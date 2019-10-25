@@ -13,7 +13,7 @@
 .login-h1 {
   margin-top: 0;
   margin-top: 4%;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .login-label {
@@ -69,4 +69,13 @@
 .form__login-button:hover, .back-button:hover {
   background-color: white;
   color: black;
+}
+
+.demo-div {
+  margin-top: 80px;
+}
+
+.demo-p {
+  margin: 0;
+  margin-top: 5px;
 }
