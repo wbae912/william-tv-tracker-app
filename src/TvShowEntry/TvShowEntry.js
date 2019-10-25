@@ -112,7 +112,7 @@ export default class TvShowEntry extends Component {
           <p className="entry-p">Season: {this.props.show.season_number}</p>
           <p className="entry-p">Episode: {this.props.show.episode_number}</p>
           <p className="entry-p">Genre: {this.props.show.genre}</p>
-          <p className="entry-p">Rating: {rating}</p>
+          <p className="entry-p entry-p-last">Rating: {rating}</p>
         </div>
 
         {this.state.touched
@@ -126,8 +126,6 @@ export default class TvShowEntry extends Component {
         }
 
         <div className="entry-buttons" aria-live="polite">
-          {this.state.editHovered ? <p className="p-edit">Edit TV Show</p> : null}
-          {this.state.deleteHovered ? <p className="p-delete">Delete TV Show</p> : null}
           <i className="fa fa-edit fa-lg edit-button" aria-label="Edit TV show button"
             onClick={() => this.props.history.push(`/edit-entry/${this.props.show.id}`)} 
             onMouseOver={this.toggleEditHovered}
@@ -138,6 +136,8 @@ export default class TvShowEntry extends Component {
             onMouseOver={this.toggleDeleteHovered}
             onMouseOut={this.mouseOutDelete}>
           </i>
+          {this.state.editHovered ? <p className="p-edit">Edit TV Show</p> : null}
+          {this.state.deleteHovered ? <p className="p-delete">Delete TV Show</p> : null}
         </div>
       </li>
     )

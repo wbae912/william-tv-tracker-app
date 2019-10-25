@@ -33,7 +33,7 @@ exports[`TvShowEntry component renders a .TvShowEntry by default 1`] = `
       Action
     </p>
     <p
-      className="entry-p"
+      className="entry-p entry-p-last"
     >
       Rating: 
       3

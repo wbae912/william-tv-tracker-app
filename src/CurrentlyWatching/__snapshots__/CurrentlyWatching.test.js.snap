@@ -272,7 +272,7 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
           Action
         </p>
         <p
-          className="entry-p"
+          className="entry-p entry-p-last"
         >
           Rating: 
           3
@@ -330,7 +330,7 @@ exports[`CurrentlyWatching component renders UI as expected 1`] = `
           Action
         </p>
         <p
-          className="entry-p"
+          className="entry-p entry-p-last"
         >
           Rating: 
           3

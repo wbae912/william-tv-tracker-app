@@ -19,10 +19,9 @@
 }
 
 .fa-trash, .fa-edit {
-  margin-top: 1%;
-  margin-bottom: 2%;
-  height: 30px;
+  margin-top: 2%;
   cursor: pointer;
+  height: 35px;
 }
 
 .fa-trash {
@@ -39,6 +38,8 @@
 
 .p-edit, .p-delete {
   margin: 0;
+  margin-bottom: 25px;
+  margin-top: 5px;
 }
 
 .p-edit {
@@ -59,10 +60,30 @@
   font-size: 14px;
 }
 
+.entry-p-last {
+  margin-bottom: 8%;
+}
+
+.entry-buttons {
+  margin-bottom: 2%;
+}
+
 #show-entry-h2, #description-p, #review-p {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media only screen and (min-width: 500px) {
+  .entry-p-last {
+    margin-bottom: 4%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .entry-buttons {
+    margin-bottom: 1%;
+  }
 }
 
 @media only screen and (min-width: 750px) {
@@ -81,6 +102,9 @@
   }
   .entry-p {
     font-size: 15px;
+  }
+  .entry-p-last {
+    margin-bottom: 10px;
   }
 }
 
