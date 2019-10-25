@@ -10,7 +10,7 @@
   
   
 ## Getting Started
-* Clone the repositories and install dependencies using ```npm install```
+* Clone the repository and install dependencies using ```npm install```
 * Start the development server using ```npm start```
 * Run tests using Jest & Enzyme using ```npm test```
   
