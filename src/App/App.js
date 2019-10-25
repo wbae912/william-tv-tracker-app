@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import LandingPage from './LandingPage/LandingPage';
-import Dashboard from './Dashboard/Dashboard';
-import Nav from './Nav/Nav';
-import AppNav from './AppNav/AppNav';
-import PlanToWatch from './PlanToWatch/PlanToWatch';
-import CurrentlyWatching from './CurrentlyWatching/CurrentlyWatching';
-import Completed from './Completed/Completed';
-import AddForm from './AddForm/AddForm';
-import LoginForm from './LoginForm/LoginForm';
-import EditForm from './EditForm/EditForm';
-import Context from './Context';
-import TokenService from './services/token-service';
-import RegistrationForm from './RegistrationForm/RegistrationForm';
-import Footer from './Footer/Footer';
-import NotFoundPage from './NotFoundPage/NotFoundPage';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import LandingPage from '../LandingPage/LandingPage';
+import Dashboard from '../Dashboard/Dashboard';
+import Nav from '../Nav/Nav';
+import AppNav from '../AppNav/AppNav';
+import PlanToWatch from '../PlanToWatch/PlanToWatch';
+import CurrentlyWatching from '../CurrentlyWatching/CurrentlyWatching';
+import Completed from '../Completed/Completed';
+import AddForm from '../AddForm/AddForm';
+import LoginForm from '../LoginForm/LoginForm';
+import EditForm from '../EditForm/EditForm';
+import Context from '../Context';
+import TokenService from '../services/token-service';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import Footer from '../Footer/Footer';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 export default class App extends Component {
   constructor(props) {

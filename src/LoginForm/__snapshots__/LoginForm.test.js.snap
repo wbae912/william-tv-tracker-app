@@ -3,16 +3,17 @@
 exports[`LoginForm component renders UI as expected 1`] = `
 <section
   className="login-section"
+  role="main"
 >
   <div
     className="error-div"
     role="alert"
   />
-  <h2
-    className="login-h2"
+  <h1
+    className="login-h1"
   >
     Login
-  </h2>
+  </h1>
   <form
     className="login-form"
     onSubmit={[Function]}

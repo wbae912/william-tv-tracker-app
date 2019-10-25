@@ -3,6 +3,7 @@
 exports[`PlanToWatch component renders UI as expected 1`] = `
 <div
   className="plan-section"
+  role="main"
 >
   <div
     className="error-bigger"
@@ -41,7 +42,6 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
         className="filter-genre"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="genre-options"
         >
@@ -138,7 +138,6 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
         className="filter-rating"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="rating-options"
         >
@@ -190,7 +189,6 @@ exports[`PlanToWatch component renders UI as expected 1`] = `
         className="sort-div"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="sort-options"
         >

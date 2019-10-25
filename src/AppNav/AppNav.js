@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import tvContext from '../Context';
 import './AppNav.css';
 
-export default class AppNav extends Component {
+class AppNav extends Component {
 
   static contextType = tvContext;
 
@@ -17,15 +17,16 @@ export default class AppNav extends Component {
       <header className="appnav-header" aria-live="polite">
         <div className="appnav-logo-header">
           <div className="appnav-logo-div">
-            <Link to='/'><i className="fa fa-tv fa-2x"></i></Link>
+            <i className="fa fa-tv fa-2x" onClick={() => this.props.history.push('/')}></i>
           </div>
           <Link to='/'><h2 className="appnav-title">TV Tracker</h2></Link>
         </div>
-
+        
+        
         <nav className="appnav">
-          <ul className="appnav-links">
-            <NavLink to='/dashboard' activeClassName="selected" className="appnav-li"><li>Dashboard</li></NavLink>
-            <li className="appnav-li" id="dropdown-li">
+          <div className="appnav-links">
+            <NavLink to='/dashboard' activeClassName="selected" className="appnav-li">Dashboard</NavLink>
+            <div className="appnav-li" id="dropdown-li">
               <div className="dropdown">
                 <button className="dropbtn">TV Show Status</button>
                 <div className="dropdown-content">
@@ -34,38 +35,40 @@ export default class AppNav extends Component {
                   <NavLink to='/completed' activeClassName="selected" className="dropdown-link"><span className="dropdown-span">Completed</span></NavLink>
                 </div>
               </div>
-            </li>
-            <NavLink to='/add-entry' activeClassName="selected" className="appnav-li"><li >Add New Show</li></NavLink>
+            </div>
+            <NavLink to='/add-entry' activeClassName="selected" className="appnav-li">Add New Show</NavLink>
             <Link to='/'>
-              <li className="appnav-li">
+              <div className="appnav-li">
                 <button type="button" className="logout-button"
                   onClick={() => {this.handleLogoutClick(); this.context.toggleIsLoggedOff()}}>
                   Logout
                 </button>
-              </li>
+              </div>
             </Link>
-          </ul>
+          </div>
         </nav>
+
 
         <div className="hamburger">
             <label htmlFor="toggle" className="hamburger-logo">&#9776;</label>
             <input type="checkbox" id="toggle"/>
             <ul className="menu">
-                <Link to='/dashboard'><li className="appnav-li appnav-li-first">Dashboard</li></Link>
-                <Link to='/plan-to-watch'><li className="appnav-li">Plan to Watch</li></Link>
-                <Link to='/currently-watching'><li className="appnav-li">Currently Watching</li></Link>
-                <Link to='/completed'><li className="appnav-li">Completed</li></Link>
-                <Link to='/add-entry'><li className="appnav-li">Add New Show</li></Link>
-                <Link to='/'>
-                  <li className="appnav-li" 
-                    onClick={() => {this.handleLogoutClick(); this.context.toggleIsLoggedOff()}}>
-                    Logout
-                  </li>
-                </Link>
+                <li className="appnav-li appnav-li-first" onClick={() => this.props.history.push('/dashboard')}>Dashboard</li>
+                <li className="appnav-li" onClick={() => this.props.history.push('/plan-to-watch')}>Plan to Watch</li>
+                <li className="appnav-li" onClick={() => this.props.history.push('/currently-watching')}>Currently Watching</li>
+                <li className="appnav-li" onClick={() => this.props.history.push('/completed')}>Completed</li>
+                <li className="appnav-li" onClick={() => this.props.history.push('/add-entry')}>Add New Show</li>
+                <li className="appnav-li" 
+                  onClick={() => {this.handleLogoutClick(); this.context.toggleIsLoggedOff(); this.props.history.push('/')}}>
+                  Logout
+                </li>    
             </ul>
         </div>
-        
+
+
       </header>
     )
   }
 }
+
+export default withRouter(AppNav);

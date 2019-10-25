@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
 import tvContext from '../Context';
-import FormError from '../FormError/FormError';
+import FormErrorLight from '../FormErrorLight/FormErrorLight';
 import './LoginForm.css';
 
 export default class LoginForm extends Component {
@@ -92,11 +92,11 @@ export default class LoginForm extends Component {
     let userNameError = this.validateUserName();
 
     return (
-      <section className="login-section">
+      <section className="login-section" role="main">
         <div role="alert" className="error-div">
             {this.state.error && <p className='red'>{this.state.error}</p>}
           </div>
-        <h2 className="login-h2">Login</h2>
+        <h1 className="login-h1">Login</h1>
         <form className="login-form" onSubmit={(e) => this.handleSubmitJwtAuth(e)}>
           <div className="login__user_name">
             <label htmlFor="user_name" className="login-label">Username</label>
@@ -104,7 +104,7 @@ export default class LoginForm extends Component {
               aria-required="true" aria-label="username" aria-invalid="true"
               onChange={(e) => {this.handleInputChange(e); this.handleUserNameTouch(e)}}
             />
-            {this.state.usernameTouch.touched && <FormError message={userNameError} />}
+            {this.state.usernameTouch.touched && <FormErrorLight message={userNameError} />}
           </div>
           <div className="login__password">
             <label htmlFor="password" className="login-label">Password</label>
@@ -112,7 +112,7 @@ export default class LoginForm extends Component {
               autoComplete="on" required aria-required="true" aria-label="password" aria-invalid="true"
               onChange={(e) => {this.handleInputChange(e); this.handlePasswordTouch(e)}}
             />
-            {this.state.passwordTouch.touched && <FormError message={passwordError} />}
+            {this.state.passwordTouch.touched && <FormErrorLight message={passwordError} />}
           </div>
           <div className="buttons-flex">
             <div className="login-button-div">

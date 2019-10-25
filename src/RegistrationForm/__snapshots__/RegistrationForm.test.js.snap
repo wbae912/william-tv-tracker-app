@@ -3,16 +3,17 @@
 exports[`RegistrationForm component renders UI as expected 1`] = `
 <section
   className="register-section"
+  role="main"
 >
   <div
     className="error-div"
     role="alert"
   />
-  <h2
-    className="register-h2"
+  <h1
+    className="register-h1"
   >
     Start Today!
-  </h2>
+  </h1>
   <form
     className="register-form"
     onSubmit={[Function]}

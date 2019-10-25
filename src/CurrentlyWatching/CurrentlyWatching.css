@@ -24,7 +24,6 @@
   width: 60%;
   padding: 0;
   border-radius: 8px;
-  border: none;
   padding: 1%;
 }
 
@@ -54,6 +53,23 @@ select {
   font-family: 'Montserrat', sans-serif;
 }
 
+#searchTerm, #genre-options, #rating-options, #sort-options {
+  width: 200px;
+}
+
+#searchTerm {
+  width: 190px;
+}
+
+@media only screen and (min-width: 400px) {
+  #searchTerm {
+    width: 60%;
+  }
+  #genre-options, #rating-options, #sort-options {
+    width: 62%;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   .current-h1 {
     font-size: 36px;
@@ -69,5 +85,8 @@ select {
   }
   .search-label {
     font-size: 20px;
+  }
+  #searchTerm, #genre-options, #rating-options, #sort-options {
+    width: 220px;
   }
 }

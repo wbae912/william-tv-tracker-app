@@ -10,9 +10,10 @@
   padding-top: 65px;
 }
 
-.login-h2 {
+.login-h1 {
   margin-top: 0;
-  margin-top: 4%
+  margin-top: 4%;
+  font-size: 24px;
 }
 
 .login-label {
@@ -23,6 +24,7 @@
 .login-input {
   margin-left: 2%;
   margin-right: 2%;
+  width: 180px;
 }
 
 .buttons-flex {
@@ -53,6 +55,7 @@
   height: 30px;
   font-size: 14px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .form__login-button {
@@ -66,8 +69,4 @@
 .form__login-button:hover, .back-button:hover {
   background-color: white;
   color: black;
-}
-
-@media only screen and (min-width: 750px) {
-
 }

@@ -3,6 +3,7 @@
 exports[`Completed component renders UI as expected 1`] = `
 <div
   className="completed-section"
+  role="main"
 >
   <div
     className="error-bigger"
@@ -32,7 +33,7 @@ exports[`Completed component renders UI as expected 1`] = `
           id="searchTerm"
           name="searchTerm"
           onChange={[Function]}
-          placeholder="Search TV Show"
+          placeholder="Enter TV Show Name..."
           type="text"
           value=""
         />
@@ -41,7 +42,6 @@ exports[`Completed component renders UI as expected 1`] = `
         className="filter-genre"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="genre-options"
         >
@@ -138,7 +138,6 @@ exports[`Completed component renders UI as expected 1`] = `
         className="filter-rating"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="rating-options"
         >
@@ -190,7 +189,6 @@ exports[`Completed component renders UI as expected 1`] = `
         className="sort-div"
       >
         <label
-          aria-hidden="true"
           className="hidden"
           htmlFor="sort-options"
         >

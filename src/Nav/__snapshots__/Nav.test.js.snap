@@ -11,14 +11,10 @@ exports[`Nav component renders UI as expected 1`] = `
     <div
       className="logo-div"
     >
-      <a
-        href="/"
+      <i
+        className="fa fa-tv fa-2x"
         onClick={[Function]}
-      >
-        <i
-          className="fa fa-tv fa-2x"
-        />
-      </a>
+      />
     </div>
     <a
       href="/"
@@ -34,7 +30,7 @@ exports[`Nav component renders UI as expected 1`] = `
   <nav
     className="nav"
   >
-    <ul
+    <div
       className="nav-links"
     >
       <a
@@ -43,11 +39,7 @@ exports[`Nav component renders UI as expected 1`] = `
         href="/login"
         onClick={[Function]}
       >
-        <li
-          className="login-li"
-        >
-          Login
-        </li>
+        Login
       </a>
       <a
         aria-current={null}
@@ -55,13 +47,9 @@ exports[`Nav component renders UI as expected 1`] = `
         href="/register"
         onClick={[Function]}
       >
-        <li
-          className="register-li"
-        >
-          Register
-        </li>
+        Register
       </a>
-    </ul>
+    </div>
   </nav>
 </header>
 `;

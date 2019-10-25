@@ -10,9 +10,10 @@
   padding-top: 65px;
 }
 
-.register-h2 {
+.register-h1 {
   margin-top: 0;
-  margin-top: 4%
+  margin-top: 4%;
+  font-size: 24px;
 }
 
 .register-form-div {
@@ -22,12 +23,13 @@
 
 .register-label {
   display: inline-block;
-  width: 150px;
+  width: 120px;
 }
 
 .register-input {
   margin-left: 2%;
   margin-right: 2%;
+  width: 180px;
 }
 
 .buttons-flex {
@@ -58,6 +60,7 @@
   height: 30px;
   font-size: 14px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .signup-button {

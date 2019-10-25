@@ -1,5 +1,5 @@
 import React from 'react';
-import FormError from '../FormError/FormError';
+import FormErrorLight from '../FormErrorLight/FormErrorLight';
 import './RegistrationForm.css';
 
 export default class RegistrationForm extends React.Component {
@@ -114,11 +114,11 @@ export default class RegistrationForm extends React.Component {
     let userNameError = this.validateUserName();
 
     return (
-      <section className="register-section">
+      <section className="register-section" role="main">
         <div role="alert" className="error-div">
           {this.state.error && <p className='red'>{this.state.error}</p>}
         </div>
-        <h2 className="register-h2">Start Today!</h2>
+        <h1 className="register-h1">Start Today!</h1>
         <form className="register-form" onSubmit={e => this.handleSubmit(e)}>
           <div className="register-form-div">
             <label htmlFor="full_name" className="register-label">Full Name</label>
@@ -126,21 +126,21 @@ export default class RegistrationForm extends React.Component {
               aria-required="true" aria-label="Full name" aria-invalid="true"
               onChange={e => {this.handleChange(e); this.handleFullNameTouch(e)}}/>
           </div>
-          {this.state.fullNameTouch.touched && <FormError message={fullNameError} />}
+          {this.state.fullNameTouch.touched && <FormErrorLight message={fullNameError} />}
           <div className="register-form-div">
             <label htmlFor="user_name" className="register-label">Username</label>
             <input type="text" className="register-input" id="user_name" name="user_name" placeholder="username" required
               aria-required="true" aria-label="username" aria-invalid="true"
               onChange={e => {this.handleChange(e); this.handleUserNameTouch(e)}}/>
           </div>
-          {this.state.userNameTouch.touched && <FormError message={userNameError} />}
+          {this.state.userNameTouch.touched && <FormErrorLight message={userNameError} />}
           <div className="register-form-div">
             <label htmlFor="password" className="register-label">Password<span className="required">*</span></label>
             <input type="password" className="register-input" id="password" name="password" minLength="8" maxLength="72" required
               autoComplete="on" aria-required="true" aria-label="password" aria-invalid="true"
               onChange={e => {this.handleChange(e);this.handlePasswordTouch(e)}}/>
           </div>
-          {this.state.passwordTouch.touched && <FormError message={passwordError} />}
+          {this.state.passwordTouch.touched && <FormErrorLight message={passwordError} />}
           <p className="password-requirements"><span className="required">*</span>Password must contain at least one uppercase, lowercase, and number character</p>
           <div className="buttons-flex">
             <div className="signup-button-div">

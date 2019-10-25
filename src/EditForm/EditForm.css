@@ -64,6 +64,7 @@
   height: 30px;
   font-size: 14px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .edit-show-button {

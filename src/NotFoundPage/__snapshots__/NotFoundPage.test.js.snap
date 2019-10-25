@@ -3,7 +3,12 @@
 exports[`NotFoundPage component renders UI as expected 1`] = `
 <div
   className="not-found"
+  role="main"
 >
-  Page Not Found!
+  <h1
+    className="not-found-h1"
+  >
+    Page Not Found!
+  </h1>
 </div>
 `;

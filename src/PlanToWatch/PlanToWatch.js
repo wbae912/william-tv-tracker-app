@@ -77,7 +77,7 @@ export default class PlanToWatch extends Component {
       planningToWatchShows = planningToWatchShows.sort((a,b) => b.rating - a.rating)
     }
     return (
-      <div className="plan-section">
+      <div className="plan-section" role="main">
         <div role="alert" className="error-bigger">
           {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
         </div>
@@ -91,7 +91,7 @@ export default class PlanToWatch extends Component {
                 onChange={this.handleSearchTermChange} />
             </div>
             <div className="filter-genre">
-              <label className="hidden" htmlFor="genre-options" aria-hidden="true">Genre Options</label>
+              <label className="hidden" htmlFor="genre-options">Genre Options</label>
               <select name="genre-options" id="genre-options" onChange={this.handleGenreChange}>
                 <option value="">Filter By Genre...</option>
                 <option value="N/A">N/A</option>
@@ -112,7 +112,7 @@ export default class PlanToWatch extends Component {
               </select>
             </div>
             <div className="filter-rating">
-              <label className="hidden" htmlFor="rating-options" aria-hidden="true">Rating Options</label>
+              <label className="hidden" htmlFor="rating-options">Rating Options</label>
               <select name="rating-options" id="rating-options" onChange={this.handleMinRatingChange}>
                 <option value="">Filter By Min. Rating...</option>
                 <option value="0">No Rating</option>
@@ -124,7 +124,7 @@ export default class PlanToWatch extends Component {
               </select>
             </div>
             <div className="sort-div">
-              <label className="hidden" htmlFor="sort-options" aria-hidden="true">Sort Options</label>
+              <label className="hidden" htmlFor="sort-options">Sort Options</label>
               <select name="sort-options" id="sort-options" onChange={this.handleSortChange}>
                   <option value="0">Sort By...</option>
                   <optgroup label="TV Show Name">

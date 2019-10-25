@@ -3,6 +3,7 @@
 exports[`AddForm component renders UI as expected 1`] = `
 <section
   className="add-form-section"
+  role="main"
 >
   <div
     className="error-form"

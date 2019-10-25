@@ -60,7 +60,7 @@
   text-decoration: none;
 }
 
-.nav-links li:hover {
+.nav-li:hover {
   color: rgb(173, 110, 173);
 }
 

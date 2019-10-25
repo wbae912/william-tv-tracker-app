@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
     const totalShows = this.context.shows.length; 
 
     return (
-      <section className="dashboard-section"> 
+      <section className="dashboard-section" role="main"> 
         <div role="alert" className="error-bigger">
           {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
         </div>

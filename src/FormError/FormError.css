@@ -1,6 +1,6 @@
 .error-message {
-  color: rgb(110, 7, 7);
-  text-shadow: 0.3px 0.3px rgb(110, 7, 7);
+  color: orangered;
+  text-shadow: 1px 1px rgb(119, 31, 31);
   font-weight: bold;
   margin-top: 5px;
   margin-bottom: 5px;

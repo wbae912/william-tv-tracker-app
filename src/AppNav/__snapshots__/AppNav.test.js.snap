@@ -11,14 +11,10 @@ exports[`AppNav component renders UI as expected 1`] = `
     <div
       className="appnav-logo-div"
     >
-      <a
-        href="/"
+      <i
+        className="fa fa-tv fa-2x"
         onClick={[Function]}
-      >
-        <i
-          className="fa fa-tv fa-2x"
-        />
-      </a>
+      />
     </div>
     <a
       href="/"
@@ -34,7 +30,7 @@ exports[`AppNav component renders UI as expected 1`] = `
   <nav
     className="appnav"
   >
-    <ul
+    <div
       className="appnav-links"
     >
       <a
@@ -43,11 +39,9 @@ exports[`AppNav component renders UI as expected 1`] = `
         href="/dashboard"
         onClick={[Function]}
       >
-        <li>
-          Dashboard
-        </li>
+        Dashboard
       </a>
-      <li
+      <div
         className="appnav-li"
         id="dropdown-li"
       >
@@ -100,22 +94,20 @@ exports[`AppNav component renders UI as expected 1`] = `
             </a>
           </div>
         </div>
-      </li>
+      </div>
       <a
         aria-current={null}
         className="appnav-li"
         href="/add-entry"
         onClick={[Function]}
       >
-        <li>
-          Add New Show
-        </li>
+        Add New Show
       </a>
       <a
         href="/"
         onClick={[Function]}
       >
-        <li
+        <div
           className="appnav-li"
         >
           <button
@@ -125,9 +117,9 @@ exports[`AppNav component renders UI as expected 1`] = `
           >
             Logout
           </button>
-        </li>
+        </div>
       </a>
-    </ul>
+    </div>
   </nav>
   <div
     className="hamburger"
@@ -145,67 +137,42 @@ exports[`AppNav component renders UI as expected 1`] = `
     <ul
       className="menu"
     >
-      <a
-        href="/dashboard"
+      <li
+        className="appnav-li appnav-li-first"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li appnav-li-first"
-        >
-          Dashboard
-        </li>
-      </a>
-      <a
-        href="/plan-to-watch"
+        Dashboard
+      </li>
+      <li
+        className="appnav-li"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li"
-        >
-          Plan to Watch
-        </li>
-      </a>
-      <a
-        href="/currently-watching"
+        Plan to Watch
+      </li>
+      <li
+        className="appnav-li"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li"
-        >
-          Currently Watching
-        </li>
-      </a>
-      <a
-        href="/completed"
+        Currently Watching
+      </li>
+      <li
+        className="appnav-li"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li"
-        >
-          Completed
-        </li>
-      </a>
-      <a
-        href="/add-entry"
+        Completed
+      </li>
+      <li
+        className="appnav-li"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li"
-        >
-          Add New Show
-        </li>
-      </a>
-      <a
-        href="/"
+        Add New Show
+      </li>
+      <li
+        className="appnav-li"
         onClick={[Function]}
       >
-        <li
-          className="appnav-li"
-          onClick={[Function]}
-        >
-          Logout
-        </li>
-      </a>
+        Logout
+      </li>
     </ul>
   </div>
 </header>

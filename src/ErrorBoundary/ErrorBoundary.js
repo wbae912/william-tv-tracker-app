@@ -17,10 +17,10 @@ export default class ErrorBoundary extends Component {
     render() {
         if (this.state.error) {
             return (
-                <>
-                  <h2 className="error-boundary-h2">Something went wrong</h2>
+                <div className="error-boundary" role="main">
+                  <h1 className="error-boundary-h1">Something went wrong</h1>
                   <p className="error-boundary-p">Please refresh the page</p>
-                </>
+                </div>
             );
         }
         return this.props.children;

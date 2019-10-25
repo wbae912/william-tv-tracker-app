@@ -1,8 +1,12 @@
-.error-boundary-h2 {
+.error-boundary {
   text-align: center;
   color: white;
   font-family: 'Montserrat', sans-serif;
   padding-top: 100px;
+  margin: 0;
+}
+
+.error-boundary-h1 {
   font-weight: bold;
   font-size: 20px;
 }
@@ -16,7 +20,7 @@
 }
 
 @media only screen and (min-width: 750px) {
-  .error-boundary-h2 {
+  .error-boundary-h1 {
     font-size: 24px;
   }
   .error-boundary-p {
@@ -25,7 +29,7 @@
 }
 
 @media only screen and (min-width: 1300px) {
-  .error-boundary-h2 {
+  .error-boundary-h1 {
     font-size: 30px;
   }
   .error-boundary-p {

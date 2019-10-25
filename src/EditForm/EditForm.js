@@ -178,7 +178,7 @@ export default class EditForm extends Component {
     let episodeNumberError = this.validateEpisodeNumber();
 
     return (
-      <section className="edit-form-section">
+      <section className="edit-form-section" role="main">
         <div role="alert" className="error-form">
           {this.state.error && <p className='red-bigger'>{this.state.error}</p>}
         </div>
